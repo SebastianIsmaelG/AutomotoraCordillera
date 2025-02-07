@@ -1,0 +1,34 @@
+create table vehiculos (
+codigo int AUTO_INCREMENT NOT NULL COMMENT 'Codigo unico del vehiculo',
+categoria int NOT NULL COMMENT 'Codigo de la categoria',
+estado varchar (30) DEFAULT 'Sin informacion' COMMENT 'Estado del vehiculo(Nuevo,Usado,Sin informacion)',
+marca int NOT NULL COMMENT 'Codigo de la marca',
+modelo varchar(100) NOT NULL COMMENT 'Nombre de modelo del vehiculo',
+precio int DEFAULT 0 COMMENT 'Precio del vehiculo',
+color varchar(100) DEFAULT 'Sin Informacion' COMMENT 'Color del vehiculo',
+ano YEAR DEFAULT 0 COMMENT 'Año del vehiculo',
+combustible int NOT NULL COMMENT 'Tipo de combustible del vehiculo',
+transmision int NOT NULL COMMENT 'Codigo del tipo de transmision',
+kilometraje int NOT NULL COMMENT 'Kilometraje del vehiculo',
+cilindrada int NOT NULL COMMENT 'Cilindrada del vehiculo',
+equipamiento TEXT COMMENT 'Datos extra del equipamiento del vehiculo',
+foto1 varchar(50) NOT NULL COMMENT 'Fotografia numero 1 del vehiculo',
+foto2 varchar(50) NOT NULL COMMENT 'Fotografia numero 2 del vehiculo',
+foto3 varchar(50) NOT NULL COMMENT 'Fotografia numero 3 del vehiculo',
+foto4 varchar(50) NOT NULL COMMENT 'Fotografia numero 4 del vehiculo',
+foto5 varchar(50) NOT NULL COMMENT 'Fotografia numero 5 del vehiculo',
+ubicacion int NOT NULL COMMENT 'Codigo de ubicacion de la sucursal',
+PRIMARY KEY (CODIGO),
+FOREIGN KEY (categoria) REFERENCES categorias(codigo),
+FOREIGN KEY (marca) REFERENCES marcas(codigo),
+FOREIGN KEY (transmision) REFERENCES transmisiones(codigo),
+FOREIGN KEY (ubicacion) REFERENCES sucursales(codigo)
+)COMMENT 'Datos de los vehiculos'
+
+
+
+
+
+
+
+INSERT INTO `vehiculos` (`codigo`, `categoria`, `estado`, `marca`, `modelo`, `precio`, `color`, `ano`, `combustible`, `transmision`, `kilometraje`, `cilindrada`, `equipamiento`, `foto1`, `foto2`, `foto3`, `foto4`, `foto5`, `ubicacion`) VALUES (NULL, '1', 'Usado', '6', ' BMW Serie 1 2012', '10100000', 'Rojo', '2012', '1', '1', '13000', '1600', 'Color: AZUL GRAFITO METALICO\r\nCombustible: GASOLINA\r\n\r\n¡Disfruta de la combinación perfecta de lujo y aventura! \r\n\r\nEste BMW X1 es tu pase a una vida más emocionante. \r\n\r\nCon su diseño deportivo y acabados de alta calidad, te sentirás como en un auto de lujo en cada viaje. \r\n\r\nYa sea para tus aventuras urbanas o escapadas de fin de semana, este BMW te llevará a donde quieras con estilo y comodidad.\r\n\r\nSu motor potente te brinda una conducción suave y ágil, mientras que su interior espacioso te ofrece todo el confort que necesitas.', '20190422045252497.jpg', '20190422045252433.jpg', '20190422045252512.jpg', '20190422045252176.jpg', '20190422045252991.jpg', '1');

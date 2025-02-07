@@ -110,16 +110,15 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
                                       //Almacenamiento en base de datos
                                         try {
-                                          include 'C:\xampp\htdocs\Proyectos\automotora2.0\paginas_funciones\dbcall.php';
+                                          include 'dbcall.php';
 
                                           if (!$cnn) {
                                               die("Conexion Fallida: " . mysqli_connect_error());
                                           }else{
 
-                                              $sql = mysqli_prepare($cnn,"INSERT INTO vehiculos (codigo_vehiculo, categoria,estado, marca, modelo, precio, color, ano, combustible, transmision, kilometraje, cilindrada, equipamiento, foto1, foto2, foto3, foto4, foto5, ubicacion)
+                                              $sql = mysqli_prepare($cnn,"INSERT INTO vehiculos (codigo, categoria, estado, marca, modelo, precio, color, ano, combustible, transmision, kilometraje, cilindrada, equipamiento, foto1, foto2, foto3, foto4, foto5, ubicacion)
                                                VALUES (NULL,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)" );
-
-                                               mysqli_stmt_bind_param($sql,"isisisiiiiissssssi",
+                                               mysqli_stmt_bind_param($sql,"i s i s i s i i iiissssssi",
                                                $categoria_vehiculo,$estado_vehiculo,$marca_vehiculo,$modelo_vehiculo,$precio_vehiculo,$color_vehiculo,$año_vehiculo,$combustible_vehiculo,$transmision_vehiculo,$kilometraje_vehiculo,$cilindrada_vehiculo,$equipamiento_vehiculo,$nombre_nuevo1,$nombre_nuevo2,$nombre_nuevo3,$nombre_nuevo4,$nombre_nuevo5,$ubicacion_vehiculo);
                                                $rs = mysqli_stmt_execute($sql);
                                                mysqli_close($cnn);
