@@ -1,25 +1,49 @@
 <?php
-    $variable_ajax = $_POST["marca"];
-
     try {
-      include 'C:\xampp\htdocs\Proyectos\automotora2.0\paginas_funciones\dbcall.php';
-      if (!$cnn) {
-        die("Conexion Fallida: " . mysqli_connect_error());
+        require_once 'dbcall.php';
 
-      }else {
-        $sql = "SELECT modelo FROM vehiculos WHERE (vehiculos.marca= '$variable_ajax') ";
-        $result = mysqli_query($cnn,$sql);
-        $cadena = "<select class='form-control' id='sel_modelo' name='sel_modelo' style='width:100%;'><option value='0'>Todos los disponibles</option>";
-
-        while ($ver=mysqli_fetch_row($result)) {
-          $cadena= $cadena.'<option value="'.utf8_encode($ver[0]).'">'.utf8_encode($ver[0]).'</option>';
+        if (!$cnn) {
+            die("Conexión Fallida: " . mysqli_connect_error());
         }
-        echo $cadena."</select>";
-      }
-    } catch (\Exception $e) {
 
+        
+        if (!isset($_POST["marca"]) || empty($_POST["marca"])) {
+            
+            $cadena = "<select class='form-control' id='sel_modelo' name='sel_modelo' style='width:100%;'>";
+            $cadena .= "</select>";
+        }
+
+        
+        $variable_ajax = $_POST["marca"];
+        $sql = "SELECT modelo FROM vehiculos WHERE marca = ? LIMIT 8";
+        $stmt = mysqli_prepare($cnn, $sql);
+
+        if ($stmt) {
+            mysqli_stmt_bind_param($stmt, "s", $variable_ajax);
+            mysqli_stmt_execute($stmt);
+            $result = mysqli_stmt_get_result($stmt);
+
+            $cadena = "<select class='form-control' id='sel_modelo' name='sel_modelo' style='width:100%;'>";
+            $cadena .= "<option value='0'>Todos los disponibles</option>";
+            
+            
+
+            while ($ver = mysqli_fetch_row($result)) {
+                $cadena .= '<option value="' . htmlspecialchars($ver[0]) . '">' . htmlspecialchars($ver[0]) . '</option>';
+            }
+
+            $cadena .= "</select>";
+            echo $cadena;
+
+            
+            mysqli_stmt_close($stmt);
+        } else {
+            echo "Error en la preparación de la consulta.";
+        }
+
+    } catch (\Exception $e) {
+        echo "Error: " . $e->getMessage();
     }
 
-
-
- ?>
+    //Revisar este codigo
+?>

@@ -2,7 +2,7 @@
 <?php
   try {
 
-    include 'C:\xampp\htdocs\Proyectos\automotora2.0\paginas_funciones\dbcall.php';
+    include '/paginas_funciones/dbcall.php';
    if (!$cnn) {
      die("Conexion Fallida: " . mysqli_connect_error());
    }else {

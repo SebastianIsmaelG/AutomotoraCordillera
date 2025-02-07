@@ -1,4 +1,142 @@
-/**Estilos de Divs */
+/*Estilos default */
+li::marker {
+  content: "";
+  display: none;
+}
+
+/* .Class */
+.vehiculo_data_nombre{
+  background-color: white;
+  font-size: 14px;
+  padding: 5px;
+  margin:5px;
+  font-family: 'Open Sans', sans-serif;
+}
+.close {
+  border: none;
+  background: transparent;
+  font-size: 1rem; /* Ajusta el tamaño del icono si es necesario */
+}
+.icono-detalles{
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+.content-detalles{
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+.vehiculo_data_precio{
+border: solid 1px #E4E3E3;
+padding: 5px;
+margin:5px;
+}
+.navbar-header{
+background-color:#F8F8F9;
+}
+
+.navbar-nav {
+flex-grow: 1; 
+}
+
+.search-container {
+position: relative;
+width: 100%; 
+}
+
+.search-container .form-control {
+width: 100%;
+padding-left: 40px; 
+}
+
+.search-container .fa-search {
+font-size: 18px;
+color: #007bff;
+pointer-events: none;
+}
+.search-container input[name="busqueda_index"] {
+width: 450px;
+}
+.sec_footer{
+background-color:#1B1C1D;
+background-color:#1B1C1D;position: absolute;
+bottom: 0;
+width:100%;
+}
+.div_valores{
+background-color: #e1e1e1;
+border-width: 0px;
+border-color: #333333;
+border-top-width: 3px;
+border-top-color: #005e7d;
+border-style: solid;
+padding:5px;
+height: 250px;
+}
+.title_valores{
+color: #005e7d;
+font-size: 22px;
+font-family: 'Raleway', sans-serif;
+}
+.content_valores{
+font-family: 'Raleway', sans-serif;
+}
+.datos_sucursal p {
+font-family: 'Lato', sans-serif !important;
+}
+.section_historia{
+font-family: 'Lato', sans-serif !important;
+letter-spacing: 1px;
+}
+.title_historia_background{
+font-family: 'Raleway', sans-serif;
+font-weight: bold;
+color: #333333;
+}
+.title_vision_mision{
+font-family: 'Raleway', sans-serif;
+font-weight: 400;
+line-height: 1.26;
+letter-spacing: 1px;
+}
+.fondo_historia{
+background-image: url(../images/_acf3741.jpg);
+background-position: 0 0;
+background-repeat: no-repeat;
+background-size: cover;
+padding: 70px 0;
+border-style: solid;
+border-width: thin;
+border-color: black;
+height: 400px;
+
+}
+.photo_sucursal{
+width:100%;
+margin:3px;
+border-style: solid;
+border-width: thin;
+border-color: black;
+}
+.areamap{
+background-image: url(../images/map.jpg);
+background-position: 0 0;
+background-repeat: no-repeat;
+background-size: cover;
+padding: 70px 0;
+border-style: solid;
+border-width: thin;
+border-color: black;
+}
+.circlemap{
+border: 10px solid #f6f5f0;
+  border-radius: 50%;
+  height: 350px;
+  width: 350px;
+  box-shadow: 0px 0px 3px 3px #e7e4dc;
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+}
 .tamaño_iconos{
   width:25px;
   height:25px;
@@ -48,64 +186,13 @@
 .recuadro_contacto_social{
   padding: 3px;
 }
-#input_busqueda_cotizacion{
-  background-image: url('../images/icons/icons8-busqueda-30.png');
-  background-position: 10px;
-  background-repeat: no-repeat;
-  font-size: 16px;
-  padding: 12px 40px 12px 40px;
-  border: 1px solid #ddd;
-}
-#div_automovils{
-  margin: 0;
-  padding:5px;
-  border: solid 1px #E4E3E3;
-  margin-bottom: 2px;
-}
-#div_automovils:hover{
-  background-color: #f2f2f2;
-  transition-duration: 0.5s;
-  transition-timing-function: linear;
-}
-#div_automovildatos{
-  border: solid 1px #E4E3E3;
-  background-color: white;
-}
-#div_automovildatos p {
-  font-family: 'Lato', sans-serif;
-}
-#div_automovildatostitle{
-    margin-top: 3px;
-    margin-bottom: 11px;
-}
+
 .footer_data div{
   color:white;
   font-family: 'Lato', sans-serif;
 }
-.section_footer{
-  padding: 10px;
-}
 .upper{
   text-transform: uppercase;
-}
-#linear{
-  border-left: solid 2px #CF3232;
-  padding-left: 5px;
-}
-#texto_equipamiento{
-  line-height: 1.4;
-  padding: 5px;
-  border: solid 1px #E4E3E3;
-  background-color:white;
-  font-family: 'Source Sans Pro', sans-serif;
-
-}
-#texto_equipamiento2{
-  padding: 5px;
-  background-color:white;
-  font-family: 'Source Sans Pro', sans-serif;
-  font-size: 18px;
-
 }
 .chat_container{
   margin: 0px;
@@ -179,6 +266,81 @@
   background-color: white;
   display: none;
 }
+.container-data{
+  background-color:rgb(243, 243, 243);
+  border: 3px solid rgb(235, 227, 227);
+}
+.div_ventavehiculo{
+  background-color: rgba(21, 60, 117, 0.8);
+  color: #f2f2f2;
+  border-style: solid;
+  border-color: black;
+  border-width: thin;
+}
+.text_div_venta_vehiculo{
+  font-family: 'Lato', sans-serif;
+  font-weight: 600 !important;
+}
+.btnindex_search{
+  background-color: #d82e2e !important;
+  color: white !important;
+}
+.cotizar_label{
+ font-weight: 700;
+ color: black;
+}
+
+/* #ID   */
+#input_busqueda_cotizacion{
+  background-image: url('../images/icons/icons8-busqueda-30.png');
+  background-position: 10px;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  padding: 12px 40px 12px 40px;
+  border: 1px solid #ddd;
+}
+#div_automovils{
+  margin: 0;
+  padding:5px;
+  border: solid 1px #E4E3E3;
+  margin-bottom: 2px;
+}
+#div_automovils:hover{
+  background-color: #f2f2f2;
+  transition-duration: 0.5s;
+  transition-timing-function: linear;
+}
+#div_automovildatos{
+  border: solid 1px #E4E3E3;
+  background-color: white;
+}
+#div_automovildatos p {
+  font-family: 'Lato', sans-serif;
+}
+#div_automovildatostitle{
+    margin-top: 3px;
+    margin-bottom: 11px;
+}
+#linear{
+  border-left: solid 2px #CF3232;
+  padding-left: 5px;
+}
+#texto_equipamiento{
+  line-height: 1.4;
+  padding: 5px;
+  border: solid 1px #E4E3E3;
+  background-color:white;
+  font-family: 'Source Sans Pro', sans-serif;
+
+}
+#texto_equipamiento2{
+  padding: 5px;
+  background-color:white;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 18px;
+
+}
+
 #navbar_administracion{
   background-color: #007BFF;
 }
@@ -211,87 +373,6 @@
 	width: 500px;
   height: auto;
 	margin: 10px auto;
-}
-@media screen and (max-width: 540px){
-    #contenedor_principalL {
-      padding: 5px;
-    	width: auto;
-      height: auto;
-    	margin: 10px auto;
-}}
-@media screen and (min-width: 360px) and (max-width: 507px){
-    .g-recaptcha {
-    transform:scale(0.90);-webkit-transform:scale(0.90);
-    transform-origin:0 0;-webkit-transform-origin:0 0;
-}}
-@media screen and (min-width: 508px) and (max-width: 575px){
-    .g-recaptcha {
-    transform:scale(0.99);-webkit-transform:scale(0.99);
-    transform-origin:0 0;-webkit-transform-origin:0 0;
-}}
-@media screen and (min-width: 576px) and (max-width: 620px){
-    .g-recaptcha {
-    transform:scale(0.70);-webkit-transform:scale(0.70);
-    transform-origin:0 0;-webkit-transform-origin:0 0;
-}}
-@media screen and (min-width: 620px) and (max-width: 991px){
-    .g-recaptcha {
-    transform:scale(0.80);-webkit-transform:scale(0.80);
-    transform-origin:0 0;-webkit-transform-origin:0 0;
-}}
-
-@media screen and (min-width: 992px) and (max-width: 1030px){
-    .g-recaptcha {
-    transform:scale(0.60);-webkit-transform:scale(0.60);
-    transform-origin:0 0;-webkit-transform-origin:0 0;
-}}
-@media screen and (min-width: 1031px) and (max-width:1100px){
-    .g-recaptcha {
-    transform:scale(0.65);-webkit-transform:scale(0.65);
-    transform-origin:0 0;-webkit-transform-origin:0 0;
-}}
-@media screen and (min-width: 1101px) and (max-width:1161px){
-    .g-recaptcha {
-    transform:scale(0.70);-webkit-transform:scale(0.70);
-    transform-origin:0 0;-webkit-transform-origin:0 0;
-}}
-@media screen and (min-width: 1162px) and (max-width:1280px){
-    .g-recaptcha {
-    transform:scale(0.75);-webkit-transform:scale(0.75);
-    transform-origin:0 0;-webkit-transform-origin:0 0;
-}}
-@media screen and (min-width: 1281px) and (max-width:14000px){
-    .g-recaptcha {
-    transform:scale(0.85);-webkit-transform:scale(0.85);
-    transform-origin:0 0;-webkit-transform-origin:0 0;
-}}
-
-.container_data{
-  background-color:white;
-  border-style:solid;
-  border-color: #bfbfbf;
-  border-width: thin;
-}
-.container_data p {
-  font-family: 'Open Sans', sans-serif;
-}
-.div_ventavehiculo{
-  background-color: rgba(21, 60, 117, 0.8);
-  color: #f2f2f2;
-  border-style: solid;
-  border-color: black;
-  border-width: thin;
-}
-.text_div_venta_vehiculo{
-  font-family: 'Lato', sans-serif;
-  font-weight: 600 !important;
-}
-
-.cotizar_label{
-padding-left: 3px;
- font-weight: 700;
- color: white;
- text-shadow: -1px 0 #4d4d4d, 0 1px #4d4d4d, 1px 0 #4d4d4d, 0 -1px #4d4d4d;
 }
 #precio_div{
   width:100%;
@@ -338,6 +419,131 @@ padding-left: 3px;
     padding:5px;
     width: 50%;
     color:#ffffff;
+}
+#aside_busqueda{
+  background: linear-gradient(to bottom, #f7f3f3, #ffffff);
+}
+#title_red{
+  color:#d82e2e;
+}
+.input-index{
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 1px;
+    color: #ffffff;
+    padding: 7px 13px;
+    background-color: #d82e2e;
+    border-radius: 5px;
+    border: solid #d82e2e; ;
+}
+.input-index:hover{
+  background-color: #43C24D;
+  border: solid #43C24D
+}
+.input-index i {
+  margin-right: 5px; 
+}
+
+.input-index-modal{
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 1px;
+  color: #ffffff;
+  padding: 7px 13px;
+  background-color: #14aa53;
+  border-radius: 5px;
+  border: solid #14aa53; ;
+}
+.input-index-modal:hover{
+  background-color: #43C24D;
+  border: solid #43C24D
+}
+#container_vehiculos_index{
+  background: linear-gradient(to bottom, #f7f3f3, #ffffff);
+}
+
+/* Media Querys */
+@media screen and (max-width: 540px){
+  #contenedor_principalL {
+    padding: 5px;
+    width: auto;
+    height: auto;
+    margin: 10px auto;
+}}
+@media screen and (min-width: 360px) and (max-width: 507px){
+  .g-recaptcha {
+  transform:scale(0.90);-webkit-transform:scale(0.90);
+  transform-origin:0 0;-webkit-transform-origin:0 0;
+}}
+@media screen and (min-width: 508px) and (max-width: 575px){
+  .g-recaptcha {
+  transform:scale(0.99);-webkit-transform:scale(0.99);
+  transform-origin:0 0;-webkit-transform-origin:0 0;
+}}
+@media screen and (min-width: 576px) and (max-width: 620px){
+  .g-recaptcha {
+  transform:scale(0.70);-webkit-transform:scale(0.70);
+  transform-origin:0 0;-webkit-transform-origin:0 0;
+}}
+@media screen and (min-width: 620px) and (max-width: 991px){
+  .g-recaptcha {
+  transform:scale(0.80);-webkit-transform:scale(0.80);
+  transform-origin:0 0;-webkit-transform-origin:0 0;
+}}
+
+@media screen and (min-width: 992px) and (max-width: 1030px){
+  .g-recaptcha {
+  transform:scale(0.60);-webkit-transform:scale(0.60);
+  transform-origin:0 0;-webkit-transform-origin:0 0;
+}}
+@media screen and (min-width: 1031px) and (max-width:1100px){
+  .g-recaptcha {
+  transform:scale(0.65);-webkit-transform:scale(0.65);
+  transform-origin:0 0;-webkit-transform-origin:0 0;
+}}
+@media screen and (min-width: 1101px) and (max-width:1161px){
+  .g-recaptcha {
+  transform:scale(0.70);-webkit-transform:scale(0.70);
+  transform-origin:0 0;-webkit-transform-origin:0 0;
+}}
+@media screen and (min-width: 1162px) and (max-width:1280px){
+  .g-recaptcha {
+  transform:scale(0.75);-webkit-transform:scale(0.75);
+  transform-origin:0 0;-webkit-transform-origin:0 0;
+}}
+@media screen and (min-width: 1281px) and (max-width:14000px){
+  .g-recaptcha {
+  transform:scale(0.85);-webkit-transform:scale(0.85);
+  transform-origin:0 0;-webkit-transform-origin:0 0;
+}}
+
+@media screen and (max-width: 766px) {
+  .fondo_historia{
+    background-image: url(../images/_acf3741.jpg);
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 70px 0;
+    border-style: solid;
+    border-width: thin;
+    border-color: black;
+    height: auto;
+  }
+}
+@media screen and (max-width: 992px) {
+  .circlemap{
+    border: 10px solid #f6f5f0;
+      border-radius: 50%;
+      height: 280px;
+      width: 280px;
+      box-shadow: 0px 0px 3px 3px #e7e4dc;
+      overflow: hidden;
+      position: relative;
+      margin: 0 auto;
+      margin-bottom: 10px;
+  }
 }
 @media screen and (max-width: 1500px) {
   #spanPrecio {
@@ -398,188 +604,4 @@ padding-left: 3px;
     width: 45%;
     color:#ffffff;
   }
-}
-#aside_busqueda{
-  background-color:#f2f2f2;
-}
-#aside_busqueda:hover{
-  background-color: #e6e6e6;
-  transition-duration: 0.5s;
-  transition-timing-function: linear;
-}
-#title_red{
-  color:#ff3333;
-}
-#input_index{
-    font-weight: 600;
-    text-transform: uppercase;
-    text-align: center;
-    letter-spacing: 1px;
-    color: #ffffff;
-    padding: 7px 13px;
-    margin:5px;
-    background-color: #717171;
-}
-#input_index:hover{
-  background-color: #43C24D;
-}
-#input_index2{
-    font-weight: 600;
-    text-transform: uppercase;
-    text-align: center;
-    letter-spacing: 1px;
-    color: #ffffff;
-    padding: 7px 13px;
-    background-color: #60a3bc;
-    user-select: none;
-
-}
-#input_index2:hover{
-  background: #60a3bc;
-  letter-spacing: 2px;
-  -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
-  -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
-  box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
-  transition: all 0.4s ease 0s;
-}
-.vehiculo_data_nombre{
-    background-color: white;
-    font-size: 14px;
-    padding: 5px;
-    margin:5px;
-    font-family: 'Open Sans', sans-serif;
-}
-.vehiculo_data_precio{
-  border: solid 1px #E4E3E3;
-  padding: 5px;
-  margin:5px;
-}
-.input_busqueda{
-  color: #ffff !important;
-  background-color:#60a3bc !important;
-  letter-spacing: 1px;
-}
-.input_busqueda:hover{
-  background: #60a3bc;
-  letter-spacing: 2px;
-  -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
-  -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
-  box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
-  transition: all 0.4s ease 0s;
-}
-.sec_footer{
-  background-color:#1B1C1D;
-  background-color:#1B1C1D;position: absolute;
-  bottom: 0;
-  width:100%;
-}
-.div_valores{
-  background-color: #e1e1e1;
-  border-width: 0px;
-  border-color: #333333;
-  border-top-width: 3px;
-  border-top-color: #005e7d;
-  border-style: solid;
-  padding:5px;
-  height: 250px;
-}
-.title_valores{
-  color: #005e7d;
-  font-size: 22px;
-  font-family: 'Raleway', sans-serif;
-}
-.content_valores{
-  font-family: 'Raleway', sans-serif;
-}
-.datos_sucursal p {
-  font-family: 'Lato', sans-serif !important;
-}
-.section_historia{
-  font-family: 'Lato', sans-serif !important;
-  letter-spacing: 1px;
-}
-.title_historia_background{
-  font-family: 'Raleway', sans-serif;
-  font-weight: bold;
-  color: #333333;
-}
-.title_vision_mision{
-  font-family: 'Raleway', sans-serif;
-  font-weight: 400;
-  line-height: 1.26;
-  letter-spacing: 1px;
-}
-.fondo_historia{
-  background-image: url(../images/_acf3741.jpg);
-  background-position: 0 0;
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: 70px 0;
-  border-style: solid;
-  border-width: thin;
-  border-color: black;
-  height: 400px;
-
-}
-@media screen and (max-width: 766px) {
-  .fondo_historia{
-    background-image: url(../images/_acf3741.jpg);
-    background-position: 0 0;
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding: 70px 0;
-    border-style: solid;
-    border-width: thin;
-    border-color: black;
-    height: auto;
-  }
-}
-.photo_sucursal{
-  width:100%;
-  margin:3px;
-  border-style: solid;
-  border-width: thin;
-  border-color: black;
-}
-.areamap{
-  background-image: url(../images/map.jpg);
-  background-position: 0 0;
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: 70px 0;
-  border-style: solid;
-  border-width: thin;
-  border-color: black;
-}
-.circlemap{
-  border: 10px solid #f6f5f0;
-    border-radius: 50%;
-    height: 350px;
-    width: 350px;
-    box-shadow: 0px 0px 3px 3px #e7e4dc;
-    overflow: hidden;
-    position: relative;
-    margin: 0 auto;
-}
-@media screen and (max-width: 992px) {
-  .circlemap{
-    border: 10px solid #f6f5f0;
-      border-radius: 50%;
-      height: 280px;
-      width: 280px;
-      box-shadow: 0px 0px 3px 3px #e7e4dc;
-      overflow: hidden;
-      position: relative;
-      margin: 0 auto;
-      margin-bottom: 10px;
-  }
-}
-#container_vehiculos_index{
-  border-style:solid;
-  border-color: #a6a6a6;
-  border-width: thin;
-  background-color:#f2f2f2;
-}
-#division_col_xs{
-  width:50%;
 }

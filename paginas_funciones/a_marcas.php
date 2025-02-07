@@ -1,21 +1,27 @@
 <?php
-  try {
-    include 'C:\xampp\htdocs\Proyectos\automotora2.0\paginas_funciones\dbcall.php';
+try {
+    require_once 'dbcall.php';
 
     if (!$cnn) {
-      die("Conexion Fallida: " . mysqli_connect_error());
-    }else{
-      $sql = "SELECT logo,marca,codigo_marca from marcas";
-      $rs = mysqli_query($cnn,$sql);
-      while ($row = mysqli_fetch_row($rs)){
-
-       echo "<a class='dropdown-item' href='menu_busqueda.php?codigoM=".$row["2"]."'><img src='images/marcas/".$row["0"]."' width='30px;' height='30px;'> ".$row["1"]."</a> ";
-      }
-      mysqli_free_result($rs);
-      mysqli_close($cnn);
+        die("Error de conexión: " . mysqli_connect_error());
     }
-  } catch (\Exception $e) {
-    echo "Error al tomar datos de la db:select marcas";
-  }
 
- ?>
+    $sql = "SELECT logo, marca, codigo FROM marcas";
+    $stmt = mysqli_prepare($cnn, $sql);
+    mysqli_stmt_execute($stmt);
+    $rs = mysqli_stmt_get_result($stmt);
+
+    while ($row = mysqli_fetch_assoc($rs)) {
+        echo "<a class='dropdown-item' href='menu_busqueda.php?codigoM=" . htmlspecialchars($row['codigo']) . "'>
+                <img src='images/marcas/" . htmlspecialchars($row['logo']) . "' width='30px' height='30px'>
+                 " . htmlspecialchars($row['marca']) . "
+              </a>";
+    }
+
+    mysqli_stmt_close($stmt);
+    //mysqli_close($cnn);
+
+} catch (Exception $e) {
+    echo "Error al tomar datos de la base de datos: " . $e->getMessage();
+}
+?>
