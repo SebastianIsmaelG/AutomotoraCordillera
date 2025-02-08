@@ -1,17 +1,15 @@
 <?php
-require_once 'dbcall.php'; // Asegúrate de que aquí se define $cnn (mysqli_connect)
+    require_once 'dbcall.php'; 
 
-if (!isset($id_vehiculo)) {
-    exit("No existe un ID o dato para traer información. / menu_busqueda_detalle.php");
-}
+    if (!isset($id_vehiculo)) {
+        exit("No existe un ID o dato para traer información. / menu_busqueda_detalle.php");
+    }
 
-try {
-    // Verificar conexión a la base de datos
-    if (!$cnn) {
+    try {
+        if (!$cnn) {
         throw new Exception("Error de conexión: " . mysqli_connect_error());
     }
 
-    // Consulta SQL con `?` para evitar SQL Injection
     $sql = "SELECT 
                 v.codigo,
                 m.marca,
@@ -30,7 +28,9 @@ try {
                 v.estado,
                 v.color,
                 v.cilindrada,
-                s.sucursal AS ubicacion
+                s.sucursal AS ubicacion,
+                s.latitud,
+                s.longitud
             FROM vehiculos AS v
             INNER JOIN marcas AS m ON v.marca = m.codigo
             INNER JOIN combustibles AS com ON v.combustible = com.codigo
@@ -74,9 +74,9 @@ try {
     $color        = $vehiculo['color'];
     $cilindrada   = $vehiculo['cilindrada'];
     $ubicacion    = $vehiculo['ubicacion'];
-    //$iframe       = $vehiculo['iframe'] ?? '';
+    $latitud      = $vehiculo['latitud'];
+    $longitud     = $vehiculo['longitud'];
 
-    // Liberar recursos
     mysqli_stmt_close($stmt);
 
 } catch (Exception $e) {

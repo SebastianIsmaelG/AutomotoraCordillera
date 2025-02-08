@@ -5,11 +5,7 @@ li::marker {
 }
 
 /* .Class */
-.vehiculo_data_nombre{
-  background-color: white;
-  font-size: 14px;
-  padding: 5px;
-  margin:5px;
+.openSans{
   font-family: 'Open Sans', sans-serif;
 }
 .close {
@@ -278,7 +274,11 @@ border: 10px solid #f6f5f0;
 }
 .cotizar_label{
  font-weight: 700;
- color: black;
+}
+.btn_cotizar_label:hover{
+  background-color: #d82e2e !important;
+  color: white !important;
+  font-weight: 700;
 }
 
 /* #ID   */
@@ -301,18 +301,7 @@ border: 10px solid #f6f5f0;
   transition-duration: 0.5s;
   transition-timing-function: linear;
 }
-#div_automovildatos{
-  border: solid 1px #E4E3E3;
-  background-color: white;
-}
-#div_automovildatos p {
-  font-family: 'Lato', sans-serif;
-}
-#div_automovildatostitle{
-    margin-top: 3px;
-    margin-bottom: 11px;
-}
-#linear{
+.linear{
   border-left: solid 2px #CF3232;
   padding-left: 5px;
 }
@@ -358,57 +347,30 @@ border: 10px solid #f6f5f0;
   border-color: gray;
   padding: 5px;
 }
-#contenedor_principalL{
-  padding: 5px;
-	width: 500px;
-  height: auto;
-	margin: 10px auto;
-}
-#precio_div{
-  width:100%;
-  margin: 5px;
+
+.container-precio{
+  text-align: center;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   color: white;
   background-color: #ff3333;
-  height: 80%;
-  text-align: center;
-  padding-top:5px;
-  padding-bottom: 5px;
-  user-select: none;
+  cursor:default;
 }
-#precio_div2{
-  text-align: center;
-  padding-top:5px;
-  padding-bottom: 5px;
-  width:100%;
-  height: 46px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  color: white;
-  background-color: #ff3333;
-}
-#precio_div2 h4 {
+.container-precio h4 {
   font-family: 'Roboto', sans-serif;
   letter-spacing: 1px;
 }
-#precio_div h5 {
-  font-family: 'Roboto', sans-serif;
-  letter-spacing: 1px;
-}
-#spanPrecio{
-    background-color: rgba(255, 51, 51,.8);
-    display: block;
-    position: absolute;
-    top: 10px;
-    left: 0;
-    padding:5px;
-    width: 50%;
-    color:#ffffff;
+.spanPrecio{
+  background-color: rgba(255, 51, 51,.8);
+  display: block;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  padding:5px;
+  width: 50%;
+  color:#ffffff;
 }
 .aside_busqueda{
   background: linear-gradient(to bottom, #f7f3f3, #ffffff);

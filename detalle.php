@@ -12,7 +12,7 @@
 
 <body>
   <header>
-    <nav class="navbar navbar-header navbar-expand-lg my-3">
+    <nav class="navbar navbar-header navbar-expand-lg ">
       <div class="container-fluid">
         <a class="navbar-brand" href="index.php">
           <img src="images/Cordillera2.png" class="img-fluid" alt="Logo">
@@ -34,7 +34,7 @@
                 Marcas
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMarcas">
-                <?php include 'paginas_funciones/a_marcas.php'; ?> <!--Marcas con logo-->
+                <?php include 'paginas_funciones/a_marcas.php'; ?>
               </ul>
             </li>
             <li class="nav-item dropdown">
@@ -71,208 +71,203 @@
   <section>
     <!--Traemos datos de id vehiculo desde varias secciones de la pagina los if definen esos botones-->
     <?php
-      if (isset($_POST["input_index"])) {
+    if (isset($_POST["input_index"])) {
 
-        if (!isset($_POST["value_carID"])) {
-          echo "<script>window.location='index.php';</script>";
-        } else {
-          $id_vehiculo = $_POST["value_carID"];
-          include 'paginas_funciones/menu_busqueda_detalle.php';
-        }
+      if (!isset($_POST["value_carID"])) {
+        echo "<script>window.location='index.php';</script>";
+      } else {
+        $id_vehiculo = $_POST["value_carID"];
+        include 'paginas_funciones/menu_busqueda_detalle.php';
       }
+    }
     ?>
-    <div class="container-fluid">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-            <div class='row'>
-              <div class='col-12' >
-                <div id='carouselExampleIndicators<?php echo 1; ?>' class='carousel slide' data-ride='carousel'>
-                  <ol class='carousel-indicators'>
-                    <li data-target='#carouselExampleIndicators<?php echo 1; ?>' data-slide-to='0' class='active'></li>
-                    <li data-target='#carouselExampleIndicators<?php echo 1; ?>' data-slide-to='1'></li>
-                    <li data-target='#carouselExampleIndicators<?php echo 1; ?>' data-slide-to='2'></li>
-                    <li data-target='#carouselExampleIndicators<?php echo 1; ?>' data-slide-to='3'></li>
-                    <li data-target='#carouselExampleIndicators<?php echo 1; ?>' data-slide-to='4'></li>
-                  </ol>
-                  <div class='carousel-inner'>
-                    <div class='carousel-item active'>
-                      <img class='d-block w-100' src='images/autos/<?php echo $foto1; ?>' alt='First slide'>
+    <div class="container my-3">
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+          <div class='container'>
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="images/autos/<?php echo $foto1; ?>" class="d-block w-100" alt="Primer slide">
+                </div>
+                <div class="carousel-item">
+                  <img src="images/autos/<?php echo $foto2; ?>" class="d-block w-100" alt="Segundo slide">
+                </div>
+                <div class="carousel-item">
+                  <img src="images/autos/<?php echo $foto3; ?>" class="d-block w-100" alt="Tercer slide">
+                </div>
+                <div class="carousel-item">
+                  <img src="images/autos/<?php echo $foto4; ?>" class="d-block w-100" alt="Cuarto slide">
+                </div>
+                <div class="carousel-item">
+                  <img src="images/autos/<?php echo $foto5; ?>" class="d-block w-100" alt="Quinto slide">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+          <div class="row">
+            <div class="col-12">
+              <div class="container py-3">
+                <h4 class="upper linear openSans">VEHICULO - <?php echo "$marca $modelo" ?></h4>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="container py-3">
+                <div class='row'>
+                  <div class='col-lg-6 col-md-6-col-sm-6 col-xs-12'>
+                    <div class="container-precio my-2">
+                      <h4 class="py-1">$ <?php echo $precio; ?></h4>
                     </div>
-                    <div class='carousel-item'>
-                      <img class='d-block w-100' src='images/autos/<?php echo $foto2; ?>' alt='Second slide'>
+                  </div>
+                  <div class='col-lg-6 col-md-6-col-sm-6 col-xs-12'>
+                    <div class=my-2">
+                      <button type="button" class="btn btn-light btn-lg btn_cotizar_label" data-bs-toggle="modal" data-bs-target="#input_index_cotizacion1"><span class='cotizar_label' value='cotizar'>COTIZAR</span></button>
                     </div>
-                    <div class='carousel-item'>
-                      <img class='d-block w-100' src='images/autos/<?php echo $foto3; ?>' alt='Third slide'>
+                  </div>
+                </div>
+                <!--modal cotizar-->
+                <div class="modal fade" id="input_index_cotizacion1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                  <div class='modal-dialog modal-dialog-centered' role='document'>
+                    <div class='modal-content'>
+                      <div class='modal-header'>
+                        <h5 class='modal-title' id='exampleModalLongTitle'>COTIZA CON <span class='title_red'>NOSOTROS</span></h5>
+                        <button class='close' data-bs-dismiss="modal" aria-label='Close'>
+                          <i class="fa-solid fa-xmark"></i>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="container">
+                          <form action="paginas_funciones/guardar_cotizacion.php" method="post">
+                            <div class="mb-3">
+                              <p>COD: <?php echo $codigo . ' | Vehiculo ' . $marca . ' - ' . $modelo; ?></p>
+                            </div>
+                            <div class="mb-3">
+                              <label for="nombres_cotizacion" class="form-label">Nombre</label>
+                              <input type="text" class="form-control" id="nombres_cotizacion" name="nombres_cotizacion" placeholder="Nombre" required>
+                            </div>
+                            <div class="mb-3">
+                              <label for="telefono_cotizacion" class="form-label">Telefono</label>
+                              <input type="text" class="form-control" id="telefono_cotizacion" name="telefono_cotizacion" placeholder="Telefono" onkeypress="return soloNumeros(event)" maxlength="12" required>
+                            </div>
+                            <div class="mb-3">
+                              <label for="mail_cotizacion" class="form-label">Correo</label>
+                              <input type="email" class="form-control" id="mail_cotizacion" name="mail_cotizacion" placeholder="Email" required>
+                            </div>
+                            <div class="mb-3">
+                              <label for="mensaje_cotizacion" class="form-label">Mensaje</label>
+                              <textarea id="mensaje_cotizacion" class="form-control" placeholder="Mensaje" name="mensaje_cotizacion" rows="2"></textarea>
+                            </div>
+                            <div class="mb-3">
+                              <!--realizar integracion de grecatcha -->
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                      <div class='modal-footer'>
+                        <button type='submit' name='btn_guardar' class=' input-index-modal ' id='input_index2'><span>ENVIAR DATOS</span></button>
+                      </div>
+                      </form>
                     </div>
-                    <div class='carousel-item'>
-                      <img class='d-block w-100' src='images/autos/<?php echo $foto4; ?>' alt='Four slide'>
-                    </div>
-                    <div class='carousel-item'>
-                      <img class='d-block w-100' src='images/autos/<?php echo $foto5; ?>' alt='Five slide'>
+                  </div>
+                </div>
+                <!--Fin modal-->
+              </div>
+            </div>
+            <!--Ocultar este en md-->
+            <div class="col-12 d-none d-lg-block">
+              <div class="row">
+                <div class="col-12">
+                  <div>
+                    <h5 class="linear upper">ESPECIFICACIONES <span class="title_red">TECNICAS</span></h5>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div>
+                    <div class='container'>
+                      <div class='row'>
+                        <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>
+                          <p><i class="fas fa-car"></i><span> ESTADO: </span> <?php echo $estado ?> </p>
+                        </div>
+                        <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>
+                          <p><i class="fas fa-palette"></i><span> COLOR: </span><?php echo $color; ?></p>
+                        </div>
+                      </div>
+                      <div class='row'>
+                        <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>
+                          <p><i class="fas fa-gas-pump"></i><span> COMBUSTIBLE: </span> <?php echo $combustible; ?></p>
+                        </div>
+                        <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>
+                          <p><i class="fa-solid fa-gears"></i><span> TRANSMISIÓN: </span> <?php echo $transmision ?></p>
+                        </div>
+                      </div>
+                      <div class='row'>
+                        <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>
+                          <p><i class="fa-solid fa-calendar"></i><span> AÑO: </span> <?php echo $ano; ?></p>
+                        </div>
+                        <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>
+                          <p><i class="fas fa-tachometer-alt"></i><span> KILOMETRAJE: </span> <?php echo $kilometraje ?> KM</p>
+                        </div>
+                      </div>
+                      <div class='row'>
+                        <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>
+                          <p><i class="fa-solid fa-screwdriver-wrench"></i><span> CILINDRADA: </span> <?php echo $cilindrada ?> L</p>
+                        </div>
+                        <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>
+                          <p><i class="fa-solid fa-location-dot"></i> <a class="text-decoration-none" target='_blank' href='contacto.php?ub=$setubicacion'> <span> UBICACIÓN: </span> <?php echo $ubicacion ?></a> </p>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-            <div class="row">
-              <div class="col-12">
-                <div class="vehiculo_data_nombre">
-                  <h4 id="linear" class="upper">VEHICULO - <span><?php echo "$marca $modelo" ?></span></h4>
-                </div>
-              </div>
-              <div class="col-12">
-                <div class="container">
-                  <div class='row'>
-                    <div class='col-lg-6 col-md-6-col-sm-6 col-xs-12'>
-                      <div class="form-group">
-                        <div id="precio_div2">
-                          <h4><?php echo $precio; ?></h4>
-                        </div>
-                      </div>
-                    </div>
-                    <div class='col-lg-6 col-md-6-col-sm-6 col-xs-12'>
-                      <div class="form-group">
-                        <button data-toggle='modal' data-target='#cotizacionmodal' type='button' class='btn btn-light' id='input_index2' value='cotizar'><span class='cotizar_label'>COTIZAR</span></button>
-                      </div>
-                    </div>
-                  </div>
-                  <!--modal cotizar-->
-                  <div class='modal fade' id='cotizacionmodal' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true'>
-                    <div class='modal-dialog modal-dialog-centered' role='document'>
-                      <div class='modal-content'>
-                        <div class='modal-header'>
-                          <h5 class='modal-title' id='exampleModalLongTitle'>COTIZA CON <span id='title_red'>NOSOTROS</span></h5>
-                          <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
-                            <span aria-hidden='true'>&times;</span>
-                          </button>
-                        </div>
-                        <div class='modal-body'>
-                          <div class='container'>
-                            <form action='paginas_funciones/guardar_cotizacion.php' method='post'>
-                              <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
-                                <p class='upper'>COD:<?php echo $setcodigo, $setmarca, $setmodelo; ?></p>
-                              </div>
-                              <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
-                                <div class='form-group'>
-                                  <label for='nombres_cotizacion' class='sr-only control-label'>Nombre</label>
-                                  <input type='text' class='form-control' id='nombres_cotizacion' name='nombres_cotizacion' placeholder='Nombre' required>
-                                </div>
-                              </div>
-                              <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
-                                <div class='form-group'>
-                                  <label for='telefono_cotizacion' class='sr-only control-label'>Telefono</label>
-                                  <input type='text' class='form-control' id='telefono_cotizacion' name='telefono_cotizacion' placeholder='Telefono' onkeypress='return soloNumeros(event)' maxlength='12' required>
-                                </div>
-                              </div>
-                              <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
-                                <div class='form-group'>
-                                  <label for='mail_cotizacion' class='sr-only control-label'>Correo</label>
-                                  <input type='email' class='form-control' id='mail_cotizacion' name='mail_cotizacion' placeholder='Email' required>
-                                </div>
-                              </div>
-                              <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
-                                <div class='form-group'>
-                                  <label for='mensaje_cotizacion' class='sr-only control-label'>Correo</label>
-                                  <textarea id='mensaje_cotizacion' class='form-control' placeholder='Mensaje' name='mensaje_cotizacion' rows='2'></textarea>
-                                </div>
-                              </div>
-                              <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
-                                <div class='form-group'>
-                                  <div style='padding:3px;' class='g-recaptcha' data-sitekey='6Lcpuo4UAAAAAMCbzkor4R21kx0bynHK92ncR_lW'></div>
-                                </div>
-                              </div>
-                          </div>
-                        </div>
-                        <div class='modal-footer'>
-                          <button type='button' class='btn btn-secondary' data-dismiss='modal' id='input_index2'><span class='cotizar_label'>CERRAR</span></button>
-                          <button type='submit' name='btn_guardar' class='btn btn-secondary' id='input_index2'><span class='cotizar_label'>ENVIAR DATOS</span></button>
-                        </div>
-                        </form>
-                      </div>
-                    </div>
-                  </div>
-                  <!--Fin modal-->
-                </div>
-              </div>
-              <!--Ocultar este en md-->
-              <div class="col-1g-12 col-md-12 col-sm-12 col-xs-12 d-none d-lg-block">
+        </div>
+        <div class="col-12">
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+              <div class="container my-2">
                 <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
-                    <div class="vehiculo_data_nombre">
-                      <h5 id="linear">ESPECIFICACIONES <span id="title_red">TECNICAS</span></h5>
-                    </div>
-                  </div>
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                  <div class="col-12">
                     <div>
-                      <div class='container'>
-                        <div class='row'>
-                          <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6' id='division_col_xs'>
-                            <p class="upper"><span><img style='width:30px; height:30px;' class='img-fluid' src='images/icons/icons8-car-40.png'></span> <?php echo $estado ?> </p>
-                          </div>
-                          <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6' id='division_col_xs'>
-                            <p class="upper"><span><img style='width:30px; height:30px;' class='img-fluid' src='images/icons/icons8-fill-color-40.png'></span> <?php echo $color; ?></p>
-                          </div>
-                        </div>
-                        <div class='row'>
-                          <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6' id='division_col_xs'>
-                            <p class="upper"><span><img style='width:30px; height:30px;' class='img-fluid' src='images/icons/u128.png'></span> <?php echo $combustible; ?></p>
-                          </div>
-                          <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6' id='division_col_xs'>
-                            <p class="upper"><span><img style='width:30px; height:30px;' class='img-fluid' src='images/icons/u129.png'></span> <?php echo $kilometraje ?> KM</p>
-                          </div>
-                        </div>
-                        <div class='row'>
-                          <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6' id='division_col_xs'>
-                            <p class="upper"><span><img style='width:30px; height:30px;' class='img-fluid' src='images/icons/u131.png'></span> <?php echo $ano; ?></p>
-                          </div>
-                          <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6' id='division_col_xs'>
-                            <p class="upper"><span><img style='width:30px; height:30px;' class='img-fluid' src='images/icons/icons8-engine-48.png'></span> <?php echo $cilindrada ?> cc</p>
-                          </div>
-                        </div>
-                        <div class='row'>
-                          <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6' id='division_col_xs'>
-                            <p class="upper"><span><img style='width:30px; height:30px;' class='img-fluid' src='images/icons/u130.png'></span> <?php echo $transmision ?></p>
-                          </div>
-                          <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6' id='division_col_xs'>
-                            <p class="upper"><span><img style='width:30px; height:30px;' class='img-fluid' src='images/icons/icons8-marcador-48.png'> <a target='_blank' href='contacto.php?ub=$setubicacion'> <?php echo $ubicacion ?></a> </p>
-                          </div>
-                        </div>
-                      </div>
+                      <h5 class="linear upper">ESPECIFICACIONES <span class="title_red">TECNICAS</span></h5>
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-12">
-            <div class="row">
-              <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
-                    <div class="vehiculo_data_nombre">
-                      <h5 id="linear">DETALLES <span id="title_red">EQUIPAMIENTO</span></h5>
-                    </div>
-                  </div>
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                  <div class="col-12">
                     <div id="div_automovils">
                       <p id='texto_equipamiento2'><?php echo $equipamiento ?></p>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+              <div class="container my-2">
                 <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                  <div class="col-12">
                     <div class="vehiculo_data_nombre">
-                      <h5 id="linear">UBICACIÓN <span id="title_red">SUCURSAL</span></h5>
+                      <h5 id="linear">UBICACIÓN <span class="title_red">SUCURSAL</span></h5>
                     </div>
                   </div>
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                  <div class="col-12">
                     <div id="div_automovils">
-                      <iframe src="<?php echo $ubicacion; ?>" height="160px;" width="100%;" frameborder="0" style="border:0" allowfullscreen></iframe>
+                      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3331.3962520354485
+                        !2d<?php echo $longitud; ?>!3d<?php echo $latitud; ?>!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c9352d11aa21%3A0x69745e993d10a7e!2sLas%20Tranqueras%201395%2C%207650192%20Vitacura%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses!2scl!4v1739038276416!5m2!1ses!2scl"
+                        width="600"
+                        height="320"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                      </iframe>
                     </div>
                   </div>
                 </div>
@@ -281,6 +276,7 @@
           </div>
         </div>
       </div>
+    </div>
   </section>
   <footer class="bg-dark">
     <div class="container footer_data">

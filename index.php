@@ -17,7 +17,7 @@
 
 <body>
   <header>
-    <nav class="navbar navbar-header navbar-expand-lg my-3">
+    <nav class="navbar navbar-header navbar-expand-lg">
       <div class="container-fluid">
         <a class="navbar-brand" href="index.php">
           <img src="images/Cordillera2.png" class="img-fluid" alt="Logo">
@@ -73,7 +73,7 @@
       </div>
     </nav>
   </header>
-  <div class="container-fluid">
+  <div class="container-fluid my-3">
 
     <div class="row">
       <div class="col-lg-9 col-md-12 col-sm-12">
@@ -224,15 +224,15 @@
                       <div class="carousel-inner my-2">
                         <div class="carousel-item active">
                           <img src="images/autos/<?php echo $vehiculos[0]['foto1']; ?>" class="d-block w-100 img-fluid" alt="Vehículo 1">
-                          <span id='spanPrecio'><strong>$<?php echo $vehiculos[0]['precio']; ?></strong></span>
+                          <span class='spanPrecio'><strong>$<?php echo $vehiculos[0]['precio']; ?></strong></span>
                         </div>
                         <div class="carousel-item">
                           <img src="images/autos/<?php echo $vehiculos[0]['foto2']; ?>" class="d-block w-100 img-fluid" alt="Vehículo 2">
-                          <span id='spanPrecio'><strong>$<?php echo $vehiculos[0]['precio']; ?></strong></span>
+                          <span class='spanPrecio'><strong>$<?php echo $vehiculos[0]['precio']; ?></strong></span>
                         </div>
                         <div class="carousel-item">
                           <img src="images/autos/<?php echo $vehiculos[0]['foto3']; ?>" class="d-block w-100 img-fluid" alt="Vehículo 3">
-                          <span id='spanPrecio'><strong>$<?php echo $vehiculos[0]['precio']; ?></strong></span>
+                          <span class='spanPrecio'><strong>$<?php echo $vehiculos[0]['precio']; ?></strong></span>
                         </div>
                       </div>
                       <a class="carousel-control-prev" href="#ControlCarousel-1" role="button" data-bs-slide="prev">
@@ -345,15 +345,15 @@
                       <div class="carousel-inner my-2">
                         <div class="carousel-item active">
                           <img src="images/autos/<?php echo $vehiculos[1]['foto1']; ?>" class="d-block w-100 img-fluid" alt="Vehículo 1">
-                          <span id='spanPrecio'><strong>$<?php echo $vehiculos[1]['precio']; ?></strong></span>
+                          <span class='spanPrecio'><strong>$<?php echo $vehiculos[1]['precio']; ?></strong></span>
                         </div>
                         <div class="carousel-item">
                           <img src="images/autos/<?php echo $vehiculos[1]['foto2']; ?>" class="d-block w-100 img-fluid" alt="Vehículo 2">
-                          <span id='spanPrecio'><strong>$<?php echo $vehiculos[1]['precio']; ?></strong></span>
+                          <span class='spanPrecio'><strong>$<?php echo $vehiculos[1]['precio']; ?></strong></span>
                         </div>
                         <div class="carousel-item">
                           <img src="images/autos/<?php echo $vehiculos[1]['foto3']; ?>" class="d-block w-100 img-fluid" alt="Vehículo 3">
-                          <span id='spanPrecio'><strong>$<?php echo $vehiculos[1]['precio']; ?></strong></span>
+                          <span class='spanPrecio'><strong>$<?php echo $vehiculos[1]['precio']; ?></strong></span>
                         </div>
                       </div>
                       <a class="carousel-control-prev" href="#ControlCarousel-2" role="button" data-bs-slide="prev">
@@ -467,15 +467,15 @@
                       <div class="carousel-inner my-2">
                         <div class="carousel-item active">
                           <img src="images/autos/<?php echo $vehiculos[2]['foto1']; ?>" class="d-block w-100 img-fluid" alt="Vehículo 1">
-                          <span id='spanPrecio'><strong>$<?php echo $vehiculos[2]['precio']; ?></strong></span>
+                          <span class='spanPrecio'><strong>$<?php echo $vehiculos[2]['precio']; ?></strong></span>
                         </div>
                         <div class="carousel-item">
                           <img src="images/autos/<?php echo $vehiculos[2]['foto2']; ?>" class="d-block w-100 img-fluid" alt="Vehículo 2">
-                          <span id='spanPrecio'><strong>$<?php echo $vehiculos[2]['precio']; ?></strong></span>
+                          <span class='spanPrecio'><strong>$<?php echo $vehiculos[2]['precio']; ?></strong></span>
                         </div>
                         <div class="carousel-item">
                           <img src="images/autos/<?php echo $vehiculos[2]['foto3']; ?>" class="d-block w-100 img-fluid" alt="Vehículo 3">
-                          <span id='spanPrecio'><strong>$<?php echo $vehiculos[2]['precio']; ?></strong></span>
+                          <span class='spanPrecio'><strong>$<?php echo $vehiculos[2]['precio']; ?></strong></span>
                         </div>
                       </div>
                       <a class="carousel-control-prev" href="#ControlCarousel-3" role="button" data-bs-slide="prev">
