@@ -1,57 +1,85 @@
 <?php
-  if (isset($id_vehiculo)) {
-    try {
-      include 'C:\xampp\htdocs\Proyectos\automotora2.0\paginas_funciones\dbcall.php';
-      if (!$cnn) {
-        die("Conexion Fallida: " . mysqli_connect_error());
-      }else {
-        $sql = mysqli_prepare($cnn,"SELECT v.codigo_vehiculo, m.marca, v.modelo, format(v.precio, 0, 'de_DE') as precio, com.combustible, v.kilometraje, tr.transmision,v.ano, v.foto1, v.foto2, v.foto3,v.foto4,v.foto5,
-                                  v.equipamiento,v.estado,v.color,v.cilindrada,s.nombre_sucursal,s.coordenadas
-                                  FROM vehiculos as v
-                                  INNER JOIN marcas AS m ON v.marca = m.codigo_marca
-                                  INNER JOIN combustible AS com ON v.combustible = com.codigo_combustible
-                                  INNER JOIN transmision AS tr ON v.transmision = tr.codigo_transmision
-                                  INNER JOIN sucursal as s ON v.ubicacion = s.codigo_sucursal
-                                  WHERE (v.codigo_vehiculo = ?)");
-        mysqli_stmt_bind_param($sql, "i", $id_vehiculo);
-        $rs = mysqli_stmt_execute($sql);
-        $modalwindow = 0;
-        $carrousell = 0;
-        mysqli_stmt_bind_result($sql, $codigo,$marca,$modelo,$precio,$combustible,$kilometraje,$transmision,$ano,$foto1,$foto2,$foto3,$foto4,$foto5,$equipamiento,$estado,$color,$cilindrada,$ubicacion,$iframe);
-          while ($fila = mysqli_stmt_fetch($sql)) {
-            $modalwindow++;
-            $carrousell++;
-            $setcodigo = utf8_encode($codigo);
-            $setmarca = utf8_encode($marca);
-            $setmodelo = utf8_encode($modelo);
-            $setprecio = utf8_encode($precio);
-            $setcombustible = utf8_encode($combustible);
-            $setkilometraje = utf8_encode($kilometraje);
-            $settransmision = utf8_encode($transmision);
-            $setano = utf8_encode($ano);
-            $setfoto1 = utf8_encode($foto1);
-            $setfoto2 = utf8_encode($foto2);
-            $setfoto3 = utf8_encode($foto3);
-            $setfoto4 = utf8_encode($foto4);
-            $setfoto5 = utf8_encode($foto5);
-            $setequipamiento = utf8_encode($equipamiento);
-            $setestado = utf8_encode($estado);
-            $setcolor = utf8_encode($color);
-            $setcilindrada = utf8_encode($cilindrada);
-            $setubicacion = utf8_encode($ubicacion);
-            $setubicacionframe = utf8_encode($iframe);
-          }
-        mysqli_close($cnn);
+require_once 'dbcall.php'; // Asegúrate de que aquí se define $cnn (mysqli_connect)
 
+if (!isset($id_vehiculo)) {
+    exit("No existe un ID o dato para traer información. / menu_busqueda_detalle.php");
+}
 
-
-      }
-    } catch (\Exception $e) {
-      echo "Error 101 creacion de bloque / menu_busqueda_detalle.php"; var_dump($e);
+try {
+    // Verificar conexión a la base de datos
+    if (!$cnn) {
+        throw new Exception("Error de conexión: " . mysqli_connect_error());
     }
 
-  }else {
-    echo "No existe un id o dato para traer informacion. / menu_busqueda_detalle.php";
-  }
+    // Consulta SQL con `?` para evitar SQL Injection
+    $sql = "SELECT 
+                v.codigo,
+                m.marca,
+                v.modelo,
+                FORMAT(v.precio, 0, 'de_DE') AS precio,
+                com.combustible,
+                v.kilometraje,
+                tr.transmision,
+                v.ano,
+                v.foto1,
+                v.foto2,
+                v.foto3,
+                v.foto4,
+                v.foto5,
+                v.equipamiento,
+                v.estado,
+                v.color,
+                v.cilindrada,
+                s.sucursal AS ubicacion
+            FROM vehiculos AS v
+            INNER JOIN marcas AS m ON v.marca = m.codigo
+            INNER JOIN combustibles AS com ON v.combustible = com.codigo
+            INNER JOIN transmisiones AS tr ON v.transmision = tr.codigo
+            INNER JOIN sucursales AS s ON v.ubicacion = s.codigo
+            WHERE v.codigo = ?";
 
- ?>
+    // Preparar la consulta
+    $stmt = mysqli_prepare($cnn, $sql);
+    mysqli_stmt_bind_param($stmt, "i", $id_vehiculo);
+    mysqli_stmt_execute($stmt);
+
+    // Obtener resultados
+    $result = mysqli_stmt_get_result($stmt);
+    $vehiculo = mysqli_fetch_assoc($result);
+
+    if (!$vehiculo) {
+        exit("No se encontraron datos para el ID proporcionado.");
+    }
+
+    // Variables para su uso en HTML este deberia sumar ++
+    $modalwindow = 0;
+    $carrousell = 0;
+
+    // Asignar valores obtenidos de la base de datos
+    $codigo       = $vehiculo['codigo'];
+    $marca        = $vehiculo['marca'];
+    $modelo       = $vehiculo['modelo'];
+    $precio       = $vehiculo['precio'];
+    $combustible  = $vehiculo['combustible'];
+    $kilometraje  = $vehiculo['kilometraje'];
+    $transmision  = $vehiculo['transmision'];
+    $ano          = $vehiculo['ano'];
+    $foto1        = $vehiculo['foto1'];
+    $foto2        = $vehiculo['foto2'];
+    $foto3        = $vehiculo['foto3'];
+    $foto4        = $vehiculo['foto4'];
+    $foto5        = $vehiculo['foto5'];
+    $equipamiento = $vehiculo['equipamiento'];
+    $estado       = $vehiculo['estado'];
+    $color        = $vehiculo['color'];
+    $cilindrada   = $vehiculo['cilindrada'];
+    $ubicacion    = $vehiculo['ubicacion'];
+    //$iframe       = $vehiculo['iframe'] ?? '';
+
+    // Liberar recursos
+    mysqli_stmt_close($stmt);
+
+} catch (Exception $e) {
+    exit("Error al obtener los datos del vehículo: " . $e->getMessage());
+}
+?>

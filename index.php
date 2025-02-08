@@ -10,6 +10,8 @@
   <link rel="shortcut icon" href="images/icons/favicon.ico" />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Lato&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!--googleReCaptcha-->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <title>Automotora Cordillera </title>
 </head>
 
@@ -113,13 +115,13 @@
       </div>
 
       <div class="col-lg-3 col-md-12 col-sm-12">
-        <aside id="aside_busqueda">
+        <div class="aside_busqueda">
           <div class="container-fluid">
             <form action="menu_busqueda.php" method="GET">
               <div class="row">
                 <div class="col-12">
                   <div class="form-group text-center py-3">
-                    <h5>BUSCADOR <span id="title_red">AVANZADO</span></h5>
+                    <h5>BUSCADOR <span class="title_red">AVANZADO</span></h5>
                   </div>
                 </div>
                 <div class="col-12">
@@ -202,7 +204,7 @@
               </div>
             </form>
           </div>
-        </aside>
+        </div>
       </div>
     </div>
 
@@ -218,7 +220,7 @@
               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                 <div class="row">
                   <div class="col-12">
-                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <div id="ControlCarousel-1" class="carousel slide" data-bs-ride="carousel">
                       <div class="carousel-inner my-2">
                         <div class="carousel-item active">
                           <img src="images/autos/<?php echo $vehiculos[0]['foto1']; ?>" class="d-block w-100 img-fluid" alt="Vehículo 1">
@@ -233,11 +235,11 @@
                           <span id='spanPrecio'><strong>$<?php echo $vehiculos[0]['precio']; ?></strong></span>
                         </div>
                       </div>
-                      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
+                      <a class="carousel-control-prev" href="#ControlCarousel-1" role="button" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span>
                       </a>
-                      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
+                      <a class="carousel-control-next" href="#ControlCarousel-1" role="button" data-bs-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Next</span>
                       </a>
@@ -292,7 +294,7 @@
                       <div class='modal-dialog modal-dialog-centered' role='document'>
                         <div class='modal-content'>
                           <div class='modal-header'>
-                            <h5 class='modal-title' id='exampleModalLongTitle'>COTIZA CON <span id='title_red'>NOSOTROS</span></h5>
+                            <h5 class='modal-title' id='exampleModalLongTitle'>COTIZA CON <span class='title_red'>NOSOTROS</span></h5>
                             <button class='close' data-bs-dismiss="modal" aria-label='Close'>
                               <i class="fa-solid fa-xmark"></i>
                             </button>
@@ -339,7 +341,7 @@
               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                 <div class="row">
                   <div class="col-12">
-                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <div id="ControlCarousel-2" class="carousel slide" data-bs-ride="carousel">
                       <div class="carousel-inner my-2">
                         <div class="carousel-item active">
                           <img src="images/autos/<?php echo $vehiculos[1]['foto1']; ?>" class="d-block w-100 img-fluid" alt="Vehículo 1">
@@ -354,11 +356,11 @@
                           <span id='spanPrecio'><strong>$<?php echo $vehiculos[1]['precio']; ?></strong></span>
                         </div>
                       </div>
-                      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
+                      <a class="carousel-control-prev" href="#ControlCarousel-2" role="button" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span>
                       </a>
-                      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
+                      <a class="carousel-control-next" href="#ControlCarousel-2" role="button" data-bs-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Next</span>
                       </a>
@@ -413,7 +415,7 @@
                       <div class='modal-dialog modal-dialog-centered' role='document'>
                         <div class='modal-content'>
                           <div class='modal-header'>
-                            <h5 class='modal-title' id='exampleModalLongTitle'>COTIZA CON <span id='title_red'>NOSOTROS</span></h5>
+                            <h5 class='modal-title' id='exampleModalLongTitle'>COTIZA CON <span class='title_red'>NOSOTROS</span></h5>
                             <button class='close' data-bs-dismiss="modal" aria-label='Close'>
                               <i class="fa-solid fa-xmark"></i>
                             </button>
@@ -455,67 +457,13 @@
                       </div>
                     </div>
                     <!--Fin Modal-->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                   </div>
                 </div>
               </div>
               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                 <div class="row">
                   <div class="col-12">
-                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <div id="ControlCarousel-3" class="carousel slide" data-bs-ride="carousel">
                       <div class="carousel-inner my-2">
                         <div class="carousel-item active">
                           <img src="images/autos/<?php echo $vehiculos[2]['foto1']; ?>" class="d-block w-100 img-fluid" alt="Vehículo 1">
@@ -530,11 +478,11 @@
                           <span id='spanPrecio'><strong>$<?php echo $vehiculos[2]['precio']; ?></strong></span>
                         </div>
                       </div>
-                      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
+                      <a class="carousel-control-prev" href="#ControlCarousel-3" role="button" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span>
                       </a>
-                      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
+                      <a class="carousel-control-next" href="#ControlCarousel-3" role="button" data-bs-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Next</span>
                       </a>
@@ -589,7 +537,7 @@
                       <div class='modal-dialog modal-dialog-centered' role='document'>
                         <div class='modal-content'>
                           <div class='modal-header'>
-                            <h5 class='modal-title' id='exampleModalLongTitle'>COTIZA CON <span id='title_red'>NOSOTROS</span></h5>
+                            <h5 class='modal-title' id='exampleModalLongTitle'>COTIZA CON <span class='title_red'>NOSOTROS</span></h5>
                             <button class='close' data-bs-dismiss="modal" aria-label='Close'>
                               <i class="fa-solid fa-xmark"></i>
                             </button>
@@ -639,38 +587,36 @@
         </article>
       </div>
       <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12 d-flex">
-        <div id="aside_busqueda" class="my-3">
+        <div class="aside_busqueda my-3">
           <div class="container py-2">
             <form class="row g-3" action="paginas_funciones/guardar_cotizacion.php" method="post">
               <div class="col-12 text-center">
-                <h5><span id="title_red">COTIZA</span> CON NOSOTROS</h5>
+                <h5><span class="title_red">COTIZA</span> CON NOSOTROS</h5>
               </div>
-
-              <div class="col-md-6">
+              <div class="col-12">
                 <label for="nombres_cotizacion" class="visually-hidden">Nombres</label>
-                <input type="text" class="form-control" id="nombres_cotizacion" name="nombres_cotizacion" placeholder="Nombres" 
-                pattern="^\+?\d{0,3}?[-.\s]?\(?\d{1,4}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,9}$" 
-                maxlength="9" 
-                required>
+                <input type="text" class="form-control" id="nombres_cotizacion" name="nombres_cotizacion" placeholder="Nombres" required>
               </div>
 
-              <div class="col-md-6">
+              <div class="col-12">
                 <label for="telefono_cotizacion" class="visually-hidden">Teléfono</label>
-                <input type="tel" class="form-control" id="telefono_cotizacion" name="telefono_cotizacion" placeholder="Teléfono" onkeypress="return soloNumeros(event)" maxlength="12" required>
+                <input type="tel" class="form-control" id="telefono_cotizacion" name="telefono_cotizacion" placeholder="Teléfono" onkeypress="return soloNumeros(event)" 
+                pattern="^\+?\d{0,3}?[-.\s]?\(?\d{1,4}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,9}$"
+                maxlength="9" required>
               </div>
 
-              <div class="col-md-6">
+              <div class="col-12">
                 <label for="mail_cotizacion" class="visually-hidden">Correo</label>
                 <input type="email" class="form-control" id="mail_cotizacion" name="mail_cotizacion" placeholder="Email" required>
               </div>
 
-              <div class="col-md-6">
+              <div class="col-12">
                 <label for="mensaje_cotizacion" class="visually-hidden">Mensaje</label>
-                <textarea id="mensaje_cotizacion" class="form-control" placeholder="Mensaje" name="mensaje_cotizacion" rows="1"></textarea>
+                <textarea id="mensaje_cotizacion" class="form-control" placeholder="Mensaje" name="mensaje_cotizacion" rows="3"></textarea>
               </div>
 
               <div class="col-12">
-                <!-- <div class="g-recaptcha" data-sitekey="6Lcpuo4UAAAAAMCbzkor4R21kx0bynHK92ncR_lW"></div> -->
+                <div class="g-recaptcha" data-sitekey="6LcW6M8qAAAAAGBqPjBO3QUxt2fmMsCPKz4RGMKv"></div>
               </div>
 
               <div class="col-12">
@@ -678,48 +624,36 @@
               </div>
             </form>
           </div>
-        </div>
-      </div>
-
-      <!--DIVS PUBLICITARIOS
-      <div class="col-lg-6 col-m6-6 col-sm-12 col-xs-12 d-none d-sm-block">
-        <div class="container" style="margin-top:5px;">
-          <div class="">
-            <a href="#"><img src="images/usado11.png" alt="" class="img-fluid"></a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6 col-m6-12 col-sm-12 col-xs-12">
-        <div class="container" style="margin-top:5px;">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <a href="#"><img src="images/u11.png" alt="" class="img-fluid"></a>
-          </div>
-          <div class="text-center col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div class="div_ventavehiculo">
-              <p class="text_div_venta_vehiculo upper">CREDITO AUTOMOTRIZ APROBACIÓN <span id="title_red">INMEDIATA</span> EN NUESTRAS OFICINAS <span class="badge badge-success"><small>Ver terminos y condiciones</small></span></p>
+          <div class="container py-3">
+            <div class="col-12">
+              <a href="#"><img src="images/u11.png" alt="" class="img-fluid"></a>
+            </div>
+            <div class="text-center col-12">
+              <div class="div_ventavehiculo">
+                <p class="text-venta-vehiculo upper">OBTÉN TU CREDITO AUTOMOTRIZ APROBACIÓN <span class="title_red">INMEDIATA</span> EN NUESTRAS OFICINAS</p>
+              </div>
             </div>
           </div>
         </div>
-      </div> -->
+      </div>
     </div>
   </div>
-  <br>
   <footer class="bg-dark">
     <div class="container footer_data">
       <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
           <div class="py-3">
             <h6>Contactanos</h6>
-            <div class="recuadro_contacto_social">
+            <div>
               <p><i class="fa-solid fa-clock mx-2"></i> Lunes a Viernes de 10:00 a 18:30 hrs - Sábados de 10:00 a 14:30 hrs </p>
             </div>
-            <div class="recuadro_contacto_social">
+            <div>
               <p><i class="fa-solid fa-location-dot mx-2"></i> Las Tranqueras 1395, Vitacura, Región Metropolitana </p>
             </div>
-            <div class="recuadro_contacto_social">
+            <div>
               <p><i class="fa-solid fa-headset mx-2"></i>(2) - 3246 8670 </p>
             </div>
-            <div class="recuadro_contacto_social">
+            <div>
               <p><i class="fas fa-envelope mx-2"></i>contacto@autoscordillera.com </p>
             </div>
           </div>
@@ -727,45 +661,38 @@
         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
           <div class="py-3">
             <h6>Redes Sociales</h6>
-            <div class="recuadro_contacto_social">
-              <a href="#"><i class="fab fa-facebook"></i> Facebook </a>
+            <div>
+              <a class="text-white text-decoration-none" href="#"><i class="fab fa-facebook"></i> Facebook </a>
             </div>
-            <div class="recuadro_contacto_social">
-              <a href="#"><i class="fab fa-instagram"></i> Instagram </a>
+            <div>
+              <a class="text-white text-decoration-none" href="#"><i class="fab fa-instagram"></i> Instagram </a>
             </div>
           </div>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
           <div class="py-3">
             <h6>Enlaces Rapidos</h6>
-            <div class="recuadro_contacto_social">
-              <a href="#">Catalogo de vehiculos</a>
+            <div>
+              <a class="text-white text-decoration-none" href="#">Catalogo de vehiculos</a>
             </div>
-            <div class="recuadro_contacto_social">
-              <a href="#">Financiamiento</a>
+            <div>
+              <a class="text-white text-decoration-none" href="#">Financiamiento</a>
             </div>
-            <div class="recuadro_contacto_social">
-              <a href="#">Servicio Tecnico</a>
+            <div>
+              <a class="text-white text-decoration-none" href="#">Servicio Tecnico</a>
             </div>
-            <div class="recuadro_contacto_social">
-              <a href="#">Compra vehiculos usados</a>
+            <div>
+              <a class="text-white text-decoration-none" href="#">Compra vehiculos usados</a>
             </div>
-            <div class="recuadro_contacto_social">
-              <a href="contacto.php" class="text-muted">Contacto</a>
+            <div>
+              <a class="text-white text-decoration-none" href="contacto.php">Contacto</a>
             </div>
-            <div class="recuadro_contacto_social">
-              <a href="historia.php" class="text-muted">Quienes Somos</a>
+            <div>
+              <a class="text-white text-decoration-none" href="historia.php">Quienes Somos</a>
             </div>
-            <div class="recuadro_contacto_social">
-              <a href="ingreso_administrativo.php" class="text-muted">Ingreso Administrativo</a>
+            <div>
+              <a class="text-white text-decoration-none" href="ingreso_administrativo.php">Ingreso Administrativo</a>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <div id="creditos">
-            <p class="text-muted text-right font-weight-light">2019 © Autos Cordillera — Diseño y desarrollo por Sebastian Gutierrez</p>
           </div>
         </div>
       </div>
@@ -792,8 +719,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script type="text/javascript" src="js/scripts.js"></script>
   <script type="text/javascript" src="js/chat_menu.js"></script>
-  <!--googleReCaptcha-->
-  <script src="https://www.google.com/recaptcha/enterprise.js?render=6LcW6M8qAAAAAGBqPjBO3QUxt2fmMsCPKz4RGMKv"></script>
 </body>
 
 </html>
