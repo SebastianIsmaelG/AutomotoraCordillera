@@ -125,7 +125,7 @@
                   </div>
                 </div>
                 <div class="col-12">
-                  <div class="mb-3" style="padding:2px;">
+                  <div class="mb-3">
                     <div class="form-check form-check-inline">
                       <input class="form-check-input" type="radio" id="customRadioInline1" value="Todos" name="customRadioInline1" checked>
                       <label class="form-check-label" for="customRadioInline1">Todos</label>
@@ -311,7 +311,7 @@
                                 </div>
                                 <div class="mb-3">
                                   <label for="telefono_cotizacion" class="form-label">Telefono</label>
-                                  <input type="text" class="form-control" id="telefono_cotizacion" name="telefono_cotizacion" placeholder="Telefono" onkeypress="return soloNumeros(event)" maxlength="12" required>
+                                  <input type="text" class="form-control" id="telefono_cotizacion" name="telefono_cotizacion" placeholder="Telefono" onkeypress="return soloNumeros(event)" maxlength="9" required>
                                 </div>
                                 <div class="mb-3">
                                   <label for="mail_cotizacion" class="form-label">Correo</label>
@@ -322,17 +322,12 @@
                                   <textarea id="mensaje_cotizacion" class="form-control" placeholder="Mensaje" name="mensaje_cotizacion" rows="2"></textarea>
                                 </div>
                                 <div class="mb-3">
-                                <button class="g-recaptcha"
-                                    data-sitekey="6LfGUtEqAAAAAMSm7KsMSurQvk1PWDinZEefU5pa"
-                                    data-callback='onSubmit'
-                                    data-action='submit'>
-                                  Submit
-                                </button>
+                                 <div class="g-recaptcha" data-sitekey="6LdpddEqAAAAAF2HSEomw4_fCCzD2mH5z5qQySmo"></div>
                                 </div>
-                              </form>
                             </div>
                           </div>
                           <div class='modal-footer'>
+                            <input type="hidden" name="vehiculo_visto" value="<?php echo $vehiculos[0]['codigo']?>">
                             <button type='submit' name='btn_guardar' class=' input-index-modal ' id='input_index2'><span>ENVIAR DATOS</span></button>
                           </div>
                           </form>
@@ -724,12 +719,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script type="text/javascript" src="js/scripts.js"></script>
   <script type="text/javascript" src="js/chat_menu.js"></script>
-   <!-- Replace the variables below. -->
-<script>
-  function onSubmit(token) {
-    document.getElementById("formGuardarCotizacion").submit();
-  }
-</script>
 </body>
 
 </html>

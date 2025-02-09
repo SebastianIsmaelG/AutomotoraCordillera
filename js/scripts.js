@@ -16,7 +16,17 @@ function cargaselectmodelo() {
       }
     });
 }
-  
+
+//Alert de confirmacion de formulario
+document.addEventListener("DOMContentLoaded", function () {
+  const params = new URLSearchParams(window.location.search);
+  if (params.get("success") === "1") {  // Verifica el valor del parámetro
+      alert("✅ Cotización enviada con éxito!");
+      history.replaceState({}, document.title, window.location.pathname); // Limpia la URL
+  }
+});
+
+//Validaciones / Sanitizaciones de Inputs
 function soloNumeros(e) {
   key = e.keyCode || e.which;
   tecla = String.fromCharCode(key).toLowerCase();
