@@ -17,7 +17,7 @@
 
 <body>
   <header>
-    <nav class="navbar navbar-header navbar-expand-lg">
+    <nav class="navbar navbarHeader navbar-expand-lg">
       <div class="container-fluid">
         <a class="navbar-brand" href="index.php">
           <img src="images/Cordillera2.png" class="img-fluid" alt="Logo">
@@ -39,7 +39,7 @@
                 Marcas
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMarcas">
-                <?php include 'paginas_funciones/a_marcas.php'; ?> <!--Marcas con logo-->
+                <?php include 'funciones/arrayMarcas.php'; ?> <!--Marcas con logo-->
               </ul>
             </li>
             <li class="nav-item dropdown">
@@ -115,7 +115,7 @@
       </div>
 
       <div class="col-lg-3 col-md-12 col-sm-12">
-        <div class="aside_busqueda">
+        <div class="divGradient">
           <div class="container-fluid">
             <form action="menu_busqueda.php" method="GET">
               <div class="row">
@@ -145,7 +145,7 @@
                     <label for="tipoauto" class="form-label">Tipo:</label>
                     <select class="form-select" name="sel_tipo" id="tipoauto">
                       <option value="0">Todos los disponibles</option>
-                      <?php include 'paginas_funciones/select_categorias.php'; ?>
+                      <?php include 'funciones/selectCategorias.php'; ?>
                     </select>
                   </div>
                 </div>
@@ -154,7 +154,7 @@
                     <label for="marca" class="form-label">Marca:</label>
                     <select class="form-select" id="marca" name="marca">
                       <option value="0">Todos los disponibles</option>
-                      <?php include 'paginas_funciones/select_marcas_index.php'; ?>
+                      <?php include 'funciones/selectMarcasIndex.php'; ?>
                     </select>
                   </div>
                 </div>
@@ -213,9 +213,9 @@
         <article class="my-3">
           <!--menu 3 vehiculos-->
           <?php
-          include 'paginas_funciones/datos_slider.php';
+          include 'funciones/datosSlider.php';
           ?>
-          <div class="container-fluid" id="container_vehiculos_index">
+          <div class="container-fluid divGradient">
             <div class="row">
               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                 <div class="row">
@@ -250,26 +250,26 @@
                       <div class="container">
                         <div class="row">
                           <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
-                            <p class="content-detalles"><img class="img-fluid icono-detalles" src="images/marcas/<?php echo $vehiculos[0]['logo']; ?>"> <?php echo $vehiculos[0]['marca']; ?></p>
+                            <p class="contentDetalles"><img class="img-fluid iconoDetalles" src="images/marcas/<?php echo $vehiculos[0]['logo']; ?>"> <?php echo $vehiculos[0]['marca']; ?></p>
                           </div>
                           <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
-                            <p class="content-detalles"><img class="img-fluid icono-detalles" src="images/icons/icons8-car-40.png"> <?php echo $vehiculos[0]['modelo']; ?></p>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
-                            <p class="content-detalles"><img class="img-fluid icono-detalles" src="images/icons/u128.png"> <?php echo $vehiculos[0]['combustible']; ?></p>
-                          </div>
-                          <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
-                            <p class="content-detalles"><img class="img-fluid icono-detalles" src="images/icons/u129.png"> <?php echo $vehiculos[0]['kilometraje']; ?>KM</p>
+                            <p class="contentDetalles"><img class="img-fluid iconoDetalles" src="images/icons/icons8-car-40.png"> <?php echo $vehiculos[0]['modelo']; ?></p>
                           </div>
                         </div>
                         <div class="row">
                           <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
-                            <p class="content-detalles"><img class="img-fluid icono-detalles" src="images/icons/u130.png"> <?php echo $vehiculos[0]['transmision']; ?></p>
+                            <p class="contentDetalles"><img class="img-fluid iconoDetalles" src="images/icons/u128.png"> <?php echo $vehiculos[0]['combustible']; ?></p>
                           </div>
                           <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
-                            <p class="content-detalles"><img class="img-fluid icono-detalles" src="images/icons/u131.png"> <?php echo $vehiculos[0]['ano']; ?></p>
+                            <p class="contentDetalles"><img class="img-fluid iconoDetalles" src="images/icons/u129.png"> <?php echo $vehiculos[0]['kilometraje']; ?>KM</p>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
+                            <p class="contentDetalles"><img class="img-fluid iconoDetalles" src="images/icons/u130.png"> <?php echo $vehiculos[0]['transmision']; ?></p>
+                          </div>
+                          <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
+                            <p class="contentDetalles"><img class="img-fluid iconoDetalles" src="images/icons/u131.png"> <?php echo $vehiculos[0]['ano']; ?></p>
                           </div>
                         </div>
                       </div>
@@ -301,7 +301,7 @@
                           </div>
                           <div class="modal-body">
                             <div class="container">
-                              <form action="paginas_funciones/guardar_cotizacion.php" method="post">
+                              <form id="formGuardarCotizacion" action="funciones/guardarCotizacion.php" method="post">
                                 <div class="mb-3">
                                   <p>COD: <?php echo $vehiculos[0]['codigo'] . ' | Vehiculo ' . $vehiculos[0]['marca'] . ' - ' . $vehiculos[0]['modelo']; ?></p>
                                 </div>
@@ -322,7 +322,12 @@
                                   <textarea id="mensaje_cotizacion" class="form-control" placeholder="Mensaje" name="mensaje_cotizacion" rows="2"></textarea>
                                 </div>
                                 <div class="mb-3">
-                                  <!--realizar integracion de grecatcha -->
+                                <button class="g-recaptcha"
+                                    data-sitekey="6LfGUtEqAAAAAMSm7KsMSurQvk1PWDinZEefU5pa"
+                                    data-callback='onSubmit'
+                                    data-action='submit'>
+                                  Submit
+                                </button>
                                 </div>
                               </form>
                             </div>
@@ -371,26 +376,26 @@
                       <div class="container">
                         <div class="row">
                           <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
-                            <p class="content-detalles"><img class="img-fluid icono-detalles" src="images/marcas/<?php echo $vehiculos[1]['logo']; ?>"> <?php echo $vehiculos[1]['marca']; ?></p>
+                            <p class="contentDetalles"><img class="img-fluid iconoDetalles" src="images/marcas/<?php echo $vehiculos[1]['logo']; ?>"> <?php echo $vehiculos[1]['marca']; ?></p>
                           </div>
                           <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
-                            <p class="content-detalles"><img class="img-fluid icono-detalles" src="images/icons/icons8-car-40.png"> <?php echo $vehiculos[1]['modelo']; ?></p>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
-                            <p class="content-detalles"><img class="img-fluid icono-detalles" src="images/icons/u128.png"> <?php echo $vehiculos[1]['combustible']; ?></p>
-                          </div>
-                          <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
-                            <p class="content-detalles"><img class="img-fluid icono-detalles" src="images/icons/u129.png"> <?php echo $vehiculos[1]['kilometraje']; ?>KM</p>
+                            <p class="contentDetalles"><img class="img-fluid iconoDetalles" src="images/icons/icons8-car-40.png"> <?php echo $vehiculos[1]['modelo']; ?></p>
                           </div>
                         </div>
                         <div class="row">
                           <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
-                            <p class="content-detalles"><img class="img-fluid icono-detalles" src="images/icons/u130.png"> <?php echo $vehiculos[1]['transmision']; ?></p>
+                            <p class="contentDetalles"><img class="img-fluid iconoDetalles" src="images/icons/u128.png"> <?php echo $vehiculos[1]['combustible']; ?></p>
                           </div>
                           <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
-                            <p class="content-detalles"><img class="img-fluid icono-detalles" src="images/icons/u131.png"> <?php echo $vehiculos[1]['ano']; ?></p>
+                            <p class="contentDetalles"><img class="img-fluid iconoDetalles" src="images/icons/u129.png"> <?php echo $vehiculos[1]['kilometraje']; ?>KM</p>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
+                            <p class="contentDetalles"><img class="img-fluid iconoDetalles" src="images/icons/u130.png"> <?php echo $vehiculos[1]['transmision']; ?></p>
+                          </div>
+                          <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
+                            <p class="contentDetalles"><img class="img-fluid iconoDetalles" src="images/icons/u131.png"> <?php echo $vehiculos[1]['ano']; ?></p>
                           </div>
                         </div>
                       </div>
@@ -422,7 +427,7 @@
                           </div>
                           <div class="modal-body">
                             <div class="container">
-                              <form action="paginas_funciones/guardar_cotizacion.php" method="post">
+                              <form action="funciones/guardarCotizacion.php" method="post">
                                 <div class="mb-3">
                                   <p>COD: <?php echo $vehiculos[1]['codigo'] . ' | Vehiculo ' . $vehiculos[1]['marca'] . ' - ' . $vehiculos[1]['modelo']; ?></p>
                                 </div>
@@ -493,26 +498,26 @@
                       <div class="container">
                         <div class="row">
                           <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
-                            <p class="content-detalles"><img class="img-fluid icono-detalles" src="images/marcas/<?php echo $vehiculos[2]['logo']; ?>"> <?php echo $vehiculos[2]['marca']; ?></p>
+                            <p class="contentDetalles"><img class="img-fluid iconoDetalles" src="images/marcas/<?php echo $vehiculos[2]['logo']; ?>"> <?php echo $vehiculos[2]['marca']; ?></p>
                           </div>
                           <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
-                            <p class="content-detalles"><img class="img-fluid icono-detalles" src="images/icons/icons8-car-40.png"> <?php echo $vehiculos[2]['modelo']; ?></p>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
-                            <p class="content-detalles"><img class="img-fluid icono-detalles" src="images/icons/u128.png"> <?php echo $vehiculos[2]['combustible']; ?></p>
-                          </div>
-                          <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
-                            <p class="content-detalles"><img class="img-fluid icono-detalles" src="images/icons/u129.png"> <?php echo $vehiculos[2]['kilometraje']; ?>KM</p>
+                            <p class="contentDetalles"><img class="img-fluid iconoDetalles" src="images/icons/icons8-car-40.png"> <?php echo $vehiculos[2]['modelo']; ?></p>
                           </div>
                         </div>
                         <div class="row">
                           <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
-                            <p class="content-detalles"><img class="img-fluid icono-detalles" src="images/icons/u130.png"> <?php echo $vehiculos[2]['transmision']; ?></p>
+                            <p class="contentDetalles"><img class="img-fluid iconoDetalles" src="images/icons/u128.png"> <?php echo $vehiculos[2]['combustible']; ?></p>
                           </div>
                           <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
-                            <p class="content-detalles"><img class="img-fluid icono-detalles" src="images/icons/u131.png"> <?php echo $vehiculos[2]['ano']; ?></p>
+                            <p class="contentDetalles"><img class="img-fluid iconoDetalles" src="images/icons/u129.png"> <?php echo $vehiculos[2]['kilometraje']; ?>KM</p>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
+                            <p class="contentDetalles"><img class="img-fluid iconoDetalles" src="images/icons/u130.png"> <?php echo $vehiculos[2]['transmision']; ?></p>
+                          </div>
+                          <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
+                            <p class="contentDetalles"><img class="img-fluid iconoDetalles" src="images/icons/u131.png"> <?php echo $vehiculos[2]['ano']; ?></p>
                           </div>
                         </div>
                       </div>
@@ -544,7 +549,7 @@
                           </div>
                           <div class="modal-body">
                             <div class="container">
-                              <form action="paginas_funciones/guardar_cotizacion.php" method="post">
+                              <form action="funciones/guardarCotizacion.php" method="post">
                                 <div class="mb-3">
                                   <p>COD: <?php echo $vehiculos[2]['codigo'] . ' | Vehiculo ' . $vehiculos[2]['marca'] . ' - ' . $vehiculos[2]['modelo']; ?></p>
                                 </div>
@@ -587,9 +592,9 @@
         </article>
       </div>
       <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12 d-flex">
-        <div class="aside_busqueda my-3">
+        <div class="divGradient my-3">
           <div class="container py-2">
-            <form class="row g-3" action="paginas_funciones/guardar_cotizacion.php" method="post">
+            <form class="row g-3" action="funciones/guardarCotizacion.php" method="post">
               <div class="col-12 text-center">
                 <h5><span class="title_red">COTIZA</span> CON NOSOTROS</h5>
               </div>
@@ -719,6 +724,12 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script type="text/javascript" src="js/scripts.js"></script>
   <script type="text/javascript" src="js/chat_menu.js"></script>
+   <!-- Replace the variables below. -->
+<script>
+  function onSubmit(token) {
+    document.getElementById("formGuardarCotizacion").submit();
+  }
+</script>
 </body>
 
 </html>

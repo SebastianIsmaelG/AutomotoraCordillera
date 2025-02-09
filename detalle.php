@@ -12,7 +12,7 @@
 
 <body>
   <header>
-    <nav class="navbar navbar-header navbar-expand-lg ">
+    <nav class="navbar navbarHeader navbar-expand-lg ">
       <div class="container-fluid">
         <a class="navbar-brand" href="index.php">
           <img src="images/Cordillera2.png" class="img-fluid" alt="Logo">
@@ -34,7 +34,7 @@
                 Marcas
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMarcas">
-                <?php include 'paginas_funciones/a_marcas.php'; ?>
+                <?php include 'funciones/arrayMarcas.php'; ?>
               </ul>
             </li>
             <li class="nav-item dropdown">
@@ -77,7 +77,7 @@
         echo "<script>window.location='index.php';</script>";
       } else {
         $id_vehiculo = $_POST["value_carID"];
-        include 'paginas_funciones/menu_busqueda_detalle.php';
+        include 'funciones/menuBusquedaDetalle.php';
       }
     }
     ?>
@@ -115,37 +115,37 @@
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
           <div class="row">
             <div class="col-12">
-              <div class="container py-3">
+              <div class="container my-2">
                 <h4 class="upper linear openSans">VEHICULO - <?php echo "$marca $modelo" ?></h4>
               </div>
             </div>
             <div class="col-12">
-              <div class="container py-3">
+              <div class="container my-2">
                 <div class='row'>
                   <div class='col-lg-6 col-md-6-col-sm-6 col-xs-12'>
-                    <div class="container-precio my-2">
-                      <h4 class="py-1">$ <?php echo $precio; ?></h4>
+                    <div class="container-precio">
+                      <h4 class="py-2">$ <?php echo $precio; ?></h4>
                     </div>
                   </div>
                   <div class='col-lg-6 col-md-6-col-sm-6 col-xs-12'>
-                    <div class=my-2">
+                    <div>
                       <button type="button" class="btn btn-light btn-lg btn_cotizar_label" data-bs-toggle="modal" data-bs-target="#input_index_cotizacion1"><span class='cotizar_label' value='cotizar'>COTIZAR</span></button>
                     </div>
                   </div>
                 </div>
                 <!--modal cotizar-->
-                <div class="modal fade" id="input_index_cotizacion1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal fade" id="input_index_cotizacion1" tabindex="-1" role="dialog" aria-labelledby="Cotizar Vehiculo" aria-hidden="true">
                   <div class='modal-dialog modal-dialog-centered' role='document'>
                     <div class='modal-content'>
                       <div class='modal-header'>
-                        <h5 class='modal-title' id='exampleModalLongTitle'>COTIZA CON <span class='title_red'>NOSOTROS</span></h5>
+                        <h5 class='modal-title' id='Cotizar Vehiculo'>COTIZA CON <span class='title_red'>NOSOTROS</span></h5>
                         <button class='close' data-bs-dismiss="modal" aria-label='Close'>
                           <i class="fa-solid fa-xmark"></i>
                         </button>
                       </div>
                       <div class="modal-body">
                         <div class="container">
-                          <form action="paginas_funciones/guardar_cotizacion.php" method="post">
+                          <form action="funciones/guardarCotizacion.php" method="post">
                             <div class="mb-3">
                               <p>COD: <?php echo $codigo . ' | Vehiculo ' . $marca . ' - ' . $modelo; ?></p>
                             </div>
@@ -191,7 +191,7 @@
                 </div>
                 <div class="col-12">
                   <div>
-                    <div class='container'>
+                    <div class='container divGradient py-2 contentDetalles'>
                       <div class='row'>
                         <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>
                           <p><i class="fas fa-car"></i><span> ESTADO: </span> <?php echo $estado ?> </p>
@@ -238,12 +238,12 @@
                 <div class="row">
                   <div class="col-12">
                     <div>
-                      <h5 class="linear upper">ESPECIFICACIONES <span class="title_red">TECNICAS</span></h5>
+                      <h5 class="linear upper">DETALLES <span class="title_red">EQUIPAMIENTO</span></h5>
                     </div>
                   </div>
                   <div class="col-12">
-                    <div id="div_automovils">
-                      <p id='texto_equipamiento2'><?php echo $equipamiento ?></p>
+                    <div class="container divGradient py-2">
+                      <p class="contentDetalles"><?php echo $equipamiento ?></p>
                     </div>
                   </div>
                 </div>
@@ -258,7 +258,7 @@
                     </div>
                   </div>
                   <div class="col-12">
-                    <div id="div_automovils">
+                    <div>
                       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3331.3962520354485
                         !2d<?php echo $longitud; ?>!3d<?php echo $latitud; ?>!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c9352d11aa21%3A0x69745e993d10a7e!2sLas%20Tranqueras%201395%2C%207650192%20Vitacura%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses!2scl!4v1739038276416!5m2!1ses!2scl"
                         width="600"
