@@ -1,0 +1,21 @@
+name: CI SecretKey
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.0'
+
+      - name: Run a script that uses the secret
+        run: php -r funciones/guardarCotizaciones.php
+        env:
+          API_KEY: ${{ secrets.SECRET_KEY_GCAPTCHA }}

@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $secretKey = "6LdpddEqAAAAAAPikRvfxs7jeQbrd-dI-trGPX4o"; // Clave secreta de Google reCAPTCHA
+    $secretKey = getenv('API_KEY'); // Clave secreta de Google reCAPTCHA
     $response = $_POST["g-recaptcha-response"]; // Respuesta del usuario
     $remoteIp = $_SERVER["REMOTE_ADDR"];
 
