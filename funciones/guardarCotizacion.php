@@ -25,18 +25,23 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $captchaSuccess = json_decode($verify);
 
     if ($captchaSuccess->success) {
-        if (isset($_POST["nombres_cotizacion"]) && isset($_POST["telefono_cotizacion"]) && isset($_POST["mail_cotizacion"]) && $mensajeCliente = $_POST["mensaje_cotizacion"]) {
+        if (isset($_POST["nombres_cotizacion"]) && isset($_POST["telefono_cotizacion"]) && isset($_POST["mail_cotizacion"])) {
 
             $nombreCliente = htmlspecialchars($_POST["nombres_cotizacion"]);
             $telefonoCliente = htmlspecialchars($_POST["telefono_cotizacion"]);
             $emailCliente = htmlspecialchars($_POST["mail_cotizacion"]);
-            $mensajeCliente = htmlspecialchars($_POST["mensaje_cotizacion"]);
 
             //Cotizacion sin codigo de vehiculo, como el form del index
-            if (!isset($_POST["vehiculo_visto"])) {
+            if (isset($_POST["vehiculo_visto"])) {
                 $vehiculoVisto = 'Sin información';
             } else {
-                $vehiculoVisto = $_POST["vehiculo_visto"];
+                $vehiculoVisto = htmlspecialchars($_POST["vehiculo_visto"]);
+            }
+            // sin mensaje para hacerle opcional
+            if(empty($_POST["mensaje_cotizacion"])){
+                $mensajeCliente = 'Sin mensaje';
+            }else{
+                $mensajeCliente = htmlspecialchars($_POST["mensaje_cotizacion"]);
             }
         }
 
@@ -53,13 +58,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         mysqli_stmt_bind_param($sql, "ssiss", $vehiculoVisto, $nombreCliente, $telefonoCliente, $emailCliente, $mensajeCliente);
 
         if (mysqli_stmt_execute($sql)) {
-            echo "<script>console.log('Solicitud procesada con éxito');</script>";
-            //Redirije la url con success para mostrar un mensaje de scripts.js
             $redirectUrl = !empty($_SERVER["HTTP_REFERER"]) ? $_SERVER["HTTP_REFERER"] : "index.php";
-            $redirectUrl .= (strpos($redirectUrl, '?') === false) ? "?success=1" : "&success=1";
+
+            // Verifica si la URL ya contiene success=1 luego se vuelve a la pagina de la que vino
+            //podemos usar success para mostrar un mensaje en le frontend
+            if (strpos($redirectUrl, 'success=1') === false) {
+                $redirectUrl .= (strpos($redirectUrl, '?') === false) ? "?success=1" : "&success=1";
+            }
+
+            header("Location: $redirectUrl");
+            exit;
             
-            header("Location: " . $redirectUrl);
-            exit();
         } else {
             echo "Error en la consulta: " . mysqli_error($cnn);
         }

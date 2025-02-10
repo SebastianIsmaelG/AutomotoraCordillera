@@ -7,6 +7,8 @@
   <link rel="shortcut icon" href="images/icons/favicon.ico" />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Lato&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!--googleReCaptcha-->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <title>Detalles</title>
 </head>
 
@@ -57,9 +59,9 @@
             </li>
           </ul>
 
-          <form class="d-flex" method="get" action="menu_busqueda.php">
+          <form class="d-flex" method="get" action="busqueda.php">
             <div class="search-container position-relative">
-              <input class="form-control me-2" type="search" name="busqueda_index" placeholder="Buscar por Marcas, Modelo, Año..." aria-label="Buscar" maxlength="15">
+              <input class="form-control me-2" type="search" name="src" placeholder="Buscar por Marcas, Modelo, Año..." aria-label="Buscar" maxlength="15">
               <i class="fas fa-search position-absolute top-50 start-0 translate-middle-y ms-3"></i> <!-- Icono de lupa -->
             </div>
           </form>
@@ -71,14 +73,12 @@
   <section>
     <!--Traemos datos de id vehiculo desde varias secciones de la pagina los if definen esos botones-->
     <?php
-    if (isset($_POST["input_index"])) {
+    if (isset($_GET["id"])) {
+      $id_vehiculo = $_GET["id"];
+      require_once 'funciones/menuBusquedaDetalle.php';
 
-      if (!isset($_POST["value_carID"])) {
-        echo "<script>window.location='index.php';</script>";
-      } else {
-        $id_vehiculo = $_POST["value_carID"];
-        include 'funciones/menuBusquedaDetalle.php';
-      }
+    } else {
+      echo "<script>window.location='index.php';</script>";
     }
     ?>
     <div class="container my-3">
@@ -129,55 +129,55 @@
                   </div>
                   <div class='col-lg-6 col-md-6-col-sm-6 col-xs-12'>
                     <div>
-                      <button type="button" class="btn btn-light btn-lg btn_cotizar_label" data-bs-toggle="modal" data-bs-target="#input_index_cotizacion1"><span class='cotizar_label' value='cotizar'>COTIZAR</span></button>
+                      <button type="button" class="btn btn-light btn-lg btn_cotizar_label" data-bs-toggle="modal" data-bs-target="#inputCotizacion"><span class='cotizar_label' value='cotizar'>COTIZAR</span></button>
                     </div>
                   </div>
                 </div>
                 <!--modal cotizar-->
-                <div class="modal fade" id="input_index_cotizacion1" tabindex="-1" role="dialog" aria-labelledby="Cotizar Vehiculo" aria-hidden="true">
-                  <div class='modal-dialog modal-dialog-centered' role='document'>
-                    <div class='modal-content'>
-                      <div class='modal-header'>
-                        <h5 class='modal-title' id='Cotizar Vehiculo'>COTIZA CON <span class='title_red'>NOSOTROS</span></h5>
-                        <button class='close' data-bs-dismiss="modal" aria-label='Close'>
-                          <i class="fa-solid fa-xmark"></i>
-                        </button>
-                      </div>
-                      <div class="modal-body">
-                        <div class="container">
-                          <form action="funciones/guardarCotizacion.php" method="post">
-                            <div class="mb-3">
-                              <p>COD: <?php echo $codigo . ' | Vehiculo ' . $marca . ' - ' . $modelo; ?></p>
+                <div class="modal fade" id="inputCotizacion" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                      <div class='modal-dialog modal-dialog-centered' role='document'>
+                        <div class='modal-content'>
+                          <div class='modal-header'>
+                            <h5 class='modal-title' id='exampleModalLongTitle'>COTIZA CON <span class='title_red'>NOSOTROS</span></h5>
+                            <button class='close' data-bs-dismiss="modal" aria-label='Close'>
+                              <i class="fa-solid fa-xmark"></i>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="container">
+                              <form id="formGuardarCotizacion" action="funciones/guardarCotizacion.php" method="post">
+                                <div class="mb-3">
+                                  <p>COD: <?php echo $codigo . ' | Vehiculo ' . $marca . ' - ' . $modelo; ?></p>
+                                </div>
+                                <div class="mb-3">
+                                  <label for="nombres_cotizacion" class="form-label">Nombre</label>
+                                  <input type="text" class="form-control" id="nombres_cotizacion" name="nombres_cotizacion" placeholder="Nombre" required>
+                                </div>
+                                <div class="mb-3">
+                                  <label for="telefono_cotizacion" class="form-label">Telefono</label>
+                                  <input type="text" class="form-control" id="telefono_cotizacion" name="telefono_cotizacion" placeholder="Telefono" onkeypress="return soloNumeros(event)" maxlength="9" required>
+                                </div>
+                                <div class="mb-3">
+                                  <label for="mail_cotizacion" class="form-label">Correo</label>
+                                  <input type="email" class="form-control" id="mail_cotizacion" name="mail_cotizacion" placeholder="Email" required>
+                                </div>
+                                <div class="mb-3">
+                                  <label for="mensaje_cotizacion" class="form-label">Mensaje</label>
+                                  <textarea id="mensaje_cotizacion" class="form-control" placeholder="Mensaje" name="mensaje_cotizacion" rows="2"></textarea>
+                                </div>
+                                <div class="mb-3">
+                                  <div class="g-recaptcha" data-sitekey="6LdpddEqAAAAAF2HSEomw4_fCCzD2mH5z5qQySmo"></div>
+                                </div>
                             </div>
-                            <div class="mb-3">
-                              <label for="nombres_cotizacion" class="form-label">Nombre</label>
-                              <input type="text" class="form-control" id="nombres_cotizacion" name="nombres_cotizacion" placeholder="Nombre" required>
-                            </div>
-                            <div class="mb-3">
-                              <label for="telefono_cotizacion" class="form-label">Telefono</label>
-                              <input type="text" class="form-control" id="telefono_cotizacion" name="telefono_cotizacion" placeholder="Telefono" onkeypress="return soloNumeros(event)" maxlength="12" required>
-                            </div>
-                            <div class="mb-3">
-                              <label for="mail_cotizacion" class="form-label">Correo</label>
-                              <input type="email" class="form-control" id="mail_cotizacion" name="mail_cotizacion" placeholder="Email" required>
-                            </div>
-                            <div class="mb-3">
-                              <label for="mensaje_cotizacion" class="form-label">Mensaje</label>
-                              <textarea id="mensaje_cotizacion" class="form-control" placeholder="Mensaje" name="mensaje_cotizacion" rows="2"></textarea>
-                            </div>
-                            <div class="mb-3">
-                              <!--realizar integracion de grecatcha -->
-                            </div>
+                          </div>
+                          <div class='modal-footer'>
+                            <input type="hidden" name="vehiculo_visto" value="<?php echo $marca . ' - ' . $modelo ?>">
+                            <button type='submit' name='btn_guardar' class=' input-index-modal ' id='input_index'><span>ENVIAR DATOS</span></button>
+                          </div>
                           </form>
                         </div>
                       </div>
-                      <div class='modal-footer'>
-                        <button type='submit' name='btn_guardar' class=' input-index-modal ' id='input_index2'><span>ENVIAR DATOS</span></button>
-                      </div>
-                      </form>
                     </div>
-                  </div>
-                </div>
                 <!--Fin modal-->
               </div>
             </div>

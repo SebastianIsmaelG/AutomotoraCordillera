@@ -62,9 +62,9 @@
             </li>
           </ul>
 
-          <form class="d-flex" method="get" action="menu_busqueda.php">
+          <form class="d-flex" method="get" action="busqueda.php">
             <div class="search-container position-relative">
-              <input class="form-control me-2" type="search" name="busqueda_index" placeholder="Buscar por Marcas, Modelo, Año..." aria-label="Buscar" maxlength="15">
+              <input class="form-control me-2" type="search" name="src" placeholder="Buscar por Marcas, Modelo, Año..." aria-label="Buscar" maxlength="15">
               <i class="fas fa-search position-absolute top-50 start-0 translate-middle-y ms-3"></i> <!-- Icono de lupa -->
             </div>
           </form>
@@ -183,7 +183,7 @@
                           <option value="0" selected>Hasta</option>
                           <?php
                           $currentYear = date("Y");
-                          for ($i = 2005; $i <= $currentYear; $i++) {
+                          for ($i = $currentYear; $i >= 2005; $i--) {
                             echo "<option value='" . $i . "'>" . $i . "</option>";
                           } ?>
                         </select>
@@ -283,9 +283,9 @@
                         </button>
                       </div>
                       <div class="my-2 mx-2">
-                        <form action="detalle.php" method="post">
-                          <input type="hidden" name="value_carID" value="<?php echo $vehiculos[0]['codigo']; ?>">
-                          <input type="submit" class=" flex-fill input-index" name="input_index" value="Ver Detalles" id="input_index">
+                        <form action="detalle.php" method="GET">
+                          <input type="hidden" id="id" name="id" value="<?php echo $vehiculos[0]['codigo']; ?>">
+                          <input type="submit" class=" flex-fill input-index" name="index" value="Ver Detalles" id="input_index">
                         </form>
                       </div>
                     </div>
@@ -322,12 +322,12 @@
                                   <textarea id="mensaje_cotizacion" class="form-control" placeholder="Mensaje" name="mensaje_cotizacion" rows="2"></textarea>
                                 </div>
                                 <div class="mb-3">
-                                 <div class="g-recaptcha" data-sitekey="6LdpddEqAAAAAF2HSEomw4_fCCzD2mH5z5qQySmo"></div>
+                                  <div class="g-recaptcha" data-sitekey="6LdpddEqAAAAAF2HSEomw4_fCCzD2mH5z5qQySmo"></div>
                                 </div>
                             </div>
                           </div>
                           <div class='modal-footer'>
-                            <input type="hidden" name="vehiculo_visto" value="<?php $vehiculos[0]['marca'] . ' - ' . $vehiculos[0]['modelo']?>">
+                            <input type="hidden" name="vehiculo_visto" value="<?php echo $vehiculos[0]['marca'] . ' - ' . $vehiculos[0]['modelo'] ?>">
                             <button type='submit' name='btn_guardar' class=' input-index-modal ' id='input_index2'><span>ENVIAR DATOS</span></button>
                           </div>
                           </form>
@@ -404,9 +404,9 @@
                         </button>
                       </div>
                       <div class="my-2 mx-2">
-                        <form action="detalle.php" method="post">
-                          <input type="hidden" name="value_carID" value="<?php $vehiculos[1]['marca'] . ' - ' . $vehiculos[1]['modelo'] ?>">
-                          <input type="submit" class=" flex-fill input-index" name="input_index" value="Ver Detalles" id="input_index">
+                        <form action="detalle.php" method="GET">
+                          <input type="hidden" id="id" name="id" value="<?php echo $vehiculos[1]['codigo']; ?>">
+                          <input type="submit" class=" flex-fill input-index" name="index" value="Ver Detalles" id="input_index">
                         </form>
                       </div>
                     </div>
@@ -443,13 +443,13 @@
                                   <textarea id="mensaje_cotizacion" class="form-control" placeholder="Mensaje" name="mensaje_cotizacion" rows="2"></textarea>
                                 </div>
                                 <div class="mb-3">
-                                 <div class="g-recaptcha" data-sitekey="6LdpddEqAAAAAF2HSEomw4_fCCzD2mH5z5qQySmo"></div>
+                                  <div class="g-recaptcha" data-sitekey="6LdpddEqAAAAAF2HSEomw4_fCCzD2mH5z5qQySmo"></div>
                                 </div>
                             </div>
                           </div>
                           <div class='modal-footer'>
-                            <input type="hidden" name="vehiculo_visto" value="<?php echo $vehiculos[1]['marca'] . ' - ' . $vehiculos[1]['modelo']?>">
-                            <button type='submit' name='btn_guardar' class=' input-index-modal ' id='input_index2'><span>ENVIAR DATOS</span></button>
+                            <input type="hidden" name="vehiculo_visto" value="<?php echo $vehiculos[1]['marca'] . ' - ' . $vehiculos[1]['modelo'] ?>">
+                            <button type='submit' name='btn_guardar' class=' input-index-modal ' id='input_index'><span>ENVIAR DATOS</span></button>
                           </div>
                           </form>
                         </div>
@@ -525,9 +525,9 @@
                         </button>
                       </div>
                       <div class="my-2 mx-2">
-                        <form action="detalle.php" method="post">
-                          <input type="hidden" name="value_carID" value="<?php $vehiculos[2]['marca'] . ' - ' . $vehiculos[2]['modelo'] ?>">
-                          <input type="submit" class=" flex-fill input-index" name="input_index" value="Ver Detalles" id="input_index">
+                        <form action="detalle.php" method="GET">
+                          <input type="hidden" id="id" name="id" value="<?php echo $vehiculos[2]['codigo']; ?>">
+                          <input type="submit" class=" flex-fill input-index" name="index" value="Ver Detalles" id="input_index">
                         </form>
                       </div>
                     </div>
@@ -564,13 +564,13 @@
                                   <textarea id="mensaje_cotizacion" class="form-control" placeholder="Mensaje" name="mensaje_cotizacion" rows="2"></textarea>
                                 </div>
                                 <div class="mb-3">
-                                 <div class="g-recaptcha" data-sitekey="6LdpddEqAAAAAF2HSEomw4_fCCzD2mH5z5qQySmo"></div>
+                                  <div class="g-recaptcha" data-sitekey="6LdpddEqAAAAAF2HSEomw4_fCCzD2mH5z5qQySmo"></div>
                                 </div>
                             </div>
                           </div>
                           <div class='modal-footer'>
-                            <input type="hidden" name="vehiculo_visto" value="<?php $vehiculos[2]['marca'] . ' - ' . $vehiculos[2]['modelo']?>">
-                            <button type='submit' name='btn_guardar' class=' input-index-modal ' id='input_index2'><span>ENVIAR DATOS</span></button>
+                            <input type="hidden" name="vehiculo_visto" value="<?php echo $vehiculos[2]['marca'] . ' - ' . $vehiculos[2]['modelo'] ?>">
+                            <button type='submit' name='btn_guardar' class=' input-index-modal ' id='input_index'><span>ENVIAR DATOS</span></button>
                           </div>
                           </form>
                         </div>
@@ -598,9 +598,9 @@
 
               <div class="col-12">
                 <label for="telefono_cotizacion" class="visually-hidden">Teléfono</label>
-                <input type="tel" class="form-control" id="telefono_cotizacion" name="telefono_cotizacion" placeholder="Teléfono" onkeypress="return soloNumeros(event)" 
-                pattern="^\+?\d{0,3}?[-.\s]?\(?\d{1,4}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,9}$"
-                maxlength="9" required>
+                <input type="tel" class="form-control" id="telefono_cotizacion" name="telefono_cotizacion" placeholder="Teléfono" onkeypress="return soloNumeros(event)"
+                  pattern="^\+?\d{0,3}?[-.\s]?\(?\d{1,4}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,9}$"
+                  maxlength="9" required>
               </div>
 
               <div class="col-12">
@@ -618,7 +618,7 @@
               </div>
 
               <div class="col-12">
-                <button type="submit" class="btn btn-primary w-100" name="btn_guardar">Enviar</button>
+                <button type="submit" class="btn w-100 btnindex_search" name="btn_guardar">Enviar</button>
               </div>
             </form>
           </div>

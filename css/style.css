@@ -49,7 +49,7 @@ li::marker {
   color: #007bff;
   pointer-events: none;
 }
-.search-container input[name="busqueda_index"] {
+.search-container input[name="src"] {
   width: 450px;
 }
 .sec_footer {

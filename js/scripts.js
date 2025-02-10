@@ -1,4 +1,4 @@
-
+//Buscador Avanzado, carga los modelos disponibles segun marca seleccionada
 $(document).ready(function() {
     cargaselectmodelo();
     $('#marca').change(function() {
@@ -9,22 +9,13 @@ $(document).ready(function() {
 function cargaselectmodelo() {
     $.ajax({
       type: "POST",
-      url: "paginas_funciones/select_busqueda_avanzada1.php",
+      url: "funciones/busquedaAvanzadaModelo.php",
       data: "marca=" + $('#marca').val(),
       success: function(r) {
         $('#modelo').html(r);
       }
     });
 }
-
-//Alert de confirmacion de formulario
-document.addEventListener("DOMContentLoaded", function () {
-  const params = new URLSearchParams(window.location.search);
-  if (params.get("success") === "1") {  // Verifica el valor del parámetro
-      alert("✅ Cotización enviada con éxito!");
-      history.replaceState({}, document.title, window.location.pathname); // Limpia la URL
-  }
-});
 
 //Validaciones / Sanitizaciones de Inputs
 function soloNumeros(e) {
@@ -64,3 +55,21 @@ function soloLetras(e) {
     return false;
   }
 }
+
+//Twitter Script
+window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "js/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));
