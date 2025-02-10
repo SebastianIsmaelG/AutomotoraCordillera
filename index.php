@@ -422,7 +422,7 @@
                           </div>
                           <div class="modal-body">
                             <div class="container">
-                              <form action="funciones/guardarCotizacion.php" method="post">
+                              <form id="formGuardarCotizacion" action="funciones/guardarCotizacion.php" method="post">
                                 <div class="mb-3">
                                   <p>COD: <?php echo $vehiculos[1]['codigo'] . ' | Vehiculo ' . $vehiculos[1]['marca'] . ' - ' . $vehiculos[1]['modelo']; ?></p>
                                 </div>
@@ -432,7 +432,7 @@
                                 </div>
                                 <div class="mb-3">
                                   <label for="telefono_cotizacion" class="form-label">Telefono</label>
-                                  <input type="text" class="form-control" id="telefono_cotizacion" name="telefono_cotizacion" placeholder="Telefono" onkeypress="return soloNumeros(event)" maxlength="12" required>
+                                  <input type="text" class="form-control" id="telefono_cotizacion" name="telefono_cotizacion" placeholder="Telefono" onkeypress="return soloNumeros(event)" maxlength="9" required>
                                 </div>
                                 <div class="mb-3">
                                   <label for="mail_cotizacion" class="form-label">Correo</label>
@@ -443,13 +443,12 @@
                                   <textarea id="mensaje_cotizacion" class="form-control" placeholder="Mensaje" name="mensaje_cotizacion" rows="2"></textarea>
                                 </div>
                                 <div class="mb-3">
-                                  <!--realizar integracion de grecatcha -->
+                                 <div class="g-recaptcha" data-sitekey="6LdpddEqAAAAAF2HSEomw4_fCCzD2mH5z5qQySmo"></div>
                                 </div>
-                              </form>
                             </div>
-
                           </div>
                           <div class='modal-footer'>
+                            <input type="hidden" name="vehiculo_visto" value="<?php echo $vehiculos[1]['codigo']?>">
                             <button type='submit' name='btn_guardar' class=' input-index-modal ' id='input_index2'><span>ENVIAR DATOS</span></button>
                           </div>
                           </form>
@@ -544,7 +543,7 @@
                           </div>
                           <div class="modal-body">
                             <div class="container">
-                              <form action="funciones/guardarCotizacion.php" method="post">
+                              <form id="formGuardarCotizacion" action="funciones/guardarCotizacion.php" method="post">
                                 <div class="mb-3">
                                   <p>COD: <?php echo $vehiculos[2]['codigo'] . ' | Vehiculo ' . $vehiculos[2]['marca'] . ' - ' . $vehiculos[2]['modelo']; ?></p>
                                 </div>
@@ -554,7 +553,7 @@
                                 </div>
                                 <div class="mb-3">
                                   <label for="telefono_cotizacion" class="form-label">Telefono</label>
-                                  <input type="text" class="form-control" id="telefono_cotizacion" name="telefono_cotizacion" placeholder="Telefono" onkeypress="return soloNumeros(event)" maxlength="12" required>
+                                  <input type="text" class="form-control" id="telefono_cotizacion" name="telefono_cotizacion" placeholder="Telefono" onkeypress="return soloNumeros(event)" maxlength="9" required>
                                 </div>
                                 <div class="mb-3">
                                   <label for="mail_cotizacion" class="form-label">Correo</label>
@@ -565,13 +564,12 @@
                                   <textarea id="mensaje_cotizacion" class="form-control" placeholder="Mensaje" name="mensaje_cotizacion" rows="2"></textarea>
                                 </div>
                                 <div class="mb-3">
-                                  <!--realizar integracion de grecatcha -->
+                                 <div class="g-recaptcha" data-sitekey="6LdpddEqAAAAAF2HSEomw4_fCCzD2mH5z5qQySmo"></div>
                                 </div>
-                              </form>
                             </div>
-
                           </div>
                           <div class='modal-footer'>
+                            <input type="hidden" name="vehiculo_visto" value="<?php echo $vehiculos[3]['codigo']?>">
                             <button type='submit' name='btn_guardar' class=' input-index-modal ' id='input_index2'><span>ENVIAR DATOS</span></button>
                           </div>
                           </form>
@@ -616,7 +614,7 @@
               </div>
 
               <div class="col-12">
-                <div class="g-recaptcha" data-sitekey="6LcW6M8qAAAAAGBqPjBO3QUxt2fmMsCPKz4RGMKv"></div>
+                <div class="g-recaptcha" data-sitekey="6LdpddEqAAAAAF2HSEomw4_fCCzD2mH5z5qQySmo"></div>
               </div>
 
               <div class="col-12">
