@@ -327,7 +327,7 @@
                             </div>
                           </div>
                           <div class='modal-footer'>
-                            <input type="hidden" name="vehiculo_visto" value="<?php echo $vehiculos[0]['codigo']?>">
+                            <input type="hidden" name="vehiculo_visto" value="<?php $vehiculos[0]['marca'] . ' - ' . $vehiculos[0]['modelo']?>">
                             <button type='submit' name='btn_guardar' class=' input-index-modal ' id='input_index2'><span>ENVIAR DATOS</span></button>
                           </div>
                           </form>
@@ -405,7 +405,7 @@
                       </div>
                       <div class="my-2 mx-2">
                         <form action="detalle.php" method="post">
-                          <input type="hidden" name="value_carID" value="<?php echo $vehiculos[1]['codigo']; ?>">
+                          <input type="hidden" name="value_carID" value="<?php $vehiculos[1]['marca'] . ' - ' . $vehiculos[1]['modelo'] ?>">
                           <input type="submit" class=" flex-fill input-index" name="input_index" value="Ver Detalles" id="input_index">
                         </form>
                       </div>
@@ -448,7 +448,7 @@
                             </div>
                           </div>
                           <div class='modal-footer'>
-                            <input type="hidden" name="vehiculo_visto" value="<?php echo $vehiculos[1]['codigo']?>">
+                            <input type="hidden" name="vehiculo_visto" value="<?php echo $vehiculos[1]['marca'] . ' - ' . $vehiculos[1]['modelo']?>">
                             <button type='submit' name='btn_guardar' class=' input-index-modal ' id='input_index2'><span>ENVIAR DATOS</span></button>
                           </div>
                           </form>
@@ -526,7 +526,7 @@
                       </div>
                       <div class="my-2 mx-2">
                         <form action="detalle.php" method="post">
-                          <input type="hidden" name="value_carID" value="<?php echo $vehiculos[2]['codigo']; ?>">
+                          <input type="hidden" name="value_carID" value="<?php $vehiculos[2]['marca'] . ' - ' . $vehiculos[2]['modelo'] ?>">
                           <input type="submit" class=" flex-fill input-index" name="input_index" value="Ver Detalles" id="input_index">
                         </form>
                       </div>
@@ -569,7 +569,7 @@
                             </div>
                           </div>
                           <div class='modal-footer'>
-                            <input type="hidden" name="vehiculo_visto" value="<?php echo $vehiculos[3]['codigo']?>">
+                            <input type="hidden" name="vehiculo_visto" value="<?php $vehiculos[2]['marca'] . ' - ' . $vehiculos[2]['modelo']?>">
                             <button type='submit' name='btn_guardar' class=' input-index-modal ' id='input_index2'><span>ENVIAR DATOS</span></button>
                           </div>
                           </form>

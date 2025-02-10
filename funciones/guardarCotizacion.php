@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
             //Cotizacion sin codigo de vehiculo, como el form del index
             if (!isset($_POST["vehiculo_visto"])) {
-                $vehiculoVisto = 0;
+                $vehiculoVisto = 'Sin información';
             } else {
                 $vehiculoVisto = $_POST["vehiculo_visto"];
             }
@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         (codigo,fecha, vehiculoVisto, nombre, telefono, email, mensaje)
          VALUES (null, CURDATE() ,? ,? ,? ,? ,?)");
 
-        mysqli_stmt_bind_param($sql, "isiss", $vehiculoVisto, $nombreCliente, $telefonoCliente, $emailCliente, $mensajeCliente);
+        mysqli_stmt_bind_param($sql, "ssiss", $vehiculoVisto, $nombreCliente, $telefonoCliente, $emailCliente, $mensajeCliente);
 
         if (mysqli_stmt_execute($sql)) {
             echo "<script>console.log('Solicitud procesada con éxito');</script>";
