@@ -1,6 +1,5 @@
-<?php
+<?php 
 if (isset($codigoMarca)) {
-
     try {
       include 'C:\xampp\htdocs\Proyectos\automotora2.0\paginas_funciones\dbcall.php';
 
@@ -116,7 +115,6 @@ if (isset($codigoMarca)) {
       }
 
   }
-
 /*****************************************************************************************************************/
 
 if (isset($resultado_index)) {
@@ -372,7 +370,7 @@ if (isset($buscarestados)) {
 
 /*****************************************************************************************************************/
 
-if (isset($resultado_busqueda_index)) {
+if (isset($srcInd)) {
   try {
     //Comprobamos las variables y sus default
     if (isset($_GET["customRadioInline1"])) {
@@ -9310,4 +9308,6 @@ if (isset($resultado_busqueda_index)) {
 }
 /*****************************************************************************************************************/
 
- ?>
+
+
+?>

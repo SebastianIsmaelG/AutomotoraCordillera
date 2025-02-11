@@ -2,7 +2,8 @@
     require_once 'dbcall.php'; 
 
     if (!isset($id_vehiculo)) {
-        exit("No existe un ID o dato para traer información. / menu_busqueda_detalle.php");
+        //hacer esta wea de salida mas bonita
+        exit("No existe un ID o dato para traer información. / menuBusquedaDetalle.php");
     }
 
     try {
@@ -38,24 +39,21 @@
             INNER JOIN sucursales AS s ON v.ubicacion = s.codigo
             WHERE v.codigo = ?";
 
-    // Preparar la consulta
+    
     $stmt = mysqli_prepare($cnn, $sql);
     mysqli_stmt_bind_param($stmt, "i", $id_vehiculo);
     mysqli_stmt_execute($stmt);
 
-    // Obtener resultados
+    // Obtener resultados y los guarda en un array 
     $result = mysqli_stmt_get_result($stmt);
     $vehiculo = mysqli_fetch_assoc($result);
 
     if (!$vehiculo) {
+        //hacer esta wea de salida mas bonita
         exit("No se encontraron datos para el ID proporcionado.");
     }
 
-    // Variables para su uso en HTML este deberia sumar ++
-    $modalwindow = 0;
-    $carrousell = 0;
-
-    // Asignar valores obtenidos de la base de datos
+    // Asignar valores obtenidos del array
     $codigo       = $vehiculo['codigo'];
     $marca        = $vehiculo['marca'];
     $modelo       = $vehiculo['modelo'];

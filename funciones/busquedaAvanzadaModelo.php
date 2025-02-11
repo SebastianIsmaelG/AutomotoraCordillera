@@ -9,7 +9,7 @@
         
         if (!isset($_POST["marca"]) || empty($_POST["marca"])) {
             
-            $cadena = "<select class='form-control' id='sel_modelo' name='sel_modelo' style='width:100%;'>";
+            $cadena = "<select class='form-control' id='modelo' name='md' style='width:100%;'>";
             $cadena .= "</select>";
         }
 
@@ -23,7 +23,7 @@
             mysqli_stmt_execute($stmt);
             $result = mysqli_stmt_get_result($stmt);
 
-            $cadena = "<select class='form-control' id='sel_modelo' name='sel_modelo' style='width:100%;'>";
+            $cadena = "<select class='form-control' id='modelo' name='md' style='width:100%;'>";
             $cadena .= "<option value='0'>Todos los disponibles</option>";
             
             

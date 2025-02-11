@@ -117,33 +117,33 @@
       <div class="col-lg-3 col-md-12 col-sm-12">
         <div class="divGradient">
           <div class="container-fluid">
-            <form action="menu_busqueda.php" method="GET">
+            <form action="busqueda.php" method="GET">
               <div class="row">
                 <div class="col-12">
-                  <div class="form-group text-center py-3">
+                  <div class="mb-3 text-center py-3">
                     <h5>BUSCADOR <span class="title_red">AVANZADO</span></h5>
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="mb-3">
                     <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" id="customRadioInline1" value="Todos" name="customRadioInline1" checked>
-                      <label class="form-check-label" for="customRadioInline1">Todos</label>
+                      <input class="form-check-input" type="radio" id="r1" value="Todos" name="r" checked>
+                      <label class="form-check-label" for="r1">Todos</label>
                     </div>
                     <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" id="customRadioInline2" value="Nuevo" name="customRadioInline1">
-                      <label class="form-check-label" for="customRadioInline2">Nuevo</label>
+                      <input class="form-check-input" type="radio" id="r2" value="Nuevo" name="r">
+                      <label class="form-check-label" for="r2">Nuevo</label>
                     </div>
                     <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" id="customRadioInline3" value="Usado" name="customRadioInline1">
-                      <label class="form-check-label" for="customRadioInline3">Usado</label>
+                      <input class="form-check-input" type="radio" id="r3" value="Usado" name="r">
+                      <label class="form-check-label" for="r3">Usado</label>
                     </div>
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="mb-3">
-                    <label for="tipoauto" class="form-label">Tipo:</label>
-                    <select class="form-select" name="sel_tipo" id="tipoauto">
+                    <label for="categoria" class="form-label">Tipo:</label>
+                    <select class="form-select" name="cat" id="categoria">
                       <option value="0">Todos los disponibles</option>
                       <?php include 'funciones/selectCategorias.php'; ?>
                     </select>
@@ -152,7 +152,7 @@
                 <div class="col-12">
                   <div class="mb-3">
                     <label for="marca" class="form-label">Marca:</label>
-                    <select class="form-select" id="marca" name="marca">
+                    <select class="form-select" id="marca" name="m">
                       <option value="0">Todos los disponibles</option>
                       <?php include 'funciones/selectMarcasIndex.php'; ?>
                     </select>
@@ -166,10 +166,10 @@
                 </div>
                 <div class="col-12">
                   <div class="mb-3">
-                    <label for="año" class="form-label">Año:</label>
+                    <label for="anoDeste" class="form-label">Año:</label>
                     <div class="row">
                       <div class="col-6">
-                        <select class="form-select" id="año" name="sel_año_desde">
+                        <select class="form-select" id="añoD" name="yrd">
                           <option value="0" selected>Desde</option>
                           <?php
                           $currentYear = date("Y");
@@ -179,7 +179,7 @@
                         </select>
                       </div>
                       <div class="col-6">
-                        <select class="form-select" id="año" name="sel_año_hasta">
+                        <select class="form-select" id="anoHasta" name="yrh">
                           <option value="0" selected>Hasta</option>
                           <?php
                           $currentYear = date("Y");
@@ -193,7 +193,7 @@
                 </div>
                 <div class="col-12">
                   <div class="mb-3">
-                    <input type="submit" class="btn w-100 btnindex_search" name="btnindex_search" value="Buscar">
+                    <input type="submit" class="btn w-100 btnindex_search" name="srcInd" value="Buscar">
                   </div>
                 </div>
                 <div class="col-12 d-none d-sm-block">
