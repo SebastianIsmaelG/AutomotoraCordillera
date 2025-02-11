@@ -3419,7 +3419,7 @@ if (isset($srcInd)) {
                                                                       FROM vehiculos as v INNER JOIN marcas AS m ON v.marca = m.codigo_marca
                                                                       INNER JOIN combustible AS com ON v.combustible = com.codigo_combustible
                                                                       INNER JOIN transmision AS tr ON v.transmision = tr.codigo_transmision
-                                                                      INNER JOIN sucursal as s ON v.ubicacion = s.codigo_sucursal WHERE (v.estado = 'Nuevo')) AS TT " );
+                                                                      INNER JOIN sucursal as s ON v.ubicacion = s.codigo_sucursal WHERE (v.estado = 'Nuevo') ) AS TT " );
 
                                     mysqli_stmt_execute($sqlCount);
                                     mysqli_stmt_bind_result($sqlCount,$rc);

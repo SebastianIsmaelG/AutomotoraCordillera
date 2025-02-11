@@ -151,7 +151,6 @@
 
     <div class="row">
       <div class="col-12">
-        <hr>
         <?php
         
         //pasamos $cnn una vez para todas las clases
