@@ -16,10 +16,10 @@
 </head>
 
 <body>
-  <?php 
-    spl_autoload_register(function ($funcion) {
-      include 'funciones/' . $funcion . '.php';
-    });
+  <?php
+  spl_autoload_register(function ($funcion) {
+    include 'funciones/' . $funcion . '.php';
+  });
   ?>
   <!--FACEBOOK LINK <div id="fb-root"></div>-->
   <header>
@@ -79,192 +79,194 @@
       </div>
     </nav>
   </header>
-  <section class="container">
-    <div class="row">
-      <div class="col-12">
-        <div class="text-center py-2">
-          <h4>BUSCADOR <span class="title_red">AVANZADO</span></h4>
-          <hr>
-        </div>
-        <form action="busqueda.php" method="GET">
-          <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-6 mb-3">
-              <label for="select_estado" class="visually-hidden">Estado</label>
-              <select class="form-control" name="customRadioInline1" id="select_estado">
-                <option selected value="0">Estado</option>
-                <option value="0">Todos</option>
-                <option value="Nuevo">Nuevos</option>
-                <option value="Usado">Usados</option>
-              </select>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-6 mb-3">
-              <label for="select_categoria" class="visually-hidden">Categoría</label>
-              <select class="form-control" name="sel_tipo" id="select_categoria">
-                <option selected value="0">Categoría</option>
-                <option value="0">Todos los disponibles</option>
-                <?php require_once 'funciones/selectCategorias.php'; ?>
-              </select>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-6 mb-3">
-              <label for="marca" class="visually-hidden">Marca</label>
-              <select class="form-control" id="marca" name="marca">
-                <option selected value="0">Marca</option>
-                <option value="0">Todas las disponibles</option>
-                <?php require_once 'funciones/selectMarcasIndex.php'; ?>
-              </select>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-6 mb-3">
-              <div id="modelo"></div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-6 mb-3">
-              <label for="select_año_d" class="visually-hidden">Año Desde</label>
-              <select class="form-select" id="select_año_d" name="sel_año_d">
-                <option value="0" selected>Desde</option>
-                <?php
-                $currentYear = date("Y");
-                for ($i = 2005; $i <= $currentYear; $i++) {
-                  echo "<option value='" . $i . "'>" . $i . "</option>";
-                }
-                ?>
-              </select>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-6 mb-3">
-              <label for="select_año_h" class="visually-hidden">Año Hasta</label>
-              <select class="form-select" id="select_año_h" name="sel_año_h">
-                <option value="0" selected>Hasta</option>
-                <?php
-                for ($i = $currentYear; $i >= 2005; $i--) {
-                  echo "<option value='" . $i . "'>" . $i . "</option>";
-                }
-                ?>
-              </select>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12 d-flex justify-content-end">
-              <input type="submit" class="btn btn-light input_busqueda w-auto" name="btnindex_search" value="Buscar">
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-12">
-        <?php
-        
-        //pasamos $cnn una vez para todas las clases
-        require_once 'funciones/dbcall.php';
-        $rsIndex = new menuBusqueda($cnn);
-
-
-        //Toma la variable desde el buscador avanzado en index
-        if (isset($_GET["srcInd"]) && isset($_GET["r"]) && isset($_GET["cat"]) && isset($_GET["m"]) && isset($_GET["md"]) && isset($_GET["yrd"]) && isset($_GET["yrh"])) {
-
-          //valores sanitizados
-          $radioSelect = isset($_GET["r"]) ? htmlspecialchars(strip_tags($_GET["r"])) : null;
-          $valoresPermitidosRadio = ["Todos", "Nuevos", "Usados"];
-          if ($radioSelect === null || !in_array($radioSelect, $valoresPermitidosRadio)) {
-            return;
-          }
-
-          $categoriaSelect = filter_var($_GET["cat"], FILTER_VALIDATE_INT);
-          $marcaSelect = filter_var($_GET["m"], FILTER_VALIDATE_INT);
-          $modeloSelect = isset($_GET["r"]) ? htmlspecialchars(strip_tags($_GET["md"])) : null;
-          $anoDesdeSelect = filter_var($_GET["yrd"], FILTER_VALIDATE_INT);
-          $anoHastaSelect = filter_var($_GET["yrh"], FILTER_VALIDATE_INT);
-
-          if ($categoriaSelect === false || $marcaSelect === false || $modeloSelect === null || $anoDesdeSelect === false || $anoHastaSelect === false) {
-            return; 
-          }
-
-          //Clase busquedaAvanzada desde menuBusqueda.php
-          $rsIndex->busquedaAvanzada($radioSelect,$categoriaSelect,$marcaSelect,$modeloSelect,$anoDesdeSelect,$anoHastaSelect);
-        }
-
-
-        
-        // //Toma la variable de la seccion del navbar marca y la almacena-->
-        // if (isset($_GET["codigoM"])) {
-        //   $codigoMarca = $_GET["codigoM"];
-        //   include 'C:\xampp\htdocs\Proyectos\automotora2.0\paginas_funciones\menu_busqueda.php';
-        // }
-
-        // //Toma de variable de la seccion Boton Busqueda y la almacena-->
-        // if (isset($_GET["btn_busc"])) {
-        //   $resultado_index = $_GET["busqueda_index"];
-        //   include 'C:\xampp\htdocs\Proyectos\automotora2.0\paginas_funciones\menu_busqueda.php';
-        // }
-        // //Busqueda desde el navbar USADOS
-        // if (isset($_GET["Estado"])) {
-        //   $buscarestados = "usado";
-        //   include 'C:\xampp\htdocs\Proyectos\automotora2.0\paginas_funciones\menu_busqueda.php';
-        // }
-
-        ?>
-      </div>
-    </div>
-  </section>
-  <footer class="bg-dark">
-    <div class="container footer_data">
+  <div class="container-fluid wrapper">
+    <div class="content container">
       <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-          <div class="py-3">
-            <h6>Contactanos</h6>
-            <div>
-              <p><i class="fa-solid fa-clock mx-2"></i> Lunes a Viernes de 10:00 a 18:30 hrs - Sábados de 10:00 a 14:30 hrs </p>
+        <div class="col-12">
+          <div class="text-center py-2">
+            <h1>BUSCADOR <span class="title_red">AVANZADO</span></h1>
+            <hr>
+          </div>
+          <form action="busqueda.php" method="GET">
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-6 mb-3">
+                <label for="select_estado" class="visually-hidden">Estado</label>
+                <select class="form-control" name="customRadioInline1" id="select_estado">
+                  <option selected value="0">Estado</option>
+                  <option value="0">Todos</option>
+                  <option value="Nuevo">Nuevos</option>
+                  <option value="Usado">Usados</option>
+                </select>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-6 mb-3">
+                <label for="select_categoria" class="visually-hidden">Categoría</label>
+                <select class="form-control" name="sel_tipo" id="select_categoria">
+                  <option selected value="0">Categoría</option>
+                  <option value="0">Todos los disponibles</option>
+                  <?php require_once 'funciones/selectCategorias.php'; ?>
+                </select>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-6 mb-3">
+                <label for="marca" class="visually-hidden">Marca</label>
+                <select class="form-control" id="marca" name="marca">
+                  <option selected value="0">Marca</option>
+                  <option value="0">Todas las disponibles</option>
+                  <?php require_once 'funciones/selectMarcasIndex.php'; ?>
+                </select>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-6 mb-3">
+                <div id="modelo"></div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-6 mb-3">
+                <label for="select_año_d" class="visually-hidden">Año Desde</label>
+                <select class="form-select" id="select_año_d" name="sel_año_d">
+                  <option value="0" selected>Desde</option>
+                  <?php
+                  $currentYear = date("Y");
+                  for ($i = 2005; $i <= $currentYear; $i++) {
+                    echo "<option value='" . $i . "'>" . $i . "</option>";
+                  }
+                  ?>
+                </select>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-6 mb-3">
+                <label for="select_año_h" class="visually-hidden">Año Hasta</label>
+                <select class="form-select" id="select_año_h" name="sel_año_h">
+                  <option value="0" selected>Hasta</option>
+                  <?php
+                  for ($i = $currentYear; $i >= 2005; $i--) {
+                    echo "<option value='" . $i . "'>" . $i . "</option>";
+                  }
+                  ?>
+                </select>
+              </div>
             </div>
-            <div>
-              <p><i class="fa-solid fa-location-dot mx-2"></i> Las Tranqueras 1395, Vitacura, Región Metropolitana </p>
+            <div class="row">
+              <div class="col-12 d-flex justify-content-end">
+                <input type="submit" class="btn btn-light input_busqueda w-auto" name="btnindex_search" value="Buscar">
+              </div>
             </div>
-            <div>
-              <p><i class="fa-solid fa-headset mx-2"></i>(2) - 3246 8670 </p>
-            </div>
-            <div>
-              <p><i class="fas fa-envelope mx-2"></i>contacto@autoscordillera.com </p>
+          </form>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <?php
+
+          //pasamos $cnn una vez para todas las clases
+          require_once 'funciones/dbcall.php';
+          $rsIndex = new menuBusqueda($cnn);
+
+
+          //Toma la variable desde el buscador avanzado en index
+          if (isset($_GET["srcInd"]) && isset($_GET["r"]) && isset($_GET["cat"]) && isset($_GET["m"]) && isset($_GET["md"]) && isset($_GET["yrd"]) && isset($_GET["yrh"])) {
+
+            //valores sanitizados
+            $radioSelect = isset($_GET["r"]) ? htmlspecialchars(strip_tags($_GET["r"])) : null;
+            $valoresPermitidosRadio = ["Todos", "Nuevos", "Usados"];
+            if ($radioSelect === null || !in_array($radioSelect, $valoresPermitidosRadio)) {
+              return;
+            }
+
+            $categoriaSelect = filter_var($_GET["cat"], FILTER_VALIDATE_INT);
+            $marcaSelect = filter_var($_GET["m"], FILTER_VALIDATE_INT);
+            $modeloSelect = isset($_GET["r"]) ? htmlspecialchars(strip_tags($_GET["md"])) : null;
+            $anoDesdeSelect = filter_var($_GET["yrd"], FILTER_VALIDATE_INT);
+            $anoHastaSelect = filter_var($_GET["yrh"], FILTER_VALIDATE_INT);
+
+            if ($categoriaSelect === false || $marcaSelect === false || $modeloSelect === null || $anoDesdeSelect === false || $anoHastaSelect === false) {
+              return;
+            }
+
+            //Clase busquedaAvanzada desde menuBusqueda.php
+            $rsIndex->busquedaAvanzada($radioSelect, $categoriaSelect, $marcaSelect, $modeloSelect, $anoDesdeSelect, $anoHastaSelect);
+          }
+
+
+
+          // //Toma la variable de la seccion del navbar marca y la almacena-->
+          // if (isset($_GET["codigoM"])) {
+          //   $codigoMarca = $_GET["codigoM"];
+          //   include 'C:\xampp\htdocs\Proyectos\automotora2.0\paginas_funciones\menu_busqueda.php';
+          // }
+
+          // //Toma de variable de la seccion Boton Busqueda y la almacena-->
+          // if (isset($_GET["btn_busc"])) {
+          //   $resultado_index = $_GET["busqueda_index"];
+          //   include 'C:\xampp\htdocs\Proyectos\automotora2.0\paginas_funciones\menu_busqueda.php';
+          // }
+          // //Busqueda desde el navbar USADOS
+          // if (isset($_GET["Estado"])) {
+          //   $buscarestados = "usado";
+          //   include 'C:\xampp\htdocs\Proyectos\automotora2.0\paginas_funciones\menu_busqueda.php';
+          // }
+
+          ?>
+        </div>
+      </div>
+    </div>
+    <footer class="bg-dark sec_footer">
+      <div class="container footer_data">
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="py-3">
+              <h6>Contactanos</h6>
+              <div>
+                <p><i class="fa-solid fa-clock mx-2"></i> Lunes a Viernes de 10:00 a 18:30 hrs - Sábados de 10:00 a 14:30 hrs </p>
+              </div>
+              <div>
+                <p><i class="fa-solid fa-location-dot mx-2"></i> Las Tranqueras 1395, Vitacura, Región Metropolitana </p>
+              </div>
+              <div>
+                <p><i class="fa-solid fa-headset mx-2"></i>(2) - 3246 8670 </p>
+              </div>
+              <div>
+                <p><i class="fas fa-envelope mx-2"></i>contacto@autoscordillera.com </p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-          <div class="py-3">
-            <h6>Redes Sociales</h6>
-            <div>
-              <a class="text-white text-decoration-none" href="#"><i class="fab fa-facebook"></i> Facebook </a>
-            </div>
-            <div>
-              <a class="text-white text-decoration-none" href="#"><i class="fab fa-instagram"></i> Instagram </a>
+          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="py-3">
+              <h6>Redes Sociales</h6>
+              <div>
+                <a class="text-white text-decoration-none" href="#"><i class="fab fa-facebook"></i> Facebook </a>
+              </div>
+              <div>
+                <a class="text-white text-decoration-none" href="#"><i class="fab fa-instagram"></i> Instagram </a>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-          <div class="py-3">
-            <h6>Enlaces Rapidos</h6>
-            <div>
-              <a class="text-white text-decoration-none" href="#">Catalogo de vehiculos</a>
-            </div>
-            <div>
-              <a class="text-white text-decoration-none" href="#">Financiamiento</a>
-            </div>
-            <div>
-              <a class="text-white text-decoration-none" href="#">Servicio Tecnico</a>
-            </div>
-            <div>
-              <a class="text-white text-decoration-none" href="#">Compra vehiculos usados</a>
-            </div>
-            <div>
-              <a class="text-white text-decoration-none" href="contacto.php">Contacto</a>
-            </div>
-            <div>
-              <a class="text-white text-decoration-none" href="historia.php">Quienes Somos</a>
-            </div>
-            <div>
-              <a class="text-white text-decoration-none" href="ingreso_administrativo.php">Ingreso Administrativo</a>
+          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="py-3">
+              <h6>Enlaces Rapidos</h6>
+              <div>
+                <a class="text-white text-decoration-none" href="#">Catalogo de vehiculos</a>
+              </div>
+              <div>
+                <a class="text-white text-decoration-none" href="#">Financiamiento</a>
+              </div>
+              <div>
+                <a class="text-white text-decoration-none" href="#">Servicio Tecnico</a>
+              </div>
+              <div>
+                <a class="text-white text-decoration-none" href="#">Compra vehiculos usados</a>
+              </div>
+              <div>
+                <a class="text-white text-decoration-none" href="contacto.php">Contacto</a>
+              </div>
+              <div>
+                <a class="text-white text-decoration-none" href="historia.php">Quienes Somos</a>
+              </div>
+              <div>
+                <a class="text-white text-decoration-none" href="ingreso_administrativo.php">Ingreso Administrativo</a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
+  </div>
   <section class="chat_container">
     <div class="chat_button2">
       <div class="banner_container">

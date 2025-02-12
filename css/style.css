@@ -19,7 +19,9 @@ html, body {
 }
 
 .content {
-  flex: 1;
+  flex-grow: 1; /* Se expande sin forzar altura extra */
+  display: flex;
+  flex-direction: column;
 }
 .close {
   border: none;
@@ -67,10 +69,9 @@ html, body {
 }
 .sec_footer {
   background-color: #1b1c1d;
-  background-color: #1b1c1d;
-  position: absolute;
-  bottom: 0;
+  position: relative; 
   width: 100%;
+  padding: 20px 0;
 }
 .div_valores {
   background-color: #e1e1e1;
@@ -286,12 +287,13 @@ html, body {
   color: white !important;
 }
 .cotizar_label {
-  font-weight: 700;
+  padding: 0!important;
+  font-weight: 600;
 }
 .btn_cotizar_label:hover {
   background-color: #d82e2e !important;
   color: white !important;
-  font-weight: 700;
+  font-weight: 600;
 }
 .container-precio {
   text-align: center;
@@ -338,6 +340,11 @@ html, body {
 }
 .input-index i {
   margin-right: 5px;
+}
+.responsive-iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9; /* Ajusta la relación de aspecto según el contenido */
+  border: none;
 }
 
 .input-index-modal {
