@@ -3,7 +3,6 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="author" content="Sebastian Gutierrez">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
@@ -17,7 +16,7 @@
 
 <body>
   <header>
-    <nav class="navbar navbarHeader navbar-expand-lg">
+    <nav class="navbar navbarHeader navbar-expand-lg ">
       <div class="container-fluid">
         <a class="navbar-brand" href="index.php">
           <img src="images/Cordillera2.png" class="img-fluid" alt="Logo">
@@ -32,14 +31,14 @@
               <a class="nav-link fw-bold" href="#">Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link fw-bold" href="menu_busqueda.php?Estado=usados">Usados</a>
+              <a class="nav-link fw-bold" href="busqueda.php?Estado=usados">Usados</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link fw-bold dropdown-toggle" href="#" id="navbarDropdownMarcas" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Marcas
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMarcas">
-                <?php include 'funciones/arrayMarcas.php'; ?> <!--Marcas con logo-->
+                <?php include 'funciones/arrayMarcas.php'; ?>
               </ul>
             </li>
             <li class="nav-item dropdown">
@@ -55,7 +54,7 @@
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link fw-bold" href="historia.php">Quiénes Somos</a>
+              <a class="nav-link fw-bold" href="about.php">Quiénes Somos</a>
             </li>
             <li class="nav-item">
               <a class="nav-link fw-bold" href="contacto.php">Contacto</a>
@@ -270,15 +269,15 @@
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="row d-flex w-100 text-center">
                       <div class="col-lg-6 col-md-12 col-sm-12 my-2 ">
-                        <button type="button" data-bs-toggle="modal" data-bs-target="#input_index_cotizacion1" class="flex-fill input-index" id="input_index">
-                          <i class="fa-solid fa-phone"></i>COTIZAR
-                        </button>
-                      </div>
-                      <div class="col-lg-6 col-md-12 col-sm-12 my-2 ">
                         <form action="detalle.php" method="GET">
                           <input type="hidden" id="id" name="id" value="<?php echo $vehiculos[0]['codigo']; ?>">
                           <input type="submit" class=" flex-fill input-index" name="index" value="Ver Detalles" id="input_index">
                         </form>
+                      </div>
+                      <div class="col-lg-6 col-md-12 col-sm-12 my-2 ">
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#input_index_cotizacion1" class="flex-fill input-index" id="input_index">
+                          <i class="fa-solid fa-phone"></i>COTIZAR
+                        </button>
                       </div>
                     </div>
                     <!--Modal Cotizar-->
@@ -391,15 +390,16 @@
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="row d-flex w-100 text-center">
                       <div class="col-lg-6 col-md-12 col-sm-12 my-2 ">
-                        <button type="button" data-bs-toggle="modal" data-bs-target="#input_index_cotizacion2" class="flex-fill input-index" id="input_index">
-                          <i class="fa-solid fa-phone"></i>COTIZAR
-                        </button>
-                      </div>
-                      <div class="col-lg-6 col-md-12 col-sm-12 my-2 ">
+
                         <form action="detalle.php" method="GET">
                           <input type="hidden" id="id" name="id" value="<?php echo $vehiculos[1]['codigo']; ?>">
                           <input type="submit" class=" flex-fill input-index" name="index" value="Ver Detalles" id="input_index">
                         </form>
+                      </div>
+                      <div class="col-lg-6 col-md-12 col-sm-12 my-2 ">
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#input_index_cotizacion2" class="flex-fill input-index" id="input_index">
+                          <i class="fa-solid fa-phone"></i>COTIZAR
+                        </button>
                       </div>
                     </div>
                     <!--Modal Cotizar-->
@@ -512,15 +512,16 @@
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="row d-flex w-100 text-center">
                       <div class="col-lg-6 col-md-12 col-sm-12 my-2 ">
-                        <button type="button" data-bs-toggle="modal" data-bs-target="#input_index_cotizacion3" class="flex-fill input-index" id="input_index">
-                          <i class="fa-solid fa-phone"></i>COTIZAR
-                        </button>
-                      </div>
-                      <div class="col-lg-6 col-md-12 col-sm-12 my-2 ">
+
                         <form action="detalle.php" method="GET">
                           <input type="hidden" id="id" name="id" value="<?php echo $vehiculos[2]['codigo']; ?>">
                           <input type="submit" class=" flex-fill input-index" name="index" value="Ver Detalles" id="input_index">
                         </form>
+                      </div>
+                      <div class="col-lg-6 col-md-12 col-sm-12 my-2 ">
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#input_index_cotizacion3" class="flex-fill input-index" id="input_index">
+                          <i class="fa-solid fa-phone"></i>COTIZAR
+                        </button>
                       </div>
                     </div>
                     <!--Modal Cotizar-->
@@ -576,12 +577,12 @@
           </div>
         </article>
       </div>
-       <!--Este div solo se debe ver en dispositivos moviles -->
-       <div class="d-block d-sm-none text-center">
-  <div class="container mt-3">
-    <a href="#"><img src="images/usado11.png" alt="" class="img-fluid"></a>
-  </div>
-</div>
+      <!--Este div solo se debe ver en dispositivos moviles -->
+      <div class="d-block d-sm-none text-center">
+        <div class="container mt-3">
+          <a href="#"><img src="images/usado11.png" alt="" class="img-fluid"></a>
+        </div>
+      </div>
       <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
         <div class="divGradient my-3">
           <div class="container py-2">
@@ -621,10 +622,10 @@
             </form>
           </div>
           <div class="container py-3 text-center">
-              <a href="#"><img src="images/u11.png" alt="" class="img-fluid"></a>
-              <div class="div_ventavehiculo">
-                <p>Obtén tu credito con aprobación <span class="text-warning">INMEDIATA</span> en nuestras oficinas</p>
-              </div>
+            <a href="#"><img src="images/u11.png" alt="" class="img-fluid"></a>
+            <div class="div_ventavehiculo">
+              <p>Obtén tu credito con aprobación <span class="text-warning">INMEDIATA</span> en nuestras oficinas</p>
+            </div>
           </div>
         </div>
       </div>

@@ -1,4 +1,10 @@
 /*Estilos default */
+:root {
+  --font-raleway: "Raleway", sans-serif;
+  --font-gill-sans: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  --font-roboto: font-family: "Roboto", sans-serif;
+  --font-Open-sans: font-family: "Open Sans", sans-serif;
+}
 li::marker {
   content: "";
   display: none;
@@ -13,94 +19,77 @@ main {
   flex-grow: 1;
 }
 /* .Class */
-.openSans {
-  font-family: "Open Sans", sans-serif;
-}
-
-.sec_footer {
-  margin-top: auto;
-  width: 100%;
+.content-about {
+  font-family: var(--font-raleway);
 }
 .close {
   border: none;
   background: transparent;
   font-size: 1rem; 
 }
+.contentDetalles {
+  font-family: var(--font-gill-sans)
+}
 .iconoDetalles {
   width: 20px;
   height: 20px;
   object-fit: contain;
 }
-.contentDetalles {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-}
-.vehiculo_data_precio {
-  border: solid 1px #e4e3e3;
-  padding: 5px;
-  margin: 5px;
-}
 .navbarHeader {
   background-color: #f8f8f9;
 }
-
 .navbar-nav {
   flex-grow: 1;
 }
-
+.openSans {
+  font-family: var(--font-Open-sans)
+}
 .search-container {
   position: relative;
   width: 100%;
 }
-
 .search-container .form-control {
   width: 100%;
   padding-left: 40px;
 }
-
 .search-container .fa-search {
   font-size: 18px;
   color: #007bff;
   pointer-events: none;
 }
 .search-container input[name="src"] {
-  width: 450px;
+  min-width: 450px;
 }
-.div_valores {
-  background-color: #e1e1e1;
-  border-width: 0px;
-  border-color: #333333;
+.sec_footer {
+  margin-top: auto;
+  width: 100%;
+}
+.valores-about {
+  background: linear-gradient(to bottom, #f7f3f3, #ffffff);
+  border-color: #ffffff;
   border-top-width: 3px;
   border-top-color: #005e7d;
   border-style: solid;
-  padding: 5px;
-  height: 250px;
+  height: 100%;
+  max-height: 250px;
 }
-.title_valores {
+.vehiculo_data_precio {
+  border: solid 1px #e4e3e3;
+  padding: 5px;
+  margin: 5px;
+}
+
+.titulo-valores {
   color: #005e7d;
-  font-size: 22px;
-  font-family: "Raleway", sans-serif;
+  font-family: var(--font-raleway)
 }
 .content_valores {
-  font-family: "Raleway", sans-serif;
+  font-family: var(--font-raleway);
 }
 .datos_sucursal p {
   font-family: "Lato", sans-serif !important;
 }
-.section_historia {
-  font-family: "Lato", sans-serif !important;
-  letter-spacing: 1px;
-}
-.title_historia_background {
-  font-family: "Raleway", sans-serif;
-  font-weight: bold;
-  color: #333333;
-}
-.title_vision_mision {
-  font-family: "Raleway", sans-serif;
-  font-weight: 400;
-  line-height: 1.26;
-  letter-spacing: 1px;
-}
+
 .fondo_historia {
   background-image: url(../images/_acf3741.jpg);
   background-position: 0 0;
@@ -112,13 +101,7 @@ main {
   border-color: black;
   height: 400px;
 }
-.photo_sucursal {
-  width: 100%;
-  margin: 3px;
-  border-style: solid;
-  border-width: thin;
-  border-color: black;
-}
+
 .areamap {
   background-image: url(../images/map.jpg);
   background-position: 0 0;
@@ -129,6 +112,7 @@ main {
   border-width: thin;
   border-color: black;
 }
+
 .circlemap {
   border: 10px solid #f6f5f0;
   border-radius: 50%;
@@ -139,6 +123,7 @@ main {
   position: relative;
   margin: 0 auto;
 }
+
 .tamaño_iconos {
   width: 25px;
   height: 25px;
@@ -153,12 +138,12 @@ main {
 }
 .span_iconos2 {
   font-size: 18px;
-  font-family: "Roboto", sans-serif;
+  font-family: var(--font-roboto);
   color: #ffff;
 }
 
 .lgtittle {
-  font-family: "Roboto", sans-serif;
+  font-family: var(--font-roboto);
   letter-spacing: 1.5px;
 }
 .li_option_list {
@@ -167,7 +152,7 @@ main {
   margin: 10px 0px 0px 0px;
   padding: 8px 6px 8px 6px !important;
   border-radius: 3px !important;
-  font-family: "Roboto", sans-serif;
+  font-family: var(--font-roboto);
   font-size: 18px;
   letter-spacing: 1px;
 }
@@ -191,6 +176,9 @@ main {
 }
 .upper {
   text-transform: uppercase;
+}
+.responsive-text {
+  font-size: 5vw;
 }
 .chat_container {
   margin: 0px;
@@ -304,7 +292,7 @@ main {
   background-color: #7297a3;
 }
 .container-precio p {
-  font-family: "Roboto", sans-serif;
+  font-family: var(--font-roboto);
   letter-spacing: 1px;
 }
 .spanPrecio {

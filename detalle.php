@@ -29,7 +29,7 @@
               <a class="nav-link fw-bold" href="#">Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link fw-bold" href="menu_busqueda.php?Estado=usados">Usados</a>
+              <a class="nav-link fw-bold" href="busqueda.php?Estado=usados">Usados</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link fw-bold dropdown-toggle" href="#" id="navbarDropdownMarcas" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -52,7 +52,7 @@
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link fw-bold" href="historia.php">Quiénes Somos</a>
+              <a class="nav-link fw-bold" href="about.php">Quiénes Somos</a>
             </li>
             <li class="nav-item">
               <a class="nav-link fw-bold" href="contacto.php">Contacto</a>
@@ -277,19 +277,19 @@
       </div>
     </div>
     <div class="chat_container">
-        <div class="chat_button2">
+      <div class="chat_button2">
         <div class="banner_container">
-            <span class="banner_contacto">Contactanos via Messeger</span>
+          <span class="banner_contacto">Contactanos via Messeger</span>
         </div>
-        </div>
-        <div class="chat_button">
+      </div>
+      <div class="chat_button">
         <div class="imagen_container">
-            <img src="images/icons/messenger-48.png" class="img-fluid" alt="">
+          <img src="images/icons/messenger-48.png" class="img-fluid" alt="">
         </div>
-        </div>
-        <div class="chat_content">
+      </div>
+      <div class="chat_content">
         <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FAutomotora-Cordillera-298602454143345&tabs=messages&width=340&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
-        </div>
+      </div>
     </div>
   </main>
   <footer class="bg-dark">
