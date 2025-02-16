@@ -74,7 +74,6 @@
     </nav>
   </header>
   <div class="container-fluid my-3">
-
     <div class="row">
       <div class="col-lg-9 col-md-12 col-sm-12">
         <article>
@@ -105,13 +104,6 @@
             </button>
           </div>
         </article>
-      </div>
-
-      <!--Este div solo se debe ver en dispositivos moviles -->
-      <div class="d-block d-sm-none">
-        <div class="container mt-3">
-          <a href="#"><img src="images/usado11.png" alt="" class="img-fluid"></a>
-        </div>
       </div>
 
       <div class="col-lg-3 col-md-12 col-sm-12">
@@ -196,7 +188,7 @@
                     <input type="submit" class="btn w-100 btnindex_search" name="srcInd" value="Buscar">
                   </div>
                 </div>
-                <div class="col-12 d-none d-sm-block">
+                <div class="col-12 d-none d-sm-block text-center">
                   <div class="my-2">
                     <a href="#"><img src="images/usado11.png" alt="" class="img-fluid"></a>
                   </div>
@@ -276,13 +268,13 @@
                     </div>
                   </div>
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="d-flex w-100">
-                      <div class="my-2 mx-2">
+                    <div class="row d-flex w-100 text-center">
+                      <div class="col-lg-6 col-md-12 col-sm-12 my-2 ">
                         <button type="button" data-bs-toggle="modal" data-bs-target="#input_index_cotizacion1" class="flex-fill input-index" id="input_index">
                           <i class="fa-solid fa-phone"></i>COTIZAR
                         </button>
                       </div>
-                      <div class="my-2 mx-2">
+                      <div class="col-lg-6 col-md-12 col-sm-12 my-2 ">
                         <form action="detalle.php" method="GET">
                           <input type="hidden" id="id" name="id" value="<?php echo $vehiculos[0]['codigo']; ?>">
                           <input type="submit" class=" flex-fill input-index" name="index" value="Ver Detalles" id="input_index">
@@ -397,13 +389,13 @@
                     </div>
                   </div>
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="d-flex w-100">
-                      <div class="my-2 mx-2">
+                    <div class="row d-flex w-100 text-center">
+                      <div class="col-lg-6 col-md-12 col-sm-12 my-2 ">
                         <button type="button" data-bs-toggle="modal" data-bs-target="#input_index_cotizacion2" class="flex-fill input-index" id="input_index">
                           <i class="fa-solid fa-phone"></i>COTIZAR
                         </button>
                       </div>
-                      <div class="my-2 mx-2">
+                      <div class="col-lg-6 col-md-12 col-sm-12 my-2 ">
                         <form action="detalle.php" method="GET">
                           <input type="hidden" id="id" name="id" value="<?php echo $vehiculos[1]['codigo']; ?>">
                           <input type="submit" class=" flex-fill input-index" name="index" value="Ver Detalles" id="input_index">
@@ -518,13 +510,13 @@
                     </div>
                   </div>
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="d-flex w-100">
-                      <div class="my-2 mx-2">
+                    <div class="row d-flex w-100 text-center">
+                      <div class="col-lg-6 col-md-12 col-sm-12 my-2 ">
                         <button type="button" data-bs-toggle="modal" data-bs-target="#input_index_cotizacion3" class="flex-fill input-index" id="input_index">
                           <i class="fa-solid fa-phone"></i>COTIZAR
                         </button>
                       </div>
-                      <div class="my-2 mx-2">
+                      <div class="col-lg-6 col-md-12 col-sm-12 my-2 ">
                         <form action="detalle.php" method="GET">
                           <input type="hidden" id="id" name="id" value="<?php echo $vehiculos[2]['codigo']; ?>">
                           <input type="submit" class=" flex-fill input-index" name="index" value="Ver Detalles" id="input_index">
@@ -584,7 +576,13 @@
           </div>
         </article>
       </div>
-      <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12 d-flex">
+       <!--Este div solo se debe ver en dispositivos moviles -->
+       <div class="d-block d-sm-none text-center">
+  <div class="container mt-3">
+    <a href="#"><img src="images/usado11.png" alt="" class="img-fluid"></a>
+  </div>
+</div>
+      <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
         <div class="divGradient my-3">
           <div class="container py-2">
             <form class="row g-3" action="funciones/guardarCotizacion.php" method="post">
@@ -622,15 +620,11 @@
               </div>
             </form>
           </div>
-          <div class="container py-3">
-            <div class="col-12">
+          <div class="container py-3 text-center">
               <a href="#"><img src="images/u11.png" alt="" class="img-fluid"></a>
-            </div>
-            <div class="text-center col-12">
               <div class="div_ventavehiculo">
-                <p class="text-venta-vehiculo upper">OBTÉN TU CREDITO AUTOMOTRIZ APROBACIÓN <span class="title_red">INMEDIATA</span> EN NUESTRAS OFICINAS</p>
+                <p>Obtén tu credito con aprobación <span class="text-warning">INMEDIATA</span> en nuestras oficinas</p>
               </div>
-            </div>
           </div>
         </div>
       </div>
@@ -697,7 +691,7 @@
     </div>
   </footer>
 
-  <section class="chat_container">
+  <div class="chat_container">
     <div class="chat_button2">
       <div class="banner_container">
         <span class="banner_contacto">Contactanos via Messeger</span>
@@ -710,7 +704,7 @@
     </div>
     <div class="chat_content">
     </div>
-  </section>
+  </div>
 
 
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>

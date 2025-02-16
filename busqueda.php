@@ -206,66 +206,66 @@
         </div>
       </div>
     </div>
-    <footer class="bg-dark sec_footer">
-      <div class="container footer_data">
-        <div class="row">
-          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-            <div class="py-3">
-              <h6>Contactanos</h6>
-              <div>
-                <p><i class="fa-solid fa-clock mx-2"></i> Lunes a Viernes de 10:00 a 18:30 hrs - Sábados de 10:00 a 14:30 hrs </p>
-              </div>
-              <div>
-                <p><i class="fa-solid fa-location-dot mx-2"></i> Las Tranqueras 1395, Vitacura, Región Metropolitana </p>
-              </div>
-              <div>
-                <p><i class="fa-solid fa-headset mx-2"></i>(2) - 3246 8670 </p>
-              </div>
-              <div>
-                <p><i class="fas fa-envelope mx-2"></i>contacto@autoscordillera.com </p>
-              </div>
+    <footer class="bg-dark">
+    <div class="container footer_data">
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+          <div class="py-3">
+            <h6>Contactanos</h6>
+            <div>
+              <p><i class="fa-solid fa-clock mx-2"></i> Lunes a Viernes de 10:00 a 18:30 hrs - Sábados de 10:00 a 14:30 hrs </p>
+            </div>
+            <div>
+              <p><i class="fa-solid fa-location-dot mx-2"></i> Las Tranqueras 1395, Vitacura, Región Metropolitana </p>
+            </div>
+            <div>
+              <p><i class="fa-solid fa-headset mx-2"></i>(2) - 3246 8670 </p>
+            </div>
+            <div>
+              <p><i class="fas fa-envelope mx-2"></i>contacto@autoscordillera.com </p>
             </div>
           </div>
-          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-            <div class="py-3">
-              <h6>Redes Sociales</h6>
-              <div>
-                <a class="text-white text-decoration-none" href="#"><i class="fab fa-facebook"></i> Facebook </a>
-              </div>
-              <div>
-                <a class="text-white text-decoration-none" href="#"><i class="fab fa-instagram"></i> Instagram </a>
-              </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+          <div class="py-3">
+            <h6>Redes Sociales</h6>
+            <div>
+              <a class="text-white text-decoration-none" href="#"><i class="fab fa-facebook"></i> Facebook </a>
+            </div>
+            <div>
+              <a class="text-white text-decoration-none" href="#"><i class="fab fa-instagram"></i> Instagram </a>
             </div>
           </div>
-          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-            <div class="py-3">
-              <h6>Enlaces Rapidos</h6>
-              <div>
-                <a class="text-white text-decoration-none" href="#">Catalogo de vehiculos</a>
-              </div>
-              <div>
-                <a class="text-white text-decoration-none" href="#">Financiamiento</a>
-              </div>
-              <div>
-                <a class="text-white text-decoration-none" href="#">Servicio Tecnico</a>
-              </div>
-              <div>
-                <a class="text-white text-decoration-none" href="#">Compra vehiculos usados</a>
-              </div>
-              <div>
-                <a class="text-white text-decoration-none" href="contacto.php">Contacto</a>
-              </div>
-              <div>
-                <a class="text-white text-decoration-none" href="historia.php">Quienes Somos</a>
-              </div>
-              <div>
-                <a class="text-white text-decoration-none" href="ingreso_administrativo.php">Ingreso Administrativo</a>
-              </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+          <div class="py-3">
+            <h6>Enlaces Rapidos</h6>
+            <div>
+              <a class="text-white text-decoration-none" href="#">Catalogo de vehiculos</a>
+            </div>
+            <div>
+              <a class="text-white text-decoration-none" href="#">Financiamiento</a>
+            </div>
+            <div>
+              <a class="text-white text-decoration-none" href="#">Servicio Tecnico</a>
+            </div>
+            <div>
+              <a class="text-white text-decoration-none" href="#">Compra vehiculos usados</a>
+            </div>
+            <div>
+              <a class="text-white text-decoration-none" href="contacto.php">Contacto</a>
+            </div>
+            <div>
+              <a class="text-white text-decoration-none" href="historia.php">Quienes Somos</a>
+            </div>
+            <div>
+              <a class="text-white text-decoration-none" href="ingreso_administrativo.php">Ingreso Administrativo</a>
             </div>
           </div>
         </div>
       </div>
-    </footer>
+    </div>
+  </footer>
   </div>
   <section class="chat_container">
     <div class="chat_button2">

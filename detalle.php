@@ -70,20 +70,19 @@
       </div>
     </nav>
   </header>
-  <div class="wrapper">
+  <main>
     <!--Traemos datos de id vehiculo desde varias secciones de la pagina los if definen esos botones-->
     <?php
     if (isset($_GET["id"])) {
       $id_vehiculo = $_GET["id"];
       require_once 'funciones/menuBusquedaDetalle.php';
-
     } else {
       echo "<script>window.location='index.php';</script>";
     }
     ?>
-    <div class="container my-3 content ">
+    <div class="container my-3">
       <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
           <div class='container'>
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
               <div class="carousel-inner">
@@ -112,7 +111,7 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
           <div class="row">
             <div class="col-12">
               <div class="container my-2">
@@ -123,11 +122,11 @@
               <div class="container my-2">
                 <div class='row'>
                   <div class='col-lg-6 col-md-6-col-sm-6 col-xs-12'>
-                    <div class="container-precio">
+                    <div class="container-precio my-1">
                       <p class="py-2">$ <?= $precio; ?></p>
                     </div>
                   </div>
-                  <div class='col-lg-6 col-md-6-col-sm-6 col-xs-12'>
+                  <div class='col-lg-6 col-md-6-col-sm-6 col-xs-12 text-center'>
                     <div>
                       <button type="button" class="btn btn-light btn-lg btn_cotizar_label" data-bs-toggle="modal" data-bs-target="#inputCotizacion"><span class='cotizar_label' value='cotizar'>COTIZAR</span></button>
                     </div>
@@ -135,99 +134,99 @@
                 </div>
                 <!--modal cotizar-->
                 <div class="modal fade" id="inputCotizacion" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                      <div class='modal-dialog modal-dialog-centered' role='document'>
-                        <div class='modal-content'>
-                          <div class='modal-header'>
-                            <h2 class='modal-title h3' id='exampleModalLongTitle'>COTIZA CON <span class='title_red'>NOSOTROS</span></h2>
-                            <button class='close' data-bs-dismiss="modal" aria-label='Close'>
-                              <i class="fa-solid fa-xmark"></i>
-                            </button>
-                          </div>
-                          <div class="modal-body">
-                            <div class="container">
-                              <form id="formGuardarCotizacion" action="funciones/guardarCotizacion.php" method="post">
-                                <div class="mb-3">
-                                  <p>COD: <?= $codigo . ' | Vehiculo ' . $marca . ' - ' . $modelo; ?></p>
-                                </div>
-                                <div class="mb-3">
-                                  <label for="nombres_cotizacion" class="form-label">Nombre</label>
-                                  <input type="text" class="form-control" id="nombres_cotizacion" name="nombres_cotizacion" placeholder="Nombre" required>
-                                </div>
-                                <div class="mb-3">
-                                  <label for="telefono_cotizacion" class="form-label">Telefono</label>
-                                  <input type="text" class="form-control" id="telefono_cotizacion" name="telefono_cotizacion" placeholder="Telefono" onkeypress="return soloNumeros(event)" maxlength="9" required>
-                                </div>
-                                <div class="mb-3">
-                                  <label for="mail_cotizacion" class="form-label">Correo</label>
-                                  <input type="email" class="form-control" id="mail_cotizacion" name="mail_cotizacion" placeholder="Email" required>
-                                </div>
-                                <div class="mb-3">
-                                  <label for="mensaje_cotizacion" class="form-label">Mensaje</label>
-                                  <textarea id="mensaje_cotizacion" class="form-control" placeholder="Mensaje" name="mensaje_cotizacion" rows="2"></textarea>
-                                </div>
-                                <div class="mb-3">
-                                  <div class="g-recaptcha" data-sitekey="6LdpddEqAAAAAF2HSEomw4_fCCzD2mH5z5qQySmo"></div>
-                                </div>
+                  <div class='modal-dialog modal-dialog-centered' role='document'>
+                    <div class='modal-content'>
+                      <div class='modal-header'>
+                        <h2 class='modal-title h3' id='exampleModalLongTitle'>COTIZA CON <span class='title_red'>NOSOTROS</span></h2>
+                        <button class='close' data-bs-dismiss="modal" aria-label='Close'>
+                          <i class="fa-solid fa-xmark"></i>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="container">
+                          <form id="formGuardarCotizacion" action="funciones/guardarCotizacion.php" method="post">
+                            <div class="mb-3">
+                              <p>COD: <?= $codigo . ' | Vehiculo ' . $marca . ' - ' . $modelo; ?></p>
                             </div>
-                          </div>
-                          <div class='modal-footer'>
-                            <input type="hidden" name="vehiculo_visto" value="<?= $marca . ' - ' . $modelo ?>">
-                            <button type='submit' name='btn_guardar' class=' input-index-modal ' id='input_index'><span>ENVIAR DATOS</span></button>
-                          </div>
-                          </form>
+                            <div class="mb-3">
+                              <label for="nombres_cotizacion" class="form-label">Nombre</label>
+                              <input type="text" class="form-control" id="nombres_cotizacion" name="nombres_cotizacion" placeholder="Nombre" required>
+                            </div>
+                            <div class="mb-3">
+                              <label for="telefono_cotizacion" class="form-label">Telefono</label>
+                              <input type="text" class="form-control" id="telefono_cotizacion" name="telefono_cotizacion" placeholder="Telefono" onkeypress="return soloNumeros(event)" maxlength="9" required>
+                            </div>
+                            <div class="mb-3">
+                              <label for="mail_cotizacion" class="form-label">Correo</label>
+                              <input type="email" class="form-control" id="mail_cotizacion" name="mail_cotizacion" placeholder="Email" required>
+                            </div>
+                            <div class="mb-3">
+                              <label for="mensaje_cotizacion" class="form-label">Mensaje</label>
+                              <textarea id="mensaje_cotizacion" class="form-control" placeholder="Mensaje" name="mensaje_cotizacion" rows="2"></textarea>
+                            </div>
+                            <div class="mb-3">
+                              <div class="g-recaptcha" data-sitekey="6LdpddEqAAAAAF2HSEomw4_fCCzD2mH5z5qQySmo"></div>
+                            </div>
                         </div>
                       </div>
+                      <div class='modal-footer'>
+                        <input type="hidden" name="vehiculo_visto" value="<?= $marca . ' - ' . $modelo ?>">
+                        <button type='submit' name='btn_guardar' class=' input-index-modal ' id='input_index'><span>ENVIAR DATOS</span></button>
+                      </div>
+                      </form>
                     </div>
+                  </div>
+                </div>
                 <!--Fin modal-->
               </div>
             </div>
             <div class="col-12 d-none d-lg-block">
               <div class="container my-2">
-              <div class="row">
-                <div class="col-12">
-                  <div>
-                    <h2 class="linear upper h4">ESPECIFICACIONES <span class="title_red">TECNICAS</span></h2>
+                <div class="row">
+                  <div class="col-12">
+                    <div>
+                      <h2 class="linear upper h4">ESPECIFICACIONES <span class="title_red">TECNICAS</span></h2>
+                    </div>
                   </div>
-                </div>
-                <div class="col-12">
-                  <div>
-                    <div class='container divGradient py-2 contentDetalles'>
-                      <div class='row'>
-                        <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>
-                          <p><i class="fas fa-car"></i><span> ESTADO: </span> <?= $estado ?> </p>
+                  <div class="col-12">
+                    <div>
+                      <div class='container divGradient py-2 contentDetalles'>
+                        <div class='row'>
+                          <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>
+                            <p><i class="fas fa-car"></i><span> ESTADO: </span> <?= $estado ?> </p>
+                          </div>
+                          <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>
+                            <p><i class="fas fa-palette"></i><span> COLOR: </span><?= $color; ?></p>
+                          </div>
                         </div>
-                        <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>
-                          <p><i class="fas fa-palette"></i><span> COLOR: </span><?= $color; ?></p>
+                        <div class='row'>
+                          <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>
+                            <p><i class="fas fa-gas-pump"></i><span> COMBUSTIBLE: </span> <?= $combustible; ?></p>
+                          </div>
+                          <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>
+                            <p><i class="fa-solid fa-gears"></i><span> TRANSMISIÓN: </span> <?= $transmision ?></p>
+                          </div>
                         </div>
-                      </div>
-                      <div class='row'>
-                        <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>
-                          <p><i class="fas fa-gas-pump"></i><span> COMBUSTIBLE: </span> <?= $combustible; ?></p>
+                        <div class='row'>
+                          <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>
+                            <p><i class="fa-solid fa-calendar"></i><span> AÑO: </span> <?= $ano; ?></p>
+                          </div>
+                          <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>
+                            <p><i class="fas fa-tachometer-alt"></i><span> KILOMETRAJE: </span> <?= $kilometraje ?> KM</p>
+                          </div>
                         </div>
-                        <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>
-                          <p><i class="fa-solid fa-gears"></i><span> TRANSMISIÓN: </span> <?= $transmision ?></p>
-                        </div>
-                      </div>
-                      <div class='row'>
-                        <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>
-                          <p><i class="fa-solid fa-calendar"></i><span> AÑO: </span> <?= $ano; ?></p>
-                        </div>
-                        <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>
-                          <p><i class="fas fa-tachometer-alt"></i><span> KILOMETRAJE: </span> <?= $kilometraje ?> KM</p>
-                        </div>
-                      </div>
-                      <div class='row'>
-                        <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>
-                          <p><i class="fa-solid fa-screwdriver-wrench"></i><span> CILINDRADA: </span> <?= $cilindrada ?> L</p>
-                        </div>
-                        <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>
-                          <p><i class="fa-solid fa-location-dot"></i> <a class="text-decoration-none" target='_blank' href='contacto.php?ub=$setubicacion'> <span> UBICACIÓN: </span> <?= $ubicacion ?></a> </p>
+                        <div class='row'>
+                          <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>
+                            <p><i class="fa-solid fa-screwdriver-wrench"></i><span> CILINDRADA: </span> <?= $cilindrada ?> L</p>
+                          </div>
+                          <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>
+                            <p><i class="fa-solid fa-location-dot"></i> <a class="text-decoration-none" target='_blank' href='contacto.php?ub=$setubicacion'> <span> UBICACIÓN: </span> <?= $ubicacion ?></a> </p>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
               </div>
             </div>
           </div>
@@ -277,27 +276,28 @@
         </div>
       </div>
     </div>
-    <section class="chat_container">
-    <div class="chat_button2">
-      <div class="banner_container">
-        <span class="banner_contacto">Contactanos via Messeger</span>
-      </div>
+    <div class="chat_container">
+        <div class="chat_button2">
+        <div class="banner_container">
+            <span class="banner_contacto">Contactanos via Messeger</span>
+        </div>
+        </div>
+        <div class="chat_button">
+        <div class="imagen_container">
+            <img src="images/icons/messenger-48.png" class="img-fluid" alt="">
+        </div>
+        </div>
+        <div class="chat_content">
+        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FAutomotora-Cordillera-298602454143345&tabs=messages&width=340&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+        </div>
     </div>
-    <div class="chat_button">
-      <div class="imagen_container">
-        <img src="images/icons/messenger-48.png" class="img-fluid" alt="">
-      </div>
-    </div>
-    <div class="chat_content">
-      <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FAutomotora-Cordillera-298602454143345&tabs=messages&width=340&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
-    </div>
-  </section>
-  <footer class="bg-dark sec_footer">
+  </main>
+  <footer class="bg-dark">
     <div class="container footer_data">
       <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
           <div class="py-3">
-            <h3>Contactanos</h3>
+            <h6>Contactanos</h6>
             <div>
               <p><i class="fa-solid fa-clock mx-2"></i> Lunes a Viernes de 10:00 a 18:30 hrs - Sábados de 10:00 a 14:30 hrs </p>
             </div>
@@ -314,7 +314,7 @@
         </div>
         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
           <div class="py-3">
-            <h3>Redes Sociales</h3>
+            <h6>Redes Sociales</h6>
             <div>
               <a class="text-white text-decoration-none" href="#"><i class="fab fa-facebook"></i> Facebook </a>
             </div>
@@ -325,7 +325,7 @@
         </div>
         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
           <div class="py-3">
-            <h3>Enlaces Rapidos</h3>
+            <h6>Enlaces Rapidos</h6>
             <div>
               <a class="text-white text-decoration-none" href="#">Catalogo de vehiculos</a>
             </div>
@@ -352,9 +352,6 @@
       </div>
     </div>
   </footer>
-  </div>
-
-
 
   <!-- Controls -->
   <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
