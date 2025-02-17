@@ -9,6 +9,7 @@
   <link rel="shortcut icon" href="images/icons/favicon.ico" />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Lato&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/nouislider.min.css">
   <!--googleReCaptcha-->
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <title>Automotora Cordillera </title>
@@ -106,13 +107,13 @@
       </div>
 
       <div class="col-lg-3 col-md-12 col-sm-12">
-        <div class="divGradient">
+        <div class="divGradient contentDetalles">
           <div class="container-fluid">
             <form action="busqueda.php" method="GET">
               <div class="row">
                 <div class="col-12">
                   <div class="mb-3 text-center py-3">
-                    <h5>BUSCADOR <span class="title_red">AVANZADO</span></h5>
+                    <h5 class="fw-bold">BUSCADOR <span class="title_red">AVANZADO</span></h5>
                   </div>
                 </div>
                 <div class="col-12">
@@ -133,7 +134,7 @@
                 </div>
                 <div class="col-12">
                   <div class="mb-3">
-                    <label for="categoria" class="form-label">Tipo:</label>
+                    <label for="categoria" class="form-label">Categoria:</label>
                     <select class="form-select" name="cat" id="categoria">
                       <option value="0">Todos los disponibles</option>
                       <?php include 'funciones/selectCategorias.php'; ?>
@@ -150,34 +151,41 @@
                   </div>
                 </div>
                 <div class="col-12">
-                  <div class="mb-3">
-                    <label for="modelo" class="form-label">Modelo:</label>
-                    <div id="modelo" name="modelo"></div>
+                <div class="mb-3">
+                    <label for="minYear" class="form-label">Año:</label>
+                    <div class="container">
+                      <div id="yrRange"></div>
+                      <div class="values">
+                        <div class="row">
+                          <div class="col-6">
+                            <div class="value-box text-start p-1" id="minYear"></div>
+                            <input type="hidden" name="yrd" id="minYearInput">
+                          </div>
+                          <div class="col-6">
+                            <div class="value-box text-end p-1" id="maxYear"></div>
+                            <input type="hidden" name="yrh" id="maxYearInput">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="mb-3">
-                    <label for="anoDeste" class="form-label">Año:</label>
-                    <div class="row">
-                      <div class="col-6">
-                        <select class="form-select" id="añoD" name="yrd">
-                          <option value="0" selected>Desde</option>
-                          <?php
-                          $currentYear = date("Y");
-                          for ($i = 2005; $i <= $currentYear; $i++) {
-                            echo "<option value='" . $i . "'>" . $i . "</option>";
-                          } ?>
-                        </select>
-                      </div>
-                      <div class="col-6">
-                        <select class="form-select" id="anoHasta" name="yrh">
-                          <option value="0" selected>Hasta</option>
-                          <?php
-                          $currentYear = date("Y");
-                          for ($i = $currentYear; $i >= 2005; $i--) {
-                            echo "<option value='" . $i . "'>" . $i . "</option>";
-                          } ?>
-                        </select>
+                    <label for="minPrecio" class="form-label">Precio:</label>
+                    <div class="container">
+                      <div id="precio"></div>
+                      <div class="values">
+                        <div class="row">
+                          <div class="col-6">
+                            <div class="value-box text-start p-1" id="minPrecio">$0</div>
+                            <input type="hidden" name="mnp" id="minPrecioInput">
+                          </div>
+                          <div class="col-6">
+                            <div class="value-box text-end p-1" id="maxPrecio">$50.000.000</div>
+                            <input type="hidden" name="mxp" id="maxPrecioInput">
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -584,11 +592,11 @@
         </div>
       </div>
       <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
-        <div class="divGradient my-3">
+        <div class="divGradient my-3 contentDetalles">
           <div class="container py-2">
             <form class="row g-3" action="funciones/guardarCotizacion.php" method="post">
               <div class="col-12 text-center">
-                <h5><span class="title_red">COTIZA</span> CON NOSOTROS</h5>
+                <h5 class="fw-bold"><span class="title_red">COTIZA</span> CON NOSOTROS</h5>
               </div>
               <div class="col-12">
                 <label for="nombres_cotizacion" class="visually-hidden">Nombres</label>
@@ -707,7 +715,7 @@
     </div>
   </div>
 
-
+  <script src="js/nouislider.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script type="text/javascript" src="js/scripts.js"></script>

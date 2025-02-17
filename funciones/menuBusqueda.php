@@ -9,7 +9,7 @@ class menuBusqueda
     $this->cnn = $cnn;
   }
 
-  public function busquedaAvanzada($radioSelect, $categoriaSelect, $marcaSelect, $modeloSelect, $anoDesdeSelect, $anoHastaSelect)
+  public function busquedaAvanzada($radioSelect, $categoriaSelect, $marcaSelect, $anoDesdeSelect, $anoHastaSelect , $precioDesdeSelect, $precioHastaSelect)
   {
     try {
       if (!$this->cnn) {
@@ -78,16 +78,17 @@ class menuBusqueda
         $types .= 'i';
         $params[] = $marcaSelect;
       }
-      if ($modeloSelect != 0) {
-        $sql .= " AND v.modelo = ?";
-        $types .= 'i';
-        $params[] = $modeloSelect;
-      }
       if ($anoDesdeSelect != 0 && $anoHastaSelect != 0) {
         $sql .= " AND v.ano BETWEEN ? AND ?";
         $types .= 'ii';
         $params[] = $anoDesdeSelect;
         $params[] = $anoHastaSelect;
+      }
+      if ($precioDesdeSelect != 0 && $precioHastaSelect != 0) {
+        $sql .= " AND v.precio BETWEEN ? AND ?";
+        $types .= 'ii';
+        $params[] = $precioDesdeSelect;
+        $params[] = $precioHastaSelect;
       }
 
       $sql .= " ORDER BY v.precio ASC LIMIT ?,? ";
@@ -152,23 +153,24 @@ class menuBusqueda
               <nav aria-label='Page navigation'>
                 <ul class='pagination justify-content-center'>
                   <li class='page-item $condicionalDisable1'>
-                    <a class='page-link ' id='paginacion_links' href='busqueda.php?r=$radioSelect&cat=$categoriaSelect&m=$marcaSelect&md=$modeloSelect&yrd=$anoDesdeSelect&yrh=$anoHastaSelect&srcInd=Buscar&p=" . ($pagina - 1) . "'>&laquo; Anterior</a>
+                    <a class='page-link ' id='paginacion_links' href='busqueda.php?r=$radioSelect&cat=$categoriaSelect&m=$marcaSelect&yrd=$anoDesdeSelect&yrh=$anoHastaSelect&mnp=$precioDesdeSelect&mxp=$precioHastaSelect&srcInd=Buscar&p=" . ($pagina - 1) . "'>&laquo; Anterior</a>
                   </li>
                   <li class='page-item'>
-                    <a class='page-link ' id='paginacion_links' href='busqueda.php?r=$radioSelect&cat=$categoriaSelect&m=$marcaSelect&md=$modeloSelect&yrd=$anoDesdeSelect&yrh=$anoHastaSelect&srcInd=Buscar&p=1' aria-label='Goto page 1'>1</a>
+                    <a class='page-link ' id='paginacion_links' href='busqueda.php?r=$radioSelect&cat=$categoriaSelect&m=$marcaSelect&yrd=$anoDesdeSelect&yrh=$anoHastaSelect&mnp=$precioDesdeSelect&mxp=$precioHastaSelect&srcInd=Buscar&p=1' aria-label='Goto page 1'>1</a>
                   </li>";
 
                   for ($i = 2; $i <= $total_paginas; $i++) {
-                    echo "<li class='page-item'><a class='page-link' id='paginacion_links' href='busqueda.php?r=$radioSelect&cat=$categoriaSelect&m=$marcaSelect&md=$modeloSelect&yrd=$anoDesdeSelect&yrh=$anoHastaSelect&srcInd=Buscar&p=" . $i . "' aria-label='Goto page $i'>$i</a></li>";
+                    echo "<li class='page-item'><a class='page-link' id='paginacion_links' href='busqueda.php?r=$radioSelect&cat=$categoriaSelect&m=$marcaSelect&yrd=$anoDesdeSelect&yrh=$anoHastaSelect&srcInd=Buscar&p=" . $i . "' aria-label='Goto page $i'>$i</a></li>";
                   }
             echo "<li class='page-item $condicionalDisable2'>
-                    <a class='page-link ' id='paginacion_links' href='busqueda.php?r=$radioSelect&cat=$categoriaSelect&m=$marcaSelect&md=$modeloSelect&yrd=$anoDesdeSelect&yrh=$anoHastaSelect&srcInd=Buscar&p=" . ($pagina + 1) . "' >Siguiente &raquo;</a>
+                    <a class='page-link ' id='paginacion_links' href='busqueda.php?r=$radioSelect&cat=$categoriaSelect&m=$marcaSelect&yrd=$anoDesdeSelect&yrh=$anoHastaSelect&mnp=$precioDesdeSelect&mxp=$precioHastaSelect&srcInd=Buscar&p=" . ($pagina + 1) . "' >Siguiente &raquo;</a>
                   </li>";
            echo "</ul></nav>
               </section>";
     } catch (Exception $e) {
       echo "<h1>Error al tomar datos de la base de datos: " . $e->getMessage() . "</h1>";
       return null;
+      //quito modelo??? revisa otras paginas de ventas
     }
   }
 

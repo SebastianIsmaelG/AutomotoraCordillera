@@ -41,6 +41,9 @@ main {
 .navbar-nav {
   flex-grow: 1;
 }
+.noUi-connect{
+  background: #7297a3 !important;
+}
 .openSans {
   font-family: var(--font-Open-sans)
 }

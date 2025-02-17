@@ -160,7 +160,8 @@
 
 
           //Toma la variable desde el buscador avanzado en index
-          if (isset($_GET["srcInd"]) && isset($_GET["r"]) && isset($_GET["cat"]) && isset($_GET["m"]) && isset($_GET["md"]) && isset($_GET["yrd"]) && isset($_GET["yrh"]) && $_GET["srcInd"] == "Buscar") {
+          if (isset($_GET["srcInd"]) && isset($_GET["r"]) && isset($_GET["cat"]) && isset($_GET["m"]) && isset($_GET["yrd"])
+              && isset($_GET["yrh"]) && isset($_GET["mnp"]) && isset($_GET["mxp"]) && $_GET["srcInd"] == "Buscar") {
 
             //valores sanitizados
             $radioSelect = isset($_GET["r"]) ? htmlspecialchars(strip_tags($_GET["r"])) : null;
@@ -171,16 +172,17 @@
 
             $categoriaSelect = filter_var($_GET["cat"], FILTER_VALIDATE_INT);
             $marcaSelect = filter_var($_GET["m"], FILTER_VALIDATE_INT);
-            $modeloSelect = isset($_GET["r"]) ? htmlspecialchars(strip_tags($_GET["md"])) : null;
             $anoDesdeSelect = filter_var($_GET["yrd"], FILTER_VALIDATE_INT);
             $anoHastaSelect = filter_var($_GET["yrh"], FILTER_VALIDATE_INT);
+            $precioDesdeSelect = filter_var($_GET["mnp"], FILTER_VALIDATE_INT);
+            $precioHastaSelect = filter_var($_GET["mxp"],FILTER_VALIDATE_INT);
 
-            if ($categoriaSelect === false || $marcaSelect === false || $modeloSelect === null || $anoDesdeSelect === false || $anoHastaSelect === false) {
+            if ($categoriaSelect === false || $marcaSelect === false || $anoDesdeSelect === false || $anoHastaSelect === false || $precioDesdeSelect === false || $precioHastaSelect === false) {
               return;
             }
 
             //Clase desde menuBusqueda.php
-            $rsIndex->busquedaAvanzada($radioSelect, $categoriaSelect, $marcaSelect, $modeloSelect, $anoDesdeSelect, $anoHastaSelect);
+            $rsIndex->busquedaAvanzada($radioSelect, $categoriaSelect, $marcaSelect, $anoDesdeSelect, $anoHastaSelect, $precioDesdeSelect, $precioHastaSelect);
           }
 
           //Toma la variable desde el buscador avanzado en index
