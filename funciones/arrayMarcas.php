@@ -12,7 +12,7 @@ try {
     $rs = mysqli_stmt_get_result($stmt);
 
     while ($row = mysqli_fetch_assoc($rs)) {
-        echo "<a class='dropdown-item' href='busqueda.php?codigoM=" . htmlspecialchars($row['codigo']) . "'>
+        echo "<a class='dropdown-item' href='busqueda.php?m=" . htmlspecialchars($row['codigo']) . "&nav=Buscar'>
                 <img src='images/marcas/" . htmlspecialchars($row['logo']) . "' width='30px' height='30px'>
                  " . htmlspecialchars($row['marca']) . "
               </a>";

@@ -18,13 +18,13 @@ class menuBusqueda
 
       //Paginacion del Catalogo
       $paginacion  = 5;
-      if (isset($_GET['pagina'])) {
-        $pagina = $_GET['pagina'];
-      }else {
+      if (isset($_GET['p'])) {
+        $pagina = $_GET['p'];
+      } else {
         $pagina = 1;
       }
 
-      $empiezaPaginacion = ($pagina-1) *  $paginacion;
+      $empiezaPaginacion = ($pagina - 1) *  $paginacion;
 
 
 
@@ -115,26 +115,68 @@ class menuBusqueda
       $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
       mysqli_stmt_close($stmt);
       //var_dump($rows);
-      $carrousell =0;
-      $modalwindow =0;
+      $carrousell = 0;
+      $modalwindow = 0;
 
       if (empty($rows)) {
 
         echo "<div class='container'><p>Se han encontrado 0 resultados</p></div>";
-        
       } else {
 
         echo "<p>Se han encontrado " . $rows[0]['TD'] . " resultados</p>";
         echo "<div class='row'>";
-        
+
         foreach ($rows as $row) {
           include 'menuBusquedaCatalogo.php';
           $carrousell++;
           $modalwindow++;
-          
         }
         echo "</div>";
-        
+      }
+
+      //Se crea nav de paginacion
+      $total_paginas = ceil($rows[0]['TD'] / $paginacion); //total de autos
+      //Condicional de disable para la paginacion
+      if ($pagina == 1) {
+        $condicionalDisable1 = "disabled";
+      } else {
+        $condicionalDisable1 = "";
+      }
+      if ($pagina == $total_paginas) {
+        $condicionalDisable2 = "disabled";
+      } else {
+        $condicionalDisable2 = "";
+      }
+
+      echo "<section class='container ' style='padding-top:10px;'>
+              <nav aria-label='Page navigation'>
+                <ul class='pagination justify-content-center'>
+                  <li class='page-item $condicionalDisable1'>
+                    <a class='page-link ' id='paginacion_links' href='busqueda.php?r=$radioSelect&cat=$categoriaSelect&m=$marcaSelect&md=$modeloSelect&yrd=$anoDesdeSelect&yrh=$anoHastaSelect&srcInd=Buscar&p=" . ($pagina - 1) . "'>&laquo; Anterior</a>
+                  </li>
+                  <li class='page-item'>
+                    <a class='page-link ' id='paginacion_links' href='busqueda.php?r=$radioSelect&cat=$categoriaSelect&m=$marcaSelect&md=$modeloSelect&yrd=$anoDesdeSelect&yrh=$anoHastaSelect&srcInd=Buscar&p=1' aria-label='Goto page 1'>1</a>
+                  </li>";
+
+                  for ($i = 2; $i <= $total_paginas; $i++) {
+                    echo "<li class='page-item'><a class='page-link' id='paginacion_links' href='busqueda.php?r=$radioSelect&cat=$categoriaSelect&m=$marcaSelect&md=$modeloSelect&yrd=$anoDesdeSelect&yrh=$anoHastaSelect&srcInd=Buscar&p=" . $i . "' aria-label='Goto page $i'>$i</a></li>";
+                  }
+            echo "<li class='page-item $condicionalDisable2'>
+                    <a class='page-link ' id='paginacion_links' href='busqueda.php?r=$radioSelect&cat=$categoriaSelect&m=$marcaSelect&md=$modeloSelect&yrd=$anoDesdeSelect&yrh=$anoHastaSelect&srcInd=Buscar&p=" . ($pagina + 1) . "' >Siguiente &raquo;</a>
+                  </li>";
+           echo "</ul></nav>
+              </section>";
+    } catch (Exception $e) {
+      echo "<h1>Error al tomar datos de la base de datos: " . $e->getMessage() . "</h1>";
+      return null;
+    }
+  }
+
+  public function busquedaMarcas($marcaSelect)
+  {
+    try {
+      if (!$this->cnn) {
+        throw new Exception("Conexion Fallida: " . mysqli_connect_error());
       }
     } catch (Exception $e) {
       echo "<h1>Error al tomar datos de la base de datos: " . $e->getMessage() . "</h1>";

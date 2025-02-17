@@ -17,11 +17,11 @@
 
 <body>
   <?php
+  header("Permissions-Policy: geolocation=(), microphone=()");
   spl_autoload_register(function ($funcion) {
     include 'funciones/' . $funcion . '.php';
   });
   ?>
-  <!--FACEBOOK LINK <div id="fb-root"></div>-->
   <header>
     <nav class="navbar navbarHeader navbar-expand-lg ">
       <div class="container-fluid">
@@ -61,7 +61,7 @@
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link fw-bold" href="historia.php">Quiénes Somos</a>
+              <a class="nav-link fw-bold" href="about.php">Quiénes Somos</a>
             </li>
             <li class="nav-item">
               <a class="nav-link fw-bold" href="contacto.php">Contacto</a>
@@ -79,12 +79,12 @@
       </div>
     </nav>
   </header>
-  <div class="container-fluid wrapper">
-    <div class="content container">
+  <main>
+    <div class="container">
       <div class="row">
         <div class="col-12">
           <div class="text-center py-2">
-            <h1>BUSCADOR <span class="title_red">AVANZADO</span></h1>
+            <h1 class="h2">BUSCADOR <span class="title_red">AVANZADO</span></h1>
             <hr>
           </div>
           <form action="busqueda.php" method="GET">
@@ -160,7 +160,7 @@
 
 
           //Toma la variable desde el buscador avanzado en index
-          if (isset($_GET["srcInd"]) && isset($_GET["r"]) && isset($_GET["cat"]) && isset($_GET["m"]) && isset($_GET["md"]) && isset($_GET["yrd"]) && isset($_GET["yrh"])) {
+          if (isset($_GET["srcInd"]) && isset($_GET["r"]) && isset($_GET["cat"]) && isset($_GET["m"]) && isset($_GET["md"]) && isset($_GET["yrd"]) && isset($_GET["yrh"]) && $_GET["srcInd"] == "Buscar") {
 
             //valores sanitizados
             $radioSelect = isset($_GET["r"]) ? htmlspecialchars(strip_tags($_GET["r"])) : null;
@@ -179,10 +179,22 @@
               return;
             }
 
-            //Clase busquedaAvanzada desde menuBusqueda.php
+            //Clase desde menuBusqueda.php
             $rsIndex->busquedaAvanzada($radioSelect, $categoriaSelect, $marcaSelect, $modeloSelect, $anoDesdeSelect, $anoHastaSelect);
           }
 
+          //Toma la variable desde el buscador avanzado en index
+          if (isset($_GET["m"]) && isset($_GET["nav"]) && $_GET["nav"] == "Buscar") {
+
+            //valores sanitizados
+            $marcaSelect = filter_var($_GET["m"], FILTER_VALIDATE_INT);
+            if ($marcaSelect === false) {
+              return;
+            }
+
+            //Clase desde menuBusqueda.php
+            $rsIndex-> busquedaMarcas($marcaSelect);
+          }
 
 
           // //Toma la variable de la seccion del navbar marca y la almacena-->
@@ -206,7 +218,8 @@
         </div>
       </div>
     </div>
-    <footer class="bg-dark">
+  </main>
+  <footer class="bg-dark">
     <div class="container footer_data">
       <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -266,7 +279,6 @@
       </div>
     </div>
   </footer>
-  </div>
   <section class="chat_container">
     <div class="chat_button2">
       <div class="banner_container">
@@ -279,7 +291,7 @@
       </div>
     </div>
     <div class="chat_content">
-      <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FAutomotora-Cordillera-298602454143345&tabs=messages&width=340&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+
     </div>
   </section>
 
