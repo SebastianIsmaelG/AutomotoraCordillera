@@ -10,6 +10,7 @@
   <link rel="shortcut icon" href="images/icons/favicon.ico" />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Lato&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/nouislider.min.css">
   <!--googleReCaptcha-->
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <title>Busqueda Avanzada </title>
@@ -89,61 +90,78 @@
           </div>
           <form action="busqueda.php" method="GET">
             <div class="row">
-              <div class="col-lg-4 col-md-4 col-sm-6 mb-3">
-                <label for="select_estado" class="visually-hidden">Estado</label>
-                <select class="form-control" id="select_estado">
-                  <option selected value="0">Estado</option>
-                  <option value="0">Todos</option>
-                  <option value="Nuevo">Nuevos</option>
-                  <option value="Usado">Usados</option>
-                </select>
+              <div class="col-lg-4 col-md-12">
+                <div class="mb-3">
+                  <label for="estado" class="form-label">Estado:</label>  
+                  <select name="r" class="form-select" id="estado">
+                    <option value="Todos">Todos</option>
+                    <option value="Nuevos">Nuevos</option>
+                    <option value="Usados">Usados</option>
+                  </select>
+                </div>
               </div>
-              <div class="col-lg-4 col-md-4 col-sm-6 mb-3">
-                <label for="select_categoria" class="visually-hidden">Categoría</label>
-                <select class="form-control" name="sel_tipo" id="select_categoria">
-                  <option selected value="0">Categoría</option>
-                  <option value="0">Todos los disponibles</option>
-                  <?php require_once 'funciones/selectCategorias.php'; ?>
-                </select>
+              <div class="col-lg-4 col-md-12">
+                <div class="mb-3">
+                  <label for="categoria" class="form-label">Categoria:</label>
+                  <select class="form-select" name="cat" id="categoria">
+                    <option value="0">Todos los disponibles</option>
+                    <?php include 'funciones/selectCategorias.php'; ?>
+                  </select>
+                </div>
               </div>
-              <div class="col-lg-4 col-md-4 col-sm-6 mb-3">
-                <label for="marca" class="visually-hidden">Marca</label>
-                <select class="form-control" id="marca" name="marca">
-                  <option selected value="0">Marca</option>
-                  <option value="0">Todas las disponibles</option>
-                  <?php require_once 'funciones/selectMarcasIndex.php'; ?>
-                </select>
+              <div class="col-lg-4 col-md-12">
+                <div class="mb-3">
+                  <label for="marca" class="form-label">Marca:</label>
+                  <select class="form-select" id="marca" name="m">
+                    <option value="0">Todos los disponibles</option>
+                    <?php include 'funciones/selectMarcasIndex.php'; ?>
+                  </select>
+                </div>
               </div>
-              <div class="col-lg-4 col-md-4 col-sm-6 mb-3">
-                <div id="modelo"></div>
+              <div class="col-lg-4 col-md-12">
+                <div class="mb-3">
+                  <label for="minYear" class="form-label">Año:</label>
+                  <div class="container">
+                    <div id="yrRange"></div>
+                    <div class="values">
+                      <div class="row">
+                        <div class="col-6">
+                          <div class="value-box text-start p-1" id="minYear"></div>
+                          <input type="hidden" name="yrd" id="minYearInput">
+                        </div>
+                        <div class="col-6">
+                          <div class="value-box text-end p-1" id="maxYear"></div>
+                          <input type="hidden" name="yrh" id="maxYearInput">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="col-lg-4 col-md-4 col-sm-6 mb-3">
-                <label for="select_año_d" class="visually-hidden">Año Desde</label>
-                <select class="form-select" id="select_año_d" name="sel_año_d">
-                  <option value="0" selected>Desde</option>
-                  <?php
-                  $currentYear = date("Y");
-                  for ($i = 2005; $i <= $currentYear; $i++) {
-                    echo "<option value='" . $i . "'>" . $i . "</option>";
-                  }
-                  ?>
-                </select>
+              <div class="col-lg-4 col-md-12">
+                <div class="mb-3">
+                  <label for="minPrecio" class="form-label">Precio:</label>
+                  <div class="container">
+                    <div id="precio"></div>
+                    <div class="values">
+                      <div class="row">
+                        <div class="col-6">
+                          <div class="value-box text-start p-1" id="minPrecio">$0</div>
+                          <input type="hidden" name="mnp" id="minPrecioInput">
+                        </div>
+                        <div class="col-6">
+                          <div class="value-box text-end p-1" id="maxPrecio">$50.000.000</div>
+                          <input type="hidden" name="mxp" id="maxPrecioInput">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="col-lg-4 col-md-4 col-sm-6 mb-3">
-                <label for="select_año_h" class="visually-hidden">Año Hasta</label>
-                <select class="form-select" id="select_año_h" name="sel_año_h">
-                  <option value="0" selected>Hasta</option>
-                  <?php
-                  for ($i = $currentYear; $i >= 2005; $i--) {
-                    echo "<option value='" . $i . "'>" . $i . "</option>";
-                  }
-                  ?>
-                </select>
+              <div class="col-lg-4 col-md-12">
+              <div class="mb-3 py-4">
+                 <input type="submit" class="btn w-100 btnindex_search" name="srcInd" value="Buscar">
               </div>
-            </div>
-            <div class="row">
-              <div class="col-12 d-flex justify-content-end">
-                <input type="submit" class="btn btn-light input_busqueda w-auto" name="btnindex_search" value="Buscar">
               </div>
             </div>
           </form>
@@ -160,8 +178,10 @@
 
 
           //Toma la variable desde el buscador avanzado en index
-          if (isset($_GET["srcInd"]) && isset($_GET["r"]) && isset($_GET["cat"]) && isset($_GET["m"]) && isset($_GET["yrd"])
-              && isset($_GET["yrh"]) && isset($_GET["mnp"]) && isset($_GET["mxp"]) && $_GET["srcInd"] == "Buscar") {
+          if (
+            isset($_GET["srcInd"]) && isset($_GET["r"]) && isset($_GET["cat"]) && isset($_GET["m"]) && isset($_GET["yrd"])
+            && isset($_GET["yrh"]) && isset($_GET["mnp"]) && isset($_GET["mxp"]) && $_GET["srcInd"] == "Buscar"
+          ) {
 
             //valores sanitizados
             $radioSelect = isset($_GET["r"]) ? htmlspecialchars(strip_tags($_GET["r"])) : null;
@@ -175,7 +195,7 @@
             $anoDesdeSelect = filter_var($_GET["yrd"], FILTER_VALIDATE_INT);
             $anoHastaSelect = filter_var($_GET["yrh"], FILTER_VALIDATE_INT);
             $precioDesdeSelect = filter_var($_GET["mnp"], FILTER_VALIDATE_INT);
-            $precioHastaSelect = filter_var($_GET["mxp"],FILTER_VALIDATE_INT);
+            $precioHastaSelect = filter_var($_GET["mxp"], FILTER_VALIDATE_INT);
 
             if ($categoriaSelect === false || $marcaSelect === false || $anoDesdeSelect === false || $anoHastaSelect === false || $precioDesdeSelect === false || $precioHastaSelect === false) {
               return;
@@ -195,7 +215,7 @@
             }
 
             //Clase desde menuBusqueda.php
-            $rsIndex-> busquedaMarcas($marcaSelect);
+            $rsIndex->busquedaMarcas($marcaSelect);
           }
 
 
@@ -296,7 +316,7 @@
 
     </div>
   </section>
-
+  <script src="js/nouislider.min.js"></script>       
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script type="text/javascript" src="js/scripts.js"></script>

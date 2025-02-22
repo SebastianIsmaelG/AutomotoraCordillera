@@ -123,7 +123,7 @@ class menuBusqueda
       if (empty($rows)) {
 
         echo "<div class='container'><p>Se han encontrado 0 resultados</p></div>";
-        $total_paginas = ceil(0 / $paginacion); //total de autos if 0
+        $total_paginas = 1; //total de autos if 0
       } else {
 
         echo "<p>Se han encontrado " . $rows[0]['TD'] . " resultados</p>";
