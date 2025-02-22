@@ -91,7 +91,7 @@
             <div class="row">
               <div class="col-lg-4 col-md-4 col-sm-6 mb-3">
                 <label for="select_estado" class="visually-hidden">Estado</label>
-                <select class="form-control" name="customRadioInline1" id="select_estado">
+                <select class="form-control" id="select_estado">
                   <option selected value="0">Estado</option>
                   <option value="0">Todos</option>
                   <option value="Nuevo">Nuevos</option>

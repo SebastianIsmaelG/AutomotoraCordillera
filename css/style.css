@@ -27,6 +27,16 @@ main {
   background: transparent;
   font-size: 1rem; 
 }
+.containerFlex {
+  display: flex;
+  align-items: stretch; /* Asegura que todos los hijos tengan la misma altura */
+  gap: 10px; /* Espaciado opcional entre los divs */
+}
+.flexColumn {
+  flex: 1; /* Hace que todos los divs ocupen el mismo espacio */
+  display: flex;
+  flex-direction: column; /* Asegura que su contenido se ajuste bien */
+}
 .contentDetalles {
   font-family: var(--font-gill-sans)
 }

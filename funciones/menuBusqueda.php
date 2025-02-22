@@ -122,6 +122,7 @@ class menuBusqueda
       if (empty($rows)) {
 
         echo "<div class='container'><p>Se han encontrado 0 resultados</p></div>";
+        $total_paginas = ceil(0 / $paginacion); //total de autos if 0
       } else {
 
         echo "<p>Se han encontrado " . $rows[0]['TD'] . " resultados</p>";
@@ -133,10 +134,11 @@ class menuBusqueda
           $modalwindow++;
         }
         echo "</div>";
+
+        //Se crea nav de paginacion
+        $total_paginas = ceil($rows[0]['TD'] / $paginacion); //total de autos
       }
 
-      //Se crea nav de paginacion
-      $total_paginas = ceil($rows[0]['TD'] / $paginacion); //total de autos
       //Condicional de disable para la paginacion
       if ($pagina == 1) {
         $condicionalDisable1 = "disabled";

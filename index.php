@@ -123,11 +123,11 @@
                       <label class="form-check-label" for="r1">Todos</label>
                     </div>
                     <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" id="r2" value="Nuevo" name="r">
+                      <input class="form-check-input" type="radio" id="r2" value="Nuevos" name="r">
                       <label class="form-check-label" for="r2">Nuevo</label>
                     </div>
                     <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" id="r3" value="Usado" name="r">
+                      <input class="form-check-input" type="radio" id="r3" value="Usados" name="r">
                       <label class="form-check-label" for="r3">Usado</label>
                     </div>
                   </div>
