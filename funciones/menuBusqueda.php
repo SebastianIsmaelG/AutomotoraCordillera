@@ -91,10 +91,10 @@ class menuBusqueda
         $params[] = $precioHastaSelect;
       }
 
-      $sql .= " ORDER BY v.precio ASC LIMIT ?,? ";
-      $types .= 'ii';
-      $params[] = $empiezaPaginacion;
-      $params[] = $paginacion;
+      if($sql){
+        $sql .= " ORDER BY v.precio ASC LIMIT " . intval($empiezaPaginacion) . ", " . intval($paginacion);
+      }
+
 
 
       $stmt = mysqli_prepare($this->cnn, $sql);
@@ -116,6 +116,7 @@ class menuBusqueda
       $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
       mysqli_stmt_close($stmt);
       //var_dump($rows);
+      //echo $sql;
       $carrousell = 0;
       $modalwindow = 0;
 
