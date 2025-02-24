@@ -96,7 +96,7 @@
             <div class="row">
               <div class="col-lg-4 col-md-12">
                 <div class="mb-3">
-                  <label for="estado" class="form-label">Estado:</label>  
+                  <label for="estado" class="form-label">Estado:</label>
                   <select name="r" class="form-select" id="estado">
                     <option value="Todos">Todos</option>
                     <option value="Nuevos">Nuevos</option>
@@ -163,9 +163,9 @@
                 </div>
               </div>
               <div class="col-lg-4 col-md-12">
-              <div class="mb-3 py-4">
-                 <input type="submit" class="btn w-100 btnindex_search" name="srcInd" value="Buscar">
-              </div>
+                <div class="mb-3 py-4">
+                  <input type="submit" class="btn w-100 btnindex_search" name="srcInd" value="Buscar">
+                </div>
               </div>
             </div>
           </form>
@@ -209,7 +209,7 @@
             //Clase desde menuBusqueda.php
             $rsIndex->busquedaAvanzada($radioSelect, $categoriaSelect, $marcaSelect, $anoDesdeSelect, $anoHastaSelect, $precioDesdeSelect, $precioHastaSelect);
           }
-          
+
 
 
           //Toma la variable desde el menu de marcas en el navbar
@@ -227,19 +227,15 @@
 
 
           //Toma la variable desde el input de busqueda en el navbar
-          if ( isset($_GET["src"]) && $_GET["src"]=="" ){
+          if (isset($_GET["src"])) {
             //Si se envio el form pero no se escribio nada igual entra, pero selecionamos una variable para hacer SQL select *
-            $srcNavBar = "Sin Info";
-            //Aqui traemos el valor de $_GET["src"] si el usuario escribio una cadena de texto
-            if (is_string($_GET["src"])) {
+            $srcNavBar = "all";
+            //Aqui modificamos $srcNavbar si el usuario escribio una cadena de texto
+            if ($_GET["src"] != "") {
               $srcNavBar = strip_tags($_GET["src"]);
-            }else{
-              return;
             }
-
             //Clase desde menuBusqueda.php
             $rsIndex->busquedaNavbar($srcNavBar);
-            
           }
 
 
@@ -334,7 +330,7 @@
 
     </div>
   </section>
-  <script src="js/nouislider.min.js"></script>       
+  <script src="js/nouislider.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script type="text/javascript" src="js/scripts.js"></script>
