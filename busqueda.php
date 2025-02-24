@@ -227,19 +227,21 @@
 
 
           //Toma la variable desde el input de busqueda en el navbar
-          if ( isset($_GET["src"]) && is_string($_GET["src"]) ){
-            $srcNavBar = strip_tags($_GET["src"]);
+          if ( isset($_GET["src"]) && $_GET["src"]=="" ){
+            //Si se envio el form pero no se escribio nada igual entra, pero selecionamos una variable para hacer SQL select *
+            $srcNavBar = "Sin Info";
+            //Aqui traemos el valor de $_GET["src"] si el usuario escribio una cadena de texto
+            if (is_string($_GET["src"])) {
+              $srcNavBar = strip_tags($_GET["src"]);
+            }else{
+              return;
+            }
+
+            //Clase desde menuBusqueda.php
+            $rsIndex->busquedaNavbar($srcNavBar);
             
           }
 
-
-
-
-          // //Toma la variable de la seccion del navbar marca y la almacena-->
-          // if (isset($_GET["codigoM"])) {
-          //   $codigoMarca = $_GET["codigoM"];
-          //   include 'C:\xampp\htdocs\Proyectos\automotora2.0\paginas_funciones\menu_busqueda.php';
-          // }
 
           // //Toma de variable de la seccion Boton Busqueda y la almacena-->
           // if (isset($_GET["btn_busc"])) {
