@@ -70,9 +70,13 @@
           </ul>
 
           <form class="d-flex" method="get" action="busqueda.php">
-            <div class="search-container position-relative">
-              <input class="form-control me-2" type="search" name="src" placeholder="Buscar por Marcas, Modelo, Año..." aria-label="Buscar" maxlength="15">
-              <i class="fas fa-search position-absolute top-50 start-0 translate-middle-y ms-3"></i> <!-- Icono de lupa -->
+            <div class="search-container position-relative d-flex w-100 border rounded overflow-hidden">
+              <input class="form-control border-0 flex-grow-1 px-3" type="search" name="src"
+                placeholder="¿Qué estás buscando?.."
+                aria-label="Buscar" maxlength="15">
+              <button type="submit" class="btn flex-shrink-0 btnLupa">
+                <i class="fas fa-search btnLupa"></i> <!-- Ícono de lupa -->
+              </button>
             </div>
           </form>
 
@@ -177,6 +181,7 @@
           $rsIndex = new menuBusqueda($cnn);
 
 
+
           //Toma la variable desde el buscador avanzado en index
           if (
             isset($_GET["srcInd"]) && isset($_GET["r"]) && isset($_GET["cat"]) && isset($_GET["m"]) && isset($_GET["yrd"])
@@ -204,8 +209,10 @@
             //Clase desde menuBusqueda.php
             $rsIndex->busquedaAvanzada($radioSelect, $categoriaSelect, $marcaSelect, $anoDesdeSelect, $anoHastaSelect, $precioDesdeSelect, $precioHastaSelect);
           }
+          
 
-          //Toma la variable desde el buscador avanzado en index
+
+          //Toma la variable desde el menu de marcas en el navbar
           if (isset($_GET["m"]) && isset($_GET["nav"]) && $_GET["nav"] == "Buscar") {
 
             //valores sanitizados
@@ -217,6 +224,15 @@
             //Clase desde menuBusqueda.php
             $rsIndex->busquedaMarcas($marcaSelect);
           }
+
+
+          //Toma la variable desde el input de busqueda en el navbar
+          if ( isset($_GET["src"]) && is_string($_GET["src"]) ){
+            $srcNavBar = strip_tags($_GET["src"]);
+            
+          }
+
+
 
 
           // //Toma la variable de la seccion del navbar marca y la almacena-->

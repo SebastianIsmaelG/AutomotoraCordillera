@@ -19,6 +19,10 @@ main {
   flex-grow: 1;
 }
 /* .Class */
+.btnLupa{
+  background-color: #7297a3 !important;
+  color: white !important;
+}
 .content-about {
   font-family: var(--font-raleway);
 }
@@ -69,9 +73,6 @@ main {
   font-size: 18px;
   color: #007bff;
   pointer-events: none;
-}
-.search-container input[name="src"] {
-  min-width: 450px;
 }
 .sec_footer {
   margin-top: auto;

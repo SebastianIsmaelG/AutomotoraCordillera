@@ -63,9 +63,13 @@
           </ul>
 
           <form class="d-flex" method="get" action="busqueda.php">
-            <div class="search-container position-relative">
-              <input class="form-control me-2" type="search" name="src" placeholder="Buscar por Marcas, Modelo, Año..." aria-label="Buscar" maxlength="15">
-              <i class="fas fa-search position-absolute top-50 start-0 translate-middle-y ms-3"></i> <!-- Icono de lupa -->
+            <div class="search-container position-relative d-flex w-100 border rounded overflow-hidden">
+              <input class="form-control border-0 flex-grow-1 px-3" type="search" name="src"
+                placeholder="¿Qué estás buscando?.."
+                aria-label="Buscar" maxlength="15">
+              <button type="submit" class="btn flex-shrink-0 btnLupa">
+                <i class="fas fa-search btnLupa"></i> <!-- Ícono de lupa -->
+              </button>
             </div>
           </form>
 
@@ -151,7 +155,7 @@
                   </div>
                 </div>
                 <div class="col-12">
-                <div class="mb-3">
+                  <div class="mb-3">
                     <label for="minYear" class="form-label">Año:</label>
                     <div class="container">
                       <div id="yrRange"></div>

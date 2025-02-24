@@ -62,9 +62,13 @@
           </ul>
 
           <form class="d-flex" method="get" action="busqueda.php">
-            <div class="search-container position-relative">
-              <input class="form-control me-2" type="search" name="src" placeholder="Buscar por Marcas, Modelo, Año..." aria-label="Buscar" maxlength="15">
-              <i class="fas fa-search position-absolute top-50 start-0 translate-middle-y ms-3"></i> <!-- Icono de lupa -->
+            <div class="search-container position-relative d-flex w-100 border rounded overflow-hidden">
+              <input class="form-control border-0 flex-grow-1 px-3" type="search" name="src"
+                placeholder="¿Qué estás buscando?.."
+                aria-label="Buscar" maxlength="15">
+              <button type="submit" class="btn flex-shrink-0 btnLupa">
+                <i class="fas fa-search btnLupa"></i> <!-- Ícono de lupa -->
+              </button>
             </div>
           </form>
 
@@ -132,7 +136,7 @@
             <div class="container valores-about my-2 p-2">
               <h4 class="titulo-valores text-center">COMPROMISO</h4>
               <div class="content_valores">
-                <p>Nuestro conocimiento, experiencias y esfuerzo adquiridas a traves de los años son claves para poder ofrecer el mejor servicio a nuestros clientes. 
+                <p>Nuestro conocimiento, experiencias y esfuerzo adquiridas a traves de los años son claves para poder ofrecer el mejor servicio a nuestros clientes.
                   Le atenderemos siempre con una sonrisa, en un ambiente que promueva el enriquecimiento, en el cual se valoran y se respetan todas las opiniones e ideas.</p>
               </div>
             </div>
@@ -141,7 +145,7 @@
             <div class="container valores-about my-2 p-2">
               <h4 class="titulo-valores text-center">HONESTIDAD</h4>
               <div class="content_valores">
-                <p>Con transparencia, honradez e integridad en nuestras relaciones del día a día, 
+                <p>Con transparencia, honradez e integridad en nuestras relaciones del día a día,
                   empezando por nosotros mismos y rechazando prácticas de negocio injustas, orientadas a obtener una ventaja particular y siendo ejemplo para los demás.</p>
               </div>
             </div>
@@ -150,7 +154,7 @@
             <div class="container valores-about my-2 p-2">
               <h4 class="titulo-valores text-center">PASIÓN</h4>
               <div class="content_valores">
-                <p>Contamos con mas de 8 años de experiencia en el mundo automotriz, nos emocionamos con los vehiculos al igual que nuestros clientes. 
+                <p>Contamos con mas de 8 años de experiencia en el mundo automotriz, nos emocionamos con los vehiculos al igual que nuestros clientes.
                   Recordando siempre nuestras raices, siempre soñamos con poder formar una organización con pasión dirigida a nuestros clientes</p>
               </div>
             </div>
