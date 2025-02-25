@@ -29,7 +29,7 @@
               <a class="nav-link fw-bold" href="#">Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link fw-bold" href="busqueda.php?Estado=usados">Usados</a>
+              <a class="nav-link fw-bold" href="busqueda.php?estado=usados&nav=buscar">Usados</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link fw-bold dropdown-toggle" href="#" id="navbarDropdownMarcas" role="button" data-bs-toggle="dropdown" aria-expanded="false">

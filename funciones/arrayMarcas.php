@@ -12,14 +12,14 @@ try {
     $rs = mysqli_stmt_get_result($stmt);
 
     while ($row = mysqli_fetch_assoc($rs)) {
-        echo "<a class='dropdown-item' href='busqueda.php?m=" . htmlspecialchars($row['codigo']) . "&nav=Buscar'>
+        echo "<a class='dropdown-item' href='busqueda.php?m=" . htmlspecialchars($row['codigo']) . "&nav=buscar'>
                 <img src='images/marcas/" . htmlspecialchars($row['logo']) . "' width='30px' height='30px'>
                  " . htmlspecialchars($row['marca']) . "
               </a>";
     }
-
+    mysqli_stmt_free_result($stmt);
     mysqli_stmt_close($stmt);
-    //mysqli_close($cnn);
+    
 
 } catch (Exception $e) {
     echo "Error al tomar datos de la base de datos: " . $e->getMessage();

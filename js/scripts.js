@@ -84,18 +84,12 @@ var minValuePr = document.getElementById("minPrecio");
 var maxValuePr = document.getElementById("maxPrecio");
 
 sliderPrecio.noUiSlider.on("update", function (values) {
+
   minValuePr.innerHTML = values[0];
   maxValuePr.innerHTML = values[1];
 
-  let minValuePrConvert = minValuePr.innerHTML;
-  minValuePrConvert = minValuePrConvert.replace("$","").replace(/\./g, "");
-  let minintValue = parseInt(minValuePrConvert, 10);
-  document.getElementById("minPrecioInput").value = minintValue;
-
-  let maxValuePrConvert = maxValuePr.innerHTML;
-  maxValuePrConvert = maxValuePrConvert.replace("$", "").replace(/\./g, "");
-  let maxintValue = parseInt(maxValuePrConvert, 10);
-  document.getElementById("maxPrecioInput").value = maxintValue;
+  document.getElementById("minPrecioInput").value = sliderPrecio.noUiSlider.options.format.from(values[0]);
+  document.getElementById("maxPrecioInput").value = sliderPrecio.noUiSlider.options.format.from(values[1]);
 
 });
 

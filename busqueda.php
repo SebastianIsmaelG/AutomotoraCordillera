@@ -39,7 +39,7 @@
               <a class="nav-link fw-bold" href="#">Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link fw-bold" href="menu_busqueda.php?Estado=usados">Usados</a>
+              <a class="nav-link fw-bold" href="busqueda.php?estado=usados&nav=buscar">Usados</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link fw-bold dropdown-toggle" href="#" id="navbarDropdownMarcas" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -213,7 +213,7 @@
 
 
           //Toma la variable desde el menu de marcas en el navbar
-          if (isset($_GET["m"]) && isset($_GET["nav"]) && $_GET["nav"] == "Buscar") {
+          if (isset($_GET["m"]) && isset($_GET["nav"]) && $_GET["nav"] == "buscar") {
 
             //valores sanitizados
             $marcaSelect = filter_var($_GET["m"], FILTER_VALIDATE_INT);
@@ -238,17 +238,14 @@
             $rsIndex->busquedaNavbar($srcNavBar);
           }
 
+          //Toma la variable desde el menu de Usados en el navbar
+          if (isset($_GET["estado"]) && $_GET["estado"] == "usados" && $_GET["nav"] == "buscar" ) {
+            $srcUsados = strip_tags($_GET["estado"]);
 
-          // //Toma de variable de la seccion Boton Busqueda y la almacena-->
-          // if (isset($_GET["btn_busc"])) {
-          //   $resultado_index = $_GET["busqueda_index"];
-          //   include 'C:\xampp\htdocs\Proyectos\automotora2.0\paginas_funciones\menu_busqueda.php';
-          // }
-          // //Busqueda desde el navbar USADOS
-          // if (isset($_GET["Estado"])) {
-          //   $buscarestados = "usado";
-          //   include 'C:\xampp\htdocs\Proyectos\automotora2.0\paginas_funciones\menu_busqueda.php';
-          // }
+            //Clase desde menuBusqueda.php
+            $rsIndex->busquedaUsados();
+          }
+
 
           ?>
         </div>
