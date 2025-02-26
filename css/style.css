@@ -109,7 +109,6 @@ main {
   background-position: 0 0;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 70px 0;
   border-style: solid;
   border-width: thin;
   border-color: black;
@@ -121,10 +120,9 @@ main {
   background-position: 0 0;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 70px 0;
   border-style: solid;
   border-width: thin;
-  border-color: black;
+  border-color: rgb(218, 218, 218);
 }
 
 .circlemap {
@@ -273,7 +271,7 @@ main {
   color: white;
   font-weight: 400 !important;
 }
-.btnindex_search {
+.index_search {
   background-color: #7297a3 !important;
   color: white !important;
   font-weight: 600 !important;
@@ -368,6 +366,9 @@ main {
 }
 .divGradient {
   background: linear-gradient(to bottom, #f7f3f3, #ffffff);
+}
+.max-width-600 {
+  max-width: 600px!important;
 }
 /* #ID   */
 #input_busqueda_cotizacion {

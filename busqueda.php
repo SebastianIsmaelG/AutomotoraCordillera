@@ -42,7 +42,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav">
             <li class="nav-item active">
-              <a class="nav-link fw-bold" href="#">Inicio</a>
+              <a class="nav-link fw-bold" href="index.php">Inicio</a>
             </li>
             <li class="nav-item">
               <a class="nav-link fw-bold" href="busqueda.php?estado=usados&nav=buscar">Usados</a>
@@ -310,7 +310,7 @@
               <a class="text-white text-decoration-none" href="historia.php">Quienes Somos</a>
             </div>
             <div>
-              <a class="text-white text-decoration-none" href="ingreso_administrativo.php">Ingreso Administrativo</a>
+              <a class="text-white text-decoration-none" href="administrativo.php">Ingreso Administrativo</a>
             </div>
           </div>
         </div>

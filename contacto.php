@@ -16,6 +16,14 @@
 </head>
 
 <body>
+  <?php
+
+  header("Permissions-Policy: geolocation=(), microphone=()");
+
+  require_once 'funciones/dbcall.php';
+  $arrayMarcas = 'funciones/arrayMarcas.php';
+
+  ?>
   <header>
     <nav class="navbar navbarHeader navbar-expand-lg ">
       <div class="container-fluid">
@@ -39,7 +47,7 @@
                 Marcas
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMarcas">
-                <?php include 'funciones/arrayMarcas.php'; ?>
+                <?php require_once $arrayMarcas; ?>
               </ul>
             </li>
             <li class="nav-item dropdown">
@@ -77,39 +85,35 @@
       </div>
     </nav>
   </header>
-  <br>
-  <div class='container-fluid'>
+  <div class='container'>
     <section>
-      <div class="text-center">
-        <h3>¿DONDE NOS ENCONTRAMOS?</h3>
+      <div class="container text-center py-3">
+        <h3>¿DONDE NOS <span class="title_red">ENCONTRAMOS</span> ?</h3>
       </div>
-      <br>
     </section>
-    <section class="areamap">
-      <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <div class="container">
+    <section class="areamap my-2">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="circlemap" id="scrollHere1">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3331.3961994531483!2d-70.55500888500409!3d-33.38682628079219!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c9352cbe61f1%3A0x53eaf862e96dce97!2sLas+Tranqueras+1395%2C+Vitacura%2C+Regi%C3%B3n+Metropolitana!5e0!3m2!1ses!2scl!4v1553999263460!5m2!1ses!2scl" height="100%;" width="100%;" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <div class="row">
-              <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <div class="circlemap" id="scrollHere1">
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3331.3961994531483!2d-70.55500888500409!3d-33.38682628079219!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c9352cbe61f1%3A0x53eaf862e96dce97!2sLas+Tranqueras+1395%2C+Vitacura%2C+Regi%C3%B3n+Metropolitana!5e0!3m2!1ses!2scl!4v1553999263460!5m2!1ses!2scl" height="100%;" width="100%;" frameborder="0" style="border:0" allowfullscreen></iframe>
-                </div>
+              <div class="col-12">
+                <img src="images/sucursalTranqueras.jpg" alt="" class="photo_sucursal">
               </div>
-              <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="background-color:rgba(255,255,255,0.3);">
-                <div>
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <img src="images/sucursalTranqueras.jpg" alt="" class="photo_sucursal">
+              <div class="col-12">
+                <div class="row datos_sucursal">
+                  <div class="col-12">
+                    <h5>SUCURSAL <span class="title_red">TRANQUERAS</span></h5>
                   </div>
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <h5>SUCURSAL <span id="title_red">TRANQUERAS</span></h5>
-                  </div>
-                  <div class="datos_sucursal">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                      <p><span id="title_red">Ubicación</span> &nbsp;&nbsp;Las Tranqueras N° 1395, Vitacura. Region Metropolitana.</p>
-                      <p><span id="title_red">Horario de atención</span> &nbsp;&nbsp;Lunes a Viernes de 10:00 a 18:30. Sabados de 10:00 a 14:30.</p>
-                      <p><span id="title_red">Contacto</span> &nbsp;&nbsp;(2)32 468 670</p>
-                      <p><span id="title_red">Email</span> &nbsp;&nbsp;contacto@autoscordillera.com.</p>
-                    </div>
+                  <div class="col-12">
+                    <p><span>Ubicación</span> Las Tranqueras N° 1395, Vitacura. Region Metropolitana.</p>
+                    <p><span>Horario de atención</span> Lunes a Viernes de 10:00 a 18:30. Sabados de 10:00 a 14:30.</p>
+                    <p><span>Contacto</span> (2)32 468 670</p>
+                    <p><span>Email</span> contacto@autoscordillera.com.</p>
                   </div>
                 </div>
               </div>
@@ -118,32 +122,32 @@
         </div>
       </div>
     </section>
-    <br>
-    <section class="areamap">
-      <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <div class="container">
+    <section class="areamap my-2">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="circlemap" id="scrollHere1">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d832.2919572172204!2d-70.66524117079187!
+                3d-33.44493379879845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c5abc84beaad%3A0x181aecedf6e7f4a9!
+                2sAv.+Brasil+59%2C+Santiago%2C+Regi%C3%B3n+Metropolitana!5e0!3m2!1ses!2scl!4v1553999985715!5m2!1ses!2scl" 
+                height="100%;" width="100%;" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <div class="row">
-              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                <div class="circlemap" id="scrollHere2">
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d832.2919572172204!2d-70.66524117079187!3d-33.44493379879845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c5abc84beaad%3A0x181aecedf6e7f4a9!2sAv.+Brasil+59%2C+Santiago%2C+Regi%C3%B3n+Metropolitana!5e0!3m2!1ses!2scl!4v1553999985715!5m2!1ses!2scl" height="100%;" width="100%;" frameborder="0" style="border:0" allowfullscreen></iframe>
-                </div>
+              <div class="col-12">
+                <img src="images/sucursalBrazil.jpg" alt="" class="photo_sucursal">
               </div>
-              <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="background-color:rgba(255,255,255,0.3);">
-                <div>
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <img src="images/sucursalBrazil.jpg" alt="" class="photo_sucursal">
+              <div class="col-12">
+                <div class="row datos_sucursal">
+                  <div class="col-12">
+                    <h5>SUCURSAL <span class="title_red">AV BRAZIL</span></h5>
                   </div>
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <h5>SUCURSAL <span id="title_red">AV BRAZIL</span></h5>
-                  </div>
-                  <div class="datos_sucursal">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                      <p><span id="title_red">Ubicación</span> &nbsp;&nbsp;Avenida Brazil N° 159, Santiago. Region Metropolitana.</p>
-                      <p><span id="title_red">Horario de atención</span> &nbsp;&nbsp;Lunes a Viernes de 10:00 a 18:30. Sabados de 10:00 a 14:30.</p>
-                      <p><span id="title_red">Contacto</span> &nbsp;&nbsp;(2)94 012 999</p>
-                      <p><span id="title_red">Email</span> &nbsp;&nbsp;contacto@autoscordillera.com.</p>
-                    </div>
+                  <div class="col-12">
+                    <p><span>Ubicación</span> Avenida Brazil N° 159, Santiago. Region Metropolitana </p>
+                    <p><span>Horario de atención</span> Lunes a Viernes de 10:00 a 18:30. Sabados de 10:00 a 14:30.</p>
+                    <p><span>Contacto</span> (2)94 012 999</p>
+                    <p><span>Email</span> contacto@autoscordillera.com.</p>
                   </div>
                 </div>
               </div>
@@ -152,7 +156,6 @@
         </div>
       </div>
     </section>
-    <br>
   </div>
   <footer class="bg-dark">
     <div class="container footer_data">
@@ -207,7 +210,7 @@
               <a class="text-white text-decoration-none" href="historia.php">Quienes Somos</a>
             </div>
             <div>
-              <a class="text-white text-decoration-none" href="ingreso_administrativo.php">Ingreso Administrativo</a>
+              <a class="text-white text-decoration-none" href="administrativo.php">Ingreso Administrativo</a>
             </div>
           </div>
         </div>
@@ -229,125 +232,15 @@
 
     </div>
   </section>
-  <!--COMIENZO DE CODIGO JAVASCRIPT------------------------------------------------------->
+
   <script src="js/nouislider.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script type="text/javascript" src="js/scripts.js"></script>
   <script type="text/javascript" src="js/chat_menu.js"></script>
-
   <!--JS CAPTHA-->
   <script src='https://www.google.com/recaptcha/api.js'></script>
-  <!--Scroll Function-->
-  <?php
-  if (isset($_GET["ub"])) {
-    $sucursalbuscada = $_GET["ub"];
 
-    switch ($sucursalbuscada) {
-      case 'Sucursal Las Tranqueras':
-        echo "<script type='text/javascript'>
-                    function setCookie(cname, cvalue) {
-                    var d = new Date();
-                    d.setTime(d.getTime() + (1 * 24 * 60 * 60 * 1000));
-                    var expires = 'expires='+d.toUTCString();
-                    document.cookie = cname + '=' + cvalue + ';' + expires + ';path=/';
-                  }
-
-                  function getCookie(cname) {
-                    var name = cname + '=';
-                    var ca = document.cookie.split(';');
-                    for(var i = 0; i < ca.length; i++) {
-                        var c = ca[i];
-                        while (c.charAt(0) == ' ') {
-                            c = c.substring(1);
-                        }
-                        if (c.indexOf(name) == 0) {
-                            return c.substring(name.length, c.length);
-                        }
-                    }
-                    return '';
-                  }
-
-
-                  $(function(){
-                  var isScroll = getCookie('isScroll');
-                  if(isScroll == ''){
-                  setCookie('isScroll', '0');
-                  }
-                  $('#btnSimulator').click(function(){
-                      setCookie('isScroll', '1');
-                      window.location.reload();
-                  });
-
-
-
-                    var isScroll = '1';
-
-                  if(isScroll == '1'){
-                    $('html, body').animate({
-                        scrollTop: $('#scrollHere1').offset().top
-                    }, 2000);
-                  }
-
-                  });
-              </script>";
-
-        break;
-      case 'Sucursal Av.Brazil':
-        echo "<script type='text/javascript'>
-                function setCookie(cname, cvalue) {
-                var d = new Date();
-                d.setTime(d.getTime() + (1 * 24 * 60 * 60 * 1000));
-                var expires = 'expires='+d.toUTCString();
-                document.cookie = cname + '=' + cvalue + ';' + expires + ';path=/';
-              }
-
-              function getCookie(cname) {
-                var name = cname + '=';
-                var ca = document.cookie.split(';');
-                for(var i = 0; i < ca.length; i++) {
-                    var c = ca[i];
-                    while (c.charAt(0) == ' ') {
-                        c = c.substring(1);
-                    }
-                    if (c.indexOf(name) == 0) {
-                        return c.substring(name.length, c.length);
-                    }
-                }
-                return '';
-              }
-
-
-              $(function(){
-              var isScroll = getCookie('isScroll');
-              if(isScroll == ''){
-              setCookie('isScroll', '0');
-              }
-              $('#btnSimulator').click(function(){
-                  setCookie('isScroll', '1');
-                  window.location.reload();
-              });
-
-
-
-                var isScroll = '1';
-
-              if(isScroll == '1'){
-                $('html, body').animate({
-                    scrollTop: $('#scrollHere2').offset().top
-                }, 2000);
-              }
-
-              });
-          </script>";
-        break;
-      default:
-        // code...
-        break;
-    }
-  }
-
-  ?>
 </body>
 
 </html>

@@ -15,6 +15,14 @@
 </head>
 
 <body>
+  <?php
+
+  header("Permissions-Policy: geolocation=(), microphone=()");
+
+  require_once 'funciones/dbcall.php';
+  $arrayMarcas = 'funciones/arrayMarcas.php';
+
+  ?>
   <header>
     <nav class="navbar navbarHeader navbar-expand-lg ">
       <div class="container-fluid">
@@ -28,7 +36,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav">
             <li class="nav-item active">
-              <a class="nav-link fw-bold" href="#">Inicio</a>
+              <a class="nav-link fw-bold" href="index.php">Inicio</a>
             </li>
             <li class="nav-item">
               <a class="nav-link fw-bold" href="busqueda.php?estado=usados&nav=buscar">Usados</a>
@@ -38,7 +46,7 @@
                 Marcas
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMarcas">
-                <?php include 'funciones/arrayMarcas.php'; ?>
+                <?php require_once $arrayMarcas ?>
               </ul>
             </li>
             <li class="nav-item dropdown">
@@ -216,7 +224,7 @@
               <a class="text-white text-decoration-none" href="historia.php">Quienes Somos</a>
             </div>
             <div>
-              <a class="text-white text-decoration-none" href="ingreso_administrativo.php">Ingreso Administrativo</a>
+              <a class="text-white text-decoration-none" href="administrativo.php">Ingreso Administrativo</a>
             </div>
           </div>
         </div>
