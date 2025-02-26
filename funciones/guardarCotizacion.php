@@ -1,4 +1,6 @@
 <?php
+require_once 'dbcall.php';
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $secretKey = "6LdpddEqAAAAAAPikRvfxs7jeQbrd-dI-trGPX4o"; // Clave secreta de Google reCAPTCHA
     $response = $_POST["g-recaptcha-response"]; // Respuesta del usuario
@@ -27,25 +29,24 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if ($captchaSuccess->success) {
         if (isset($_POST["nombres_cotizacion"]) && isset($_POST["telefono_cotizacion"]) && isset($_POST["mail_cotizacion"])) {
 
-            $nombreCliente = htmlspecialchars($_POST["nombres_cotizacion"]);
-            $telefonoCliente = htmlspecialchars($_POST["telefono_cotizacion"]);
-            $emailCliente = htmlspecialchars($_POST["mail_cotizacion"]);
+            $nombreCliente = strip_tags($_POST["nombres_cotizacion"]);
+            $telefonoCliente =  strip_tags($_POST["telefono_cotizacion"]); 
+            $emailCliente = filter_input(INPUT_POST,'mail_cotizacion',FILTER_SANITIZE_EMAIL);
 
             //Cotizacion sin codigo de vehiculo, como el form del index
             if (!isset($_POST["vehiculo_visto"])) {
                 $vehiculoVisto = 'Sin información';
             } else {
-                $vehiculoVisto = htmlspecialchars($_POST["vehiculo_visto"]);
+                $vehiculoVisto = strip_tags($_POST["vehiculo_visto"]);
             }
             // sin mensaje para hacerle opcional
             if(empty($_POST["mensaje_cotizacion"])){
                 $mensajeCliente = 'Sin mensaje';
             }else{
-                $mensajeCliente = htmlspecialchars($_POST["mensaje_cotizacion"]);
+                $mensajeCliente = strip_tags($_POST["mensaje_cotizacion"]);
             }
         }
-
-        require_once 'dbcall.php';
+        echo $nombreCliente,$telefonoCliente,$emailCliente,$mensajeCliente;
 
         if (!$cnn) {
             die("Conexion Fallida: " . mysqli_connect_error());

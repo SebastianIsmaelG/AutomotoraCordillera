@@ -1,0 +1,8 @@
+# Activar el motor de reescritura
+RewriteEngine On
+
+
+# Personalizar página de error 404
+ErrorDocument 404 /AutomotoraCordillera/errors/404.html
+
+

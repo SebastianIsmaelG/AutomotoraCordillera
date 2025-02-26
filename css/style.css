@@ -279,8 +279,13 @@ main {
   text-align: center;
   letter-spacing: 1px;
 }
-.btnindex_search:hover {
+.btnindex_search {
   background-color: #d82e2e !important;
+  color: white !important;
+  font-weight: 600 !important;
+}
+.btnindex_search:hover {
+  background-color: #d60303 !important;
   color: white !important;
 }
 .cotizar_label {
@@ -369,6 +374,11 @@ main {
 }
 .max-width-600 {
   max-width: 600px!important;
+}
+.btn_index_search{
+  color: white;
+  background-color: var(--bs-btn-hover-bg);
+  border-color: var(--bs-btn-hover-border-color);
 }
 /* #ID   */
 #input_busqueda_cotizacion {

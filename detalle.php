@@ -77,11 +77,11 @@
   <main>
     <!--Traemos datos de id vehiculo desde varias secciones de la pagina los if definen esos botones-->
     <?php
-    if (isset($_GET["id"])) {
-      $id_vehiculo = $_GET["id"];
-      require_once $menuBusquedaDetalle;
-    } else {
+    if (!isset($_GET["id"]) || filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT) === false  || filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT) === NULL) {
       echo "<script>window.location='index.php';</script>";
+    } else {
+      $id_vehiculo = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
+      require_once $menuBusquedaDetalle;
     }
     ?>
     

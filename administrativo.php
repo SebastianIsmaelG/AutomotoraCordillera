@@ -10,13 +10,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Lato&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/nouislider.min.css">
-    <!--googleReCaptcha-->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>Ingreso Administrativo </title>
 </head>
 
 <body>
     <?php 
+        require_once 'funciones/dbcall.php';
         require_once 'funciones/login.php';
     ?>
     <div class="container">
@@ -25,8 +25,17 @@
                 <div class="col-12">
                     <img src="images/Cordillera2.png" class="img-fluid"></img>
                 </div>
-                <div class="col-12">
-                    <h3>Ingreso Administración</h3>
+                <div class="col-lg-6 col-md-12 col-sm-12">
+                    <div class="container">
+                        <h3>Ingreso Administración</h3>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12">
+                    <div class="container text-end">
+                        <button onclick="window.history.back();" class="btn btn-sm btn-outline-primary">
+                            <i class="fas fa-arrow-left me-2"></i> Volver atrás
+                        </button>
+                    </div>
                 </div>
             </div>
             <hr>
@@ -35,13 +44,13 @@
                     <div class="col-12">
                         <div class="mb-3">
                             <label for="nombreUsuario" class="form-label">Usuario</label>
-                            <input type="text" class="form-control" id="nombreUsuario" aria-describedby="nombreUsuario" required>
+                            <input type="text" class="form-control" name="nombreUsuario" id="nombreUsuario" aria-describedby="nombreUsuario" required>
                         </div>
                     </div>
                     <div class="col-12">
                         <div class="mb-3">
                             <label for="passwordUsuario" class="form-label">Contraseña</label>
-                            <input type="password" class="form-control" id="passwordUsuario">
+                            <input type="password" class="form-control" name="passwordUsuario" id="passwordUsuario">
                         </div>
                     </div>
                     <div class="col-12">
@@ -54,7 +63,7 @@
                         </div>
                     </div>
                     <div class="col-12">
-                        <input type="submit" class=" form-control btn btn-primary" name="btn_ingreso" value="Ingresar">
+                        <input type="submit" class=" form-control btn btn-primary" name="ingresoLogin" value="Ingresar">
                     </div>
                 </div>
             </div>

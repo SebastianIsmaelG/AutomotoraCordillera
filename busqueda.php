@@ -194,21 +194,22 @@
           ) {
 
             //valores sanitizados
-            $radioSelect = isset($_GET["r"]) ? htmlspecialchars(strip_tags($_GET["r"])) : null;
+            $radioSelect = isset($_GET["r"]) ? strip_tags($_GET["r"]) : null;
             $valoresPermitidosRadio = ["Todos", "Nuevos", "Usados"];
             if ($radioSelect === null || !in_array($radioSelect, $valoresPermitidosRadio)) {
               return;
             }
 
-            $categoriaSelect = filter_var($_GET["cat"], FILTER_VALIDATE_INT);
-            $marcaSelect = filter_var($_GET["m"], FILTER_VALIDATE_INT);
-            $anoDesdeSelect = filter_var($_GET["yrd"], FILTER_VALIDATE_INT);
-            $anoHastaSelect = filter_var($_GET["yrh"], FILTER_VALIDATE_INT);
-            $precioDesdeSelect = filter_var($_GET["mnp"], FILTER_VALIDATE_INT);
-            $precioHastaSelect = filter_var($_GET["mxp"], FILTER_VALIDATE_INT);
+            $categoriaSelect = filter_input(INPUT_GET, 'cat', FILTER_VALIDATE_INT);
+            $marcaSelect = filter_input(INPUT_GET, 'm', FILTER_VALIDATE_INT);  
+            $anoDesdeSelect = filter_input(INPUT_GET, 'yrd', FILTER_VALIDATE_INT); 
+            $anoHastaSelect = filter_input(INPUT_GET, 'yrh', FILTER_VALIDATE_INT);
+            $precioDesdeSelect = filter_input(INPUT_GET, 'mnp', FILTER_VALIDATE_INT);
+            $precioHastaSelect = filter_input(INPUT_GET, 'mxp', FILTER_VALIDATE_INT);
 
-            if ($categoriaSelect === false || $marcaSelect === false || $anoDesdeSelect === false || $anoHastaSelect === false || $precioDesdeSelect === false || $precioHastaSelect === false) {
-              return;
+            if ($categoriaSelect === false || $marcaSelect === false  || $anoDesdeSelect === false || 
+                $anoHastaSelect === false || $precioDesdeSelect === false || $precioHastaSelect === false) {
+                return;
             }
 
             //Clase desde menuBusqueda.php
@@ -221,7 +222,7 @@
           if (isset($_GET["m"]) && isset($_GET["nav"]) && $_GET["nav"] == "buscar") {
 
             //valores sanitizados
-            $marcaSelect = filter_var($_GET["m"], FILTER_VALIDATE_INT);
+            $marcaSelect = filter_input(INPUT_GET,'m', FILTER_VALIDATE_INT);
             if ($marcaSelect === false) {
               return;
             }
