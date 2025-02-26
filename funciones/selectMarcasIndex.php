@@ -1,6 +1,5 @@
 <?php
 try {
-  require_once 'dbcall.php';
 
   if (!$cnn) {
     die("Conexion Fallida: " . mysqli_connect_error());

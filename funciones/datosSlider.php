@@ -1,6 +1,5 @@
 <?php
 try {
-    require_once 'dbcall.php';
 
     if (!$cnn) {
         throw new Exception("Conexión Fallida: " . mysqli_connect_error());
@@ -31,10 +30,6 @@ try {
         $vehiculos[] = $row;
     }
 
-    // Verificar si hay suficientes vehículos
-    if (count($vehiculos) < 3) {
-        throw new Exception("Error: No hay suficientes vehículos en la base de datos.");
-    }
     mysqli_free_result($results);
 
 } catch (Exception $e) {

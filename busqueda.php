@@ -17,10 +17,14 @@
 
 <body>
   <?php
-  error_reporting(E_ALL);
-  ini_set('display_errors', 1);
-  
+
   header("Permissions-Policy: geolocation=(), microphone=()");
+
+  require_once 'funciones/dbcall.php';
+  $arrayMarcas = 'funciones/arrayMarcas.php';
+  $selectCategorias = 'funciones/selectCategorias.php';
+  $selectMarcasIndex = 'funciones/selectMarcasIndex.php';
+
   spl_autoload_register(function ($funcion) {
     include 'funciones/' . $funcion . '.php';
   });
@@ -48,7 +52,7 @@
                 Marcas
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMarcas">
-                <?php include 'funciones/arrayMarcas.php'; ?>
+                <?php require_once $arrayMarcas; ?>
               </ul>
             </li>
             <li class="nav-item dropdown">
@@ -111,7 +115,7 @@
                   <label for="categoria" class="form-label">Categoria:</label>
                   <select class="form-select" name="cat" id="categoria">
                     <option value="0">Todos los disponibles</option>
-                    <?php include 'funciones/selectCategorias.php'; ?>
+                    <?php require_once $selectCategorias; ?>
                   </select>
                 </div>
               </div>
@@ -120,7 +124,7 @@
                   <label for="marca" class="form-label">Marca:</label>
                   <select class="form-select" id="marca" name="m">
                     <option value="0">Todos los disponibles</option>
-                    <?php include 'funciones/selectMarcasIndex.php'; ?>
+                    <?php require_once $selectMarcasIndex; ?>
                   </select>
                 </div>
               </div>
@@ -179,8 +183,7 @@
           <?php
 
           //pasamos $cnn una vez para todas las clases
-          require_once 'funciones/dbcall.php';
-          $rsIndex = new menuBusqueda($cnn);
+          $rsIndex = new MenuBusqueda($cnn);
 
 
 
@@ -227,6 +230,15 @@
             $rsIndex->busquedaMarcas($marcaSelect);
           }
 
+          
+          //Toma la variable desde el menu de Usados en el navbar
+          if (isset($_GET["estado"]) && $_GET["estado"] == "usados" && $_GET["nav"] == "buscar") {
+            $srcUsados = strip_tags($_GET["estado"]);
+
+            //Clase desde menuBusqueda.php
+            $rsIndex->busquedaUsados();
+          }
+
 
           //Toma la variable desde el input de busqueda en el navbar
           if (isset($_GET["src"])) {
@@ -239,15 +251,6 @@
             //Clase desde menuBusqueda.php
             $rsIndex->busquedaNavbar($srcNavBar);
           }
-
-          //Toma la variable desde el menu de Usados en el navbar
-          if (isset($_GET["estado"]) && $_GET["estado"] == "usados" && $_GET["nav"] == "buscar" ) {
-            $srcUsados = strip_tags($_GET["estado"]);
-
-            //Clase desde menuBusqueda.php
-            $rsIndex->busquedaUsados();
-          }
-
 
           ?>
         </div>
@@ -329,12 +332,12 @@
 
     </div>
   </section>
+
   <script src="js/nouislider.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script type="text/javascript" src="js/scripts.js"></script>
   <script type="text/javascript" src="js/chat_menu.js"></script>
-
   <!--JS CAPTHA-->
   <script src='https://www.google.com/recaptcha/api.js'></script>
 </body>

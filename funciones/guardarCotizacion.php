@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $emailCliente = htmlspecialchars($_POST["mail_cotizacion"]);
 
             //Cotizacion sin codigo de vehiculo, como el form del index
-            if (isset($_POST["vehiculo_visto"])) {
+            if (!isset($_POST["vehiculo_visto"])) {
                 $vehiculoVisto = 'Sin información';
             } else {
                 $vehiculoVisto = htmlspecialchars($_POST["vehiculo_visto"]);

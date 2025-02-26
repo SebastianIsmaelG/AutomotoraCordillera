@@ -1,6 +1,5 @@
 <?php
 try {
-    require_once 'dbcall.php';
 
     if (!$cnn) {
         die("Error de conexión: " . mysqli_connect_error());
@@ -8,6 +7,11 @@ try {
 
     $sql = "SELECT logo, marca, codigo FROM marcas";
     $stmt = mysqli_prepare($cnn, $sql);
+
+    if (!$stmt) {
+        die("Error en la preparación de la consulta: " . mysqli_error($cnn));
+    }
+
     mysqli_stmt_execute($stmt);
     $rs = mysqli_stmt_get_result($stmt);
 
@@ -19,6 +23,7 @@ try {
     }
     mysqli_stmt_free_result($stmt);
     mysqli_stmt_close($stmt);
+    
     
 
 } catch (Exception $e) {

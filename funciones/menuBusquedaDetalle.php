@@ -1,5 +1,4 @@
 <?php
-    require_once 'dbcall.php'; 
 
     if (!isset($id_vehiculo)) {
         //hacer esta wea de salida mas bonita

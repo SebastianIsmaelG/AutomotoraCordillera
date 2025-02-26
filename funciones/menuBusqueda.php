@@ -1,5 +1,5 @@
 <?php
-class menuBusqueda
+class MenuBusqueda
 {
 
   private $cnn;
@@ -171,10 +171,6 @@ class menuBusqueda
     } catch (Exception $e) {
       echo "<h1>Error al tomar datos de la base de datos: " . $e->getMessage() . "</h1>";
       return null;
-    }finally {
-        if (isset($this->cnn)) {
-          mysqli_close($this->cnn);
-      }
     }
   }
 
@@ -222,9 +218,9 @@ class menuBusqueda
           INNER JOIN combustibles AS cb ON v.combustible = cb.codigo
           INNER JOIN transmisiones AS tr ON v.transmision = tr.codigo 
           INNER JOIN sucursales AS su ON v.ubicacion = su.codigo
-          WHERE v.marca = ? "; 
+          WHERE v.marca = ? ";
 
-          $sql .= " ORDER BY v.precio ASC LIMIT " . intval($empiezaPaginacion) . ", " . intval($paginacion);
+      $sql .= " ORDER BY v.precio ASC LIMIT " . intval($empiezaPaginacion) . ", " . intval($paginacion);
 
 
       $stmt = mysqli_prepare($this->cnn, $sql);
@@ -298,11 +294,7 @@ class menuBusqueda
     } catch (Exception $e) {
       echo "<h1>Error al tomar datos de la base de datos: " . $e->getMessage() . "</h1>";
       return null;
-    }finally {
-      if (isset($this->cnn)) {
-        mysqli_close($this->cnn);
     }
-  }
   }
 
   public function busquedaNavbar($srcNavBar)
@@ -322,7 +314,7 @@ class menuBusqueda
       //Paginacion del Catalogo
       $paginacion  = 5;
       if (isset($_GET['p'])) {
-        $pagina = intval( $_GET['p']);
+        $pagina = intval($_GET['p']);
       } else {
         $pagina = 1;
       }
@@ -464,11 +456,7 @@ class menuBusqueda
     } catch (Exception $e) {
       echo "<h1>Error al tomar datos de la base de datos: " . $e->getMessage() . "</h1>";
       return null;
-    }finally {
-      if (isset($this->cnn)) {
-        mysqli_close($this->cnn);
     }
-  }
   }
 
   public function busquedaUsados()
@@ -477,11 +465,11 @@ class menuBusqueda
       if (!$this->cnn) {
         throw new Exception("Conexion Fallida: " . mysqli_connect_error());
       }
-      
+
       //Paginacion del Catalogo
       $paginacion  = 5;
       if (isset($_GET['p'])) {
-        $pagina = $_GET['p'];
+        $pagina = intval($_GET['p']);
       } else {
         $pagina = 1;
       }
@@ -490,54 +478,58 @@ class menuBusqueda
 
       // Todos los vehiculos con estado Usado
       $sql = "SELECT COUNT(*) OVER() AS TD,
-          v.codigo,
-          v.estado,
-          cat.categoria,
-          m.marca,
-          v.modelo,
-          format(v.precio, 0, 'de_DE') as precio,
-          v.color,
-          cb.combustible,
-          v.kilometraje,
-          v.cilindrada,
-          tr.transmision,
-          v.ano,
-          v.equipamiento,
-          v.foto1,
-          v.foto2,
-          v.foto3,
-          v.foto4,
-          v.foto5,
-          su.sucursal FROM vehiculos AS v
-          INNER JOIN categorias AS cat ON v.categoria = cat.codigo
-          INNER JOIN marcas AS m ON v.marca = m.codigo
-          INNER JOIN combustibles AS cb ON v.combustible = cb.codigo
-          INNER JOIN transmisiones AS tr ON v.transmision = tr.codigo 
-          INNER JOIN sucursales AS su ON v.ubicacion = su.codigo
-          WHERE v.estado = 'Usado' ";
+            v.codigo,
+            v.estado,
+            cat.categoria,
+            m.marca,
+            v.modelo,
+            format(v.precio, 0, 'de_DE') as precio,
+            v.color,
+            cb.combustible,
+            v.kilometraje,
+            v.cilindrada,
+            tr.transmision,
+            v.ano,
+            v.equipamiento,
+            v.foto1,
+            v.foto2,
+            v.foto3,
+            v.foto4,
+            v.foto5,
+            su.sucursal FROM vehiculos AS v
+            INNER JOIN categorias AS cat ON v.categoria = cat.codigo
+            INNER JOIN marcas AS m ON v.marca = m.codigo
+            INNER JOIN combustibles AS cb ON v.combustible = cb.codigo
+            INNER JOIN transmisiones AS tr ON v.transmision = tr.codigo 
+            INNER JOIN sucursales AS su ON v.ubicacion = su.codigo
+            WHERE v.estado = 'Usado' ";
 
       $sql .= " ORDER BY v.precio ASC LIMIT " . intval($empiezaPaginacion) . ", " . intval($paginacion);
-      
+
       $stmt = mysqli_prepare($this->cnn, $sql);
       if (!$stmt) {
         throw new Exception("Error preparing statement: " . mysqli_error($this->cnn));
       }
+
+      if (!mysqli_stmt_execute($stmt)) {
+        throw new Exception("Error executing statement: " . mysqli_stmt_error($stmt));
+      }
+
       // resultado y creamos
       $result = mysqli_stmt_get_result($stmt);
       $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
-      mysqli_stmt_free_result($stmt);
+
+      // Liberar el resultado y cerrar el statement
+      mysqli_free_result($result);
       mysqli_stmt_close($stmt);
-      //var_dump($rows);
-      //echo $sql;
+
       $carrousell = 0;
       $modalwindow = 0;
 
       if (empty($rows)) {
-
         echo "<div class='container'><p>Se han encontrado 0 resultados</p></div>";
         $total_paginas = 1; //total de autos if 0
       } else {
-
         echo "<p>Se han encontrado " . $rows[0]['TD'] . " resultados</p>";
         echo "<div class='row'>";
 
@@ -552,6 +544,7 @@ class menuBusqueda
         //Se crea nav de paginacion
         $total_paginas = ceil($rows[0]['TD'] / $paginacion); //total de autos
       }
+
       //Condicional de disable para la paginacion
       if ($pagina == 1) {
         $condicionalDisable1 = "disabled";
@@ -565,23 +558,23 @@ class menuBusqueda
       }
 
       echo "<section class='container ' style='padding-top:10px;'>
-                    <nav aria-label='Page navigation'>
-                      <ul class='pagination pagination-sm pagination-sm justify-content-center'>
-                        <li class='page-item $condicionalDisable1'>
-                          <a class='page-link ' id='paginacion_links' href='busqueda.php?estado=usados&nav=buscar&p=" . ($pagina - 1) . "'>&laquo; Anterior</a>
-                        </li>
-                        <li class='page-item'>
-                          <a class='page-link ' id='paginacion_links' href='busqueda.php?estado=usados&nav=buscar&p=1' aria-label='Goto page 1'>1</a>
-                        </li>";
+                <nav aria-label='Page navigation'>
+                  <ul class='pagination pagination-sm pagination-sm justify-content-center'>
+                    <li class='page-item $condicionalDisable1'>
+                      <a class='page-link ' id='paginacion_links' href='busqueda.php?estado=usados&nav=buscar&p=" . ($pagina - 1) . "'>&laquo; Anterior</a>
+                    </li>
+                    <li class='page-item'>
+                      <a class='page-link ' id='paginacion_links' href='busqueda.php?estado=usados&nav=buscar&p=1' aria-label='Goto page 1'>1</a>
+                    </li>";
 
       for ($i = 2; $i <= $total_paginas; $i++) {
         echo "<li class='page-item'><a class='page-link' id='paginacion_links' href='busqueda.php?estado=usados&nav=buscar&p=" . $i . "' aria-label='Goto page $i'>$i</a></li>";
       }
       echo "<li class='page-item $condicionalDisable2'>
-                          <a class='page-link ' id='paginacion_links' href='busqueda.php?estado=usados&nav=buscar&p=" . ($pagina + 1) . "' >Siguiente &raquo;</a>
-                        </li>";
+                      <a class='page-link ' id='paginacion_links' href='busqueda.php?estado=usados&nav=buscar&p=" . ($pagina + 1) . "' >Siguiente &raquo;</a>
+                    </li>";
       echo "</ul></nav>
-                    </section>";
+                </section>";
     } catch (Exception $e) {
       echo "<h1>Error al tomar datos de la base de datos: " . $e->getMessage() . "</h1>";
       return null;

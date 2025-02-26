@@ -13,6 +13,11 @@
 </head>
 
 <body>
+  <?php 
+    require_once 'funciones/dbcall.php';
+    $arrayMarcas = 'funciones/arrayMarcas.php';
+    $menuBusquedaDetalle = 'funciones/menuBusquedaDetalle.php';
+  ?>
   <header>
     <nav class="navbar navbarHeader navbar-expand-lg ">
       <div class="container-fluid">
@@ -36,7 +41,7 @@
                 Marcas
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMarcas">
-                <?php include 'funciones/arrayMarcas.php'; ?>
+                <?php require_once $arrayMarcas; ?>
               </ul>
             </li>
             <li class="nav-item dropdown">
@@ -75,7 +80,7 @@
     <?php
     if (isset($_GET["id"])) {
       $id_vehiculo = $_GET["id"];
-      require_once 'funciones/menuBusquedaDetalle.php';
+      require_once $menuBusquedaDetalle;
     } else {
       echo "<script>window.location='index.php';</script>";
     }
