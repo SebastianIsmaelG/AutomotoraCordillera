@@ -112,7 +112,6 @@ class menuBusqueda
       $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
       mysqli_stmt_free_result($stmt);
       mysqli_stmt_close($stmt);
-      unset($stmt,$cnn);
       //var_dump($rows);
       //echo $sql;
       $carrousell = 0;
@@ -172,6 +171,10 @@ class menuBusqueda
     } catch (Exception $e) {
       echo "<h1>Error al tomar datos de la base de datos: " . $e->getMessage() . "</h1>";
       return null;
+    }finally {
+        if (isset($this->cnn)) {
+          mysqli_close($this->cnn);
+      }
     }
   }
 
@@ -236,7 +239,6 @@ class menuBusqueda
       $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
       mysqli_stmt_free_result($stmt);
       mysqli_stmt_close($stmt);
-      unset($stmt,$cnn);
       //var_dump($rows);
       //echo $sql;
       $carrousell = 0;
@@ -296,7 +298,11 @@ class menuBusqueda
     } catch (Exception $e) {
       echo "<h1>Error al tomar datos de la base de datos: " . $e->getMessage() . "</h1>";
       return null;
+    }finally {
+      if (isset($this->cnn)) {
+        mysqli_close($this->cnn);
     }
+  }
   }
 
   public function busquedaNavbar($srcNavBar)
@@ -400,7 +406,6 @@ class menuBusqueda
       $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
       mysqli_stmt_free_result($stmt);
       mysqli_stmt_close($stmt);
-      unset($stmt,$cnn);
       //var_dump($rows);
       //echo $sql;
       $carrousell = 0;
@@ -459,17 +464,20 @@ class menuBusqueda
     } catch (Exception $e) {
       echo "<h1>Error al tomar datos de la base de datos: " . $e->getMessage() . "</h1>";
       return null;
+    }finally {
+      if (isset($this->cnn)) {
+        mysqli_close($this->cnn);
     }
+  }
   }
 
   public function busquedaUsados()
   {
-
     try {
       if (!$this->cnn) {
         throw new Exception("Conexion Fallida: " . mysqli_connect_error());
       }
-
+      
       //Paginacion del Catalogo
       $paginacion  = 5;
       if (isset($_GET['p'])) {
@@ -509,7 +517,7 @@ class menuBusqueda
           WHERE v.estado = 'Usado' ";
 
       $sql .= " ORDER BY v.precio ASC LIMIT " . intval($empiezaPaginacion) . ", " . intval($paginacion);
-
+      
       $stmt = mysqli_prepare($this->cnn, $sql);
       if (!$stmt) {
         throw new Exception("Error preparing statement: " . mysqli_error($this->cnn));
@@ -519,7 +527,6 @@ class menuBusqueda
       $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
       mysqli_stmt_free_result($stmt);
       mysqli_stmt_close($stmt);
-      unset($stmt,$cnn);
       //var_dump($rows);
       //echo $sql;
       $carrousell = 0;

@@ -14,7 +14,7 @@ try {
   while($row = mysqli_fetch_assoc($rs)){
     echo "<option value='". htmlspecialchars($row['codigo'])."'>". htmlspecialchars($row['marca'])."</option>";
   }
-
+  mysqli_stmt_free_result($stmt);
   mysqli_stmt_close($stmt);
   
 

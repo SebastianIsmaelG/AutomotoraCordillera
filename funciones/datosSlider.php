@@ -35,19 +35,9 @@ try {
     if (count($vehiculos) < 3) {
         throw new Exception("Error: No hay suficientes vehículos en la base de datos.");
     }
-    
+    mysqli_free_result($results);
 
 } catch (Exception $e) {
     echo "Error: " . $e->getMessage();
-} finally {
-    // Liberar el resultado de la consulta
-    if (isset($results)) {
-        mysqli_free_result($results);
-    }
-
-    // Cerrar la conexión a la base de datos
-    if (isset($cnn)) {
-        mysqli_close($cnn);
-    }
 }
 ?>
