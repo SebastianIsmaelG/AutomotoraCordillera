@@ -47,6 +47,7 @@ class MenuBusqueda
           v.foto3,
           v.foto4,
           v.foto5,
+          su.codigo AS codigoSucursal,
           su.sucursal FROM vehiculos AS v
           INNER JOIN categorias AS cat ON v.categoria = cat.codigo
           INNER JOIN marcas AS m ON v.marca = m.codigo
@@ -212,6 +213,7 @@ class MenuBusqueda
           v.foto3,
           v.foto4,
           v.foto5,
+          su.codigo AS codigoSucursal,
           su.sucursal FROM vehiculos AS v
           INNER JOIN categorias AS cat ON v.categoria = cat.codigo
           INNER JOIN marcas AS m ON v.marca = m.codigo
@@ -343,6 +345,7 @@ class MenuBusqueda
             v.foto3,
             v.foto4,
             v.foto5,
+            su.codigo AS codigoSucursal,
             su.sucursal FROM vehiculos AS v
             INNER JOIN categorias AS cat ON v.categoria = cat.codigo
             INNER JOIN marcas AS m ON v.marca = m.codigo
@@ -376,6 +379,7 @@ class MenuBusqueda
             v.foto3,
             v.foto4,
             v.foto5,
+            su.codigo AS codigoSucursal,
             su.sucursal FROM vehiculos AS v
             INNER JOIN categorias AS cat ON v.categoria = cat.codigo
             INNER JOIN marcas AS m ON v.marca = m.codigo
@@ -496,6 +500,7 @@ class MenuBusqueda
             v.foto3,
             v.foto4,
             v.foto5,
+            su.codigo AS codigoSucursal,
             su.sucursal FROM vehiculos AS v
             INNER JOIN categorias AS cat ON v.categoria = cat.codigo
             INNER JOIN marcas AS m ON v.marca = m.codigo

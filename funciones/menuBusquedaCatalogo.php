@@ -65,7 +65,9 @@
           </div>
           <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>
             <p><i class="fa-solid fa-location-dot"></i>
-              <a class="text-decoration-none" target='_blank' href='contacto.php?ub=$setubicacion'> <span> UBICACIÓN: </span> <?= $row['sucursal'] ?></a>
+              <a class="text-decoration-none" target='_blank' href='contacto.php?ub=<?=strip_tags($row['codigoSucursal']) ?>'> 
+                <span> UBICACIÓN: </span> <?= $row['sucursal'] ?>
+              </a>
             </p>
           </div>
         </div>

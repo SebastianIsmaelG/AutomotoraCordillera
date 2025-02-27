@@ -28,6 +28,7 @@
                 v.estado,
                 v.color,
                 v.cilindrada,
+                s.codigo AS codigoSucursal,
                 s.sucursal AS ubicacion,
                 s.latitud,
                 s.longitud
@@ -53,26 +54,27 @@
     }
 
     // Asignar valores obtenidos del array
-    $codigo       = $vehiculo['codigo'];
-    $marca        = $vehiculo['marca'];
-    $modelo       = $vehiculo['modelo'];
-    $precio       = $vehiculo['precio'];
-    $combustible  = $vehiculo['combustible'];
-    $kilometraje  = $vehiculo['kilometraje'];
-    $transmision  = $vehiculo['transmision'];
-    $ano          = $vehiculo['ano'];
-    $foto1        = $vehiculo['foto1'];
-    $foto2        = $vehiculo['foto2'];
-    $foto3        = $vehiculo['foto3'];
-    $foto4        = $vehiculo['foto4'];
-    $foto5        = $vehiculo['foto5'];
-    $equipamiento = $vehiculo['equipamiento'];
-    $estado       = $vehiculo['estado'];
-    $color        = $vehiculo['color'];
-    $cilindrada   = $vehiculo['cilindrada'];
-    $ubicacion    = $vehiculo['ubicacion'];
-    $latitud      = $vehiculo['latitud'];
-    $longitud     = $vehiculo['longitud'];
+    $codigo         = $vehiculo['codigo'];
+    $marca          = $vehiculo['marca'];
+    $modelo         = $vehiculo['modelo'];
+    $precio         = $vehiculo['precio'];
+    $combustible    = $vehiculo['combustible'];
+    $kilometraje    = $vehiculo['kilometraje'];
+    $transmision    = $vehiculo['transmision'];
+    $ano            = $vehiculo['ano'];
+    $foto1          = $vehiculo['foto1'];
+    $foto2          = $vehiculo['foto2'];
+    $foto3          = $vehiculo['foto3'];
+    $foto4          = $vehiculo['foto4'];
+    $foto5          = $vehiculo['foto5'];
+    $equipamiento   = $vehiculo['equipamiento'];
+    $estado         = $vehiculo['estado'];
+    $color          = $vehiculo['color'];
+    $cilindrada     = $vehiculo['cilindrada'];
+    $codigoSucursal = $vehiculo['codigoSucursal'];
+    $ubicacion      = $vehiculo['ubicacion'];
+    $latitud        = $vehiculo['latitud'];
+    $longitud       = $vehiculo['longitud'];
 
     mysqli_stmt_close($stmt);
 

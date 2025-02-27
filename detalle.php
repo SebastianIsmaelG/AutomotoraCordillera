@@ -225,7 +225,11 @@
                             <p><i class="fa-solid fa-screwdriver-wrench"></i><span> CILINDRADA: </span> <?= $cilindrada ?> L</p>
                           </div>
                           <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>
-                            <p><i class="fa-solid fa-location-dot"></i> <a class="text-decoration-none" target='_blank' href='contacto.php?ub=$setubicacion'> <span> UBICACIÓN: </span> <?= $ubicacion ?></a> </p>
+                            <p><i class="fa-solid fa-location-dot"></i> 
+                              <a class="text-decoration-none" target='_blank' href='contacto.php?ub=<?= $codigoSucursal ?>'> 
+                                <span> UBICACIÓN: </span> <?= $ubicacion ?>
+                              </a> 
+                            </p>
                           </div>
                         </div>
                       </div>
