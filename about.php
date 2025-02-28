@@ -89,11 +89,11 @@
       <h1 class="h2">Automotora <span class="title_red">Cordillera</span></h1>
     </div>
     <div class="container text-center">
-      <div class="text-center fondo_historia"></div>
+      <div class="text-center fondoHistoria"></div>
     </div>
     <main>
       <div class="container my-2">
-        <div class="content-about">
+        <div class="containerAbout">
           <p>Automotora Cordillera nace en el año 2011, cuando su dueño Juan Pablo Montecinos, se da cuenta de las pocas facilidades que los clientes de escasos recursos
             tienen para poder acceder y lograr a concretar el tan ansiado sueño del auto propio. A raíz de esto, comienza a trabajar para revertir esta situación.
             Es así como en mayo del 2011, se da inicio a Automotora Cordillera, la cual en sus inicios comenzo como un negocio de compra de vehiculos usados para reventa.
@@ -104,7 +104,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-6 col-md-12 col-sm-12">
-            <div class="p-2 content-about">
+            <div class="p-2 containerAbout">
               <h3 class="title_vision_mision">VISIÓN</h3>
               <hr>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -123,7 +123,7 @@
             </div>
           </div>
           <div class="col-lg-6 col-md-12 col-sm-12">
-            <div class="p-2 content-about">
+            <div class="p-2 containerAbout">
               <h3 class="title_vision_mision">MISIÓN</h3>
               <hr>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -139,11 +139,11 @@
             <h3>Nuestros <span class="title_red">Valores</span></h3>
           </div>
         </div>
-        <div class="row">
+        <div class="row fontDetalles">
           <div class="col-lg-4 col-md-12 col-sm-12">
             <div class="container valores-about my-2 p-2">
               <h4 class="titulo-valores text-center">COMPROMISO</h4>
-              <div class="content_valores">
+              <div>
                 <p>Nuestro conocimiento, experiencias y esfuerzo adquiridas a traves de los años son claves para poder ofrecer el mejor servicio a nuestros clientes.
                   Le atenderemos siempre con una sonrisa, en un ambiente que promueva el enriquecimiento, en el cual se valoran y se respetan todas las opiniones e ideas.</p>
               </div>
@@ -152,7 +152,7 @@
           <div class="col-lg-4 col-md-12 col-sm-12">
             <div class="container valores-about my-2 p-2">
               <h4 class="titulo-valores text-center">HONESTIDAD</h4>
-              <div class="content_valores">
+              <div>
                 <p>Con transparencia, honradez e integridad en nuestras relaciones del día a día,
                   empezando por nosotros mismos y rechazando prácticas de negocio injustas, orientadas a obtener una ventaja particular y siendo ejemplo para los demás.</p>
               </div>
@@ -161,7 +161,7 @@
           <div class="col-lg-4 col-md-12 col-sm-12">
             <div class="container valores-about my-2 p-2">
               <h4 class="titulo-valores text-center">PASIÓN</h4>
-              <div class="content_valores">
+              <div>
                 <p>Contamos con mas de 8 años de experiencia en el mundo automotriz, nos emocionamos con los vehiculos al igual que nuestros clientes.
                   Recordando siempre nuestras raices, siempre soñamos con poder formar una organización con pasión dirigida a nuestros clientes</p>
               </div>
@@ -172,7 +172,7 @@
     </main>
   </div>
   <footer class="bg-dark">
-    <div class="container footer_data">
+    <div class="container footerData">
       <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
           <div class="py-3">

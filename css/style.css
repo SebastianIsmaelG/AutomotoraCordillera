@@ -120,46 +120,40 @@ main {
   background: transparent;
   font-size: 1rem; 
 }
-.container-data {
+.containerData {
   background-color: rgb(243, 243, 243);
   border: 3px solid rgb(235, 227, 227);
 }
-.containerFlex {
+/* .containerFlex {
   display: flex;
-  align-items: stretch; /* Asegura que todos los hijos tengan la misma altura */
-  gap: 10px; /* Espaciado opcional entre los divs */
-}
-.container-precio {
+  align-items: stretch; 
+} */
+.containerPrecio {
   text-align: center;
   font-weight: 600;
   color: rgb(250, 250, 250);
   cursor: default;
   background-color: #7297a3;
 }
-.container-precio p {
+.containerPrecio p {
   font-family: var(--font-roboto);
   letter-spacing: 1px;
 }
-.content-about {
-  font-family: var(--font-raleway);
+.containerAbout {
+  font-family: var(--font-gill-sans);
 }
-.contentDetalles {
-  font-family: var(--font-gill-sans)
+.fontDetalles {
+  font-family: var(--font-gill-sans);
 }
-.content_valores {
-  font-family: var(--font-raleway);
-}
-.cotizar_label {
+.cotizarLabel {
   padding: 0!important;
   font-weight: 600;
 }
-.datos_sucursal p {
-  font-family: var(--font-Lato);
-}
+
 .divGradient {
   background: linear-gradient(to bottom, #f7f3f3, #ffffff);
 }
-.div_ventavehiculo {
+.divBannerVentaCredito {
   background-color: #00568f;
   color: white;
   font-weight: 400 !important;
@@ -167,16 +161,7 @@ main {
 .enlacesBtnPrimary:hover {
   color: #ffffff;
 }
-.fb {
-  background-color: #001d60;
-  background-image: linear-gradient(106deg, #001d60, #2d51a6);
-}
-.flexColumn {
-  flex: 1; /* Hace que todos los divs ocupen el mismo espacio */
-  display: flex;
-  flex-direction: column; /* Asegura que su contenido se ajuste bien */
-}
-.fondo_historia {
+.fondoHistoria {
   background-image: url(../images/_acf3741.jpg);
   background-position: 0 0;
   background-repeat: no-repeat;
@@ -186,9 +171,8 @@ main {
   border-color: black;
   height: 400px;
 }
-.footer_data div {
+.footerData div {
   color: white;
-  font-family: var(--font-Lato);
 }
 .iconoDetalles {
   width: 20px;
@@ -380,13 +364,13 @@ main {
 .col-lg-3 {
     order: 2; /* Cambia el orden para que el buscador avanzado aparezca primero */
 }
-  .footer_data {
+  .footerData {
       flex-direction: column;
       align-items: center;
       text-align: center;
   }
 
-  .footer_data .col-lg-6, .footer_data .col-lg-3 {
+  .footerData .col-lg-6, .footerData .col-lg-3 {
       flex: 0 0 100%;
       max-width: 100%;
   }

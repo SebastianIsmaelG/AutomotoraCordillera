@@ -12,10 +12,10 @@
 </head>
 
 <body>
-  <?php 
-    require_once 'funciones/dbcall.php';
-    $arrayMarcas = 'funciones/arrayMarcas.php';
-    $menuBusquedaDetalle = 'funciones/menuBusquedaDetalle.php';
+  <?php
+  require_once 'funciones/dbcall.php';
+  $arrayMarcas = 'funciones/arrayMarcas.php';
+  $menuBusquedaDetalle = 'funciones/menuBusquedaDetalle.php';
   ?>
   <header>
     <nav class="navbar navbarHeader navbar-expand-lg ">
@@ -23,7 +23,8 @@
         <a class="navbar-brand" href="index.php">
           <img src="images/Cordillera2.png" class="img-fluid" alt="Logo">
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -88,7 +89,7 @@
       require_once $menuBusquedaDetalle;
     }
     ?>
-    
+
     <div class="container my-3">
       <div class="row">
         <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
@@ -131,13 +132,15 @@
               <div class="container my-2">
                 <div class='row'>
                   <div class='col-lg-6 col-md-6-col-sm-6 col-xs-12'>
-                    <div class="container-precio my-1">
+                    <div class="containerPrecio my-1">
                       <p class="py-2">$ <?= $precio; ?></p>
                     </div>
                   </div>
                   <div class='col-lg-6 col-md-6-col-sm-6 col-xs-12 text-center'>
                     <div>
-                      <button type="button" class="btn btn-light btn-lg btnCotizarLabel" data-bs-toggle="modal" data-bs-target="#inputCotizacion"><span class='cotizar_label' value='cotizar'>COTIZAR</span></button>
+                      <button type="button" class="btn btn-light btn-lg btnCotizarLabel" data-bs-toggle="modal" data-bs-target="#inputCotizacion">
+                        <span class='cotizarLabel' value='cotizar'>COTIZAR</span>
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -163,7 +166,8 @@
                             </div>
                             <div class="mb-3">
                               <label for="telefono_cotizacion" class="form-label">Telefono</label>
-                              <input type="text" class="form-control" id="telefono_cotizacion" name="telefono_cotizacion" placeholder="Telefono" onkeypress="return soloNumeros(event)" maxlength="9" required>
+                              <input type="text" class="form-control" id="telefono_cotizacion" name="telefono_cotizacion" placeholder="Telefono"
+                                onkeypress="return soloNumeros(event)" maxlength="9" required>
                             </div>
                             <div class="mb-3">
                               <label for="mail_cotizacion" class="form-label">Correo</label>
@@ -199,7 +203,7 @@
                   </div>
                   <div class="col-12">
                     <div>
-                      <div class='container divGradient py-2 contentDetalles'>
+                      <div class='container divGradient py-2 fontDetalles'>
                         <div class='row'>
                           <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>
                             <p><i class="fas fa-car"></i><span> ESTADO: </span> <?= $estado ?> </p>
@@ -229,10 +233,10 @@
                             <p><i class="fa-solid fa-screwdriver-wrench"></i><span> CILINDRADA: </span> <?= $cilindrada ?> L</p>
                           </div>
                           <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>
-                            <p><i class="fa-solid fa-location-dot"></i> 
-                              <a class="text-decoration-none" target='_blank' href='contacto.php?ub=<?= $codigoSucursal ?>'> 
+                            <p><i class="fa-solid fa-location-dot"></i>
+                              <a class="text-decoration-none" target='_blank' href='contacto.php?ub=<?= $codigoSucursal ?>'>
                                 <span> UBICACIÓN: </span> <?= $ubicacion ?>
-                              </a> 
+                              </a>
                             </p>
                           </div>
                         </div>
@@ -255,8 +259,8 @@
                     </div>
                   </div>
                   <div class="col-12">
-                    <div class="container divGradient py-2">
-                      <p class="contentDetalles"><?= $equipamiento ?></p>
+                    <div class="container divGradient py-2 fontDetalles">
+                      <p><?= $equipamiento ?></p>
                     </div>
                   </div>
                 </div>
@@ -299,12 +303,12 @@
         </div>
       </div>
       <div class="chatContent">
-        
+
       </div>
     </div>
   </main>
   <footer class="bg-dark">
-    <div class="container footer_data">
+    <div class="container footerData">
       <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
           <div class="py-3">

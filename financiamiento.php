@@ -80,7 +80,7 @@
     </nav>
   </header>
   <footer class="bg-dark">
-    <div class="container footer_data">
+    <div class="container footerData">
       <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
           <div class="py-3">

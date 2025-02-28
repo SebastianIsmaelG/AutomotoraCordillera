@@ -121,7 +121,7 @@
       </div>
 
       <div class="col-lg-3 col-md-12 col-sm-12">
-        <div class="divGradient contentDetalles">
+        <div class="divGradient fontDetalles">
           <div class="container-fluid">
             <form action="busqueda.php" method="GET">
               <div class="row">
@@ -246,7 +246,7 @@
         </div>
       </div>
       <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
-        <div class="divGradient my-3 contentDetalles">
+        <div class="divGradient my-3 fontDetalles">
           <div class="container py-2">
             <form class="row g-3" action="funciones/guardarCotizacion.php" method="post">
               <div class="col-12 text-center">
@@ -285,7 +285,7 @@
           </div>
           <div class="container py-3 text-center">
             <a href="#"><img src="images/u11.png" alt="" class="img-fluid"></a>
-            <div class="div_ventavehiculo">
+            <div class="divBannerVentaCredito">
               <p>Obtén tu credito con aprobación <span class="text-warning">INMEDIATA</span> en nuestras oficinas</p>
             </div>
           </div>
@@ -294,7 +294,7 @@
     </div>
   </div>
   <footer class="bg-dark">
-    <div class="container footer_data">
+    <div class="container footerData">
       <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
           <div class="py-3">

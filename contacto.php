@@ -105,7 +105,7 @@
                 <img src="images/sucursalTranqueras.jpg" alt="" class="photo_sucursal">
               </div>
               <div class="col-12">
-                <div class="row datos_sucursal">
+                <div class="row fontDetalles">
                   <div class="col-12">
                     <h5>SUCURSAL <span class="title_red">TRANQUERAS</span></h5>
                   </div>
@@ -139,7 +139,7 @@
                 <img src="images/sucursalBrazil.jpg" alt="" class="photo_sucursal">
               </div>
               <div class="col-12">
-                <div class="row datos_sucursal">
+                <div class="row fontDetalles">
                   <div class="col-12">
                     <h5>SUCURSAL <span class="title_red">AV BRAZIL</span></h5>
                   </div>
@@ -158,7 +158,7 @@
     </section>
   </div>
   <footer class="bg-dark">
-    <div class="container footer_data">
+    <div class="container footerData">
       <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
           <div class="py-3">

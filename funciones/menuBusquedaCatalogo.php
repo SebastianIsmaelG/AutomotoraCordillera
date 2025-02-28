@@ -30,7 +30,7 @@
       </div>
     </div>
     <div class="col-lg-4 col-md-12 col-sm-12 p-2">
-      <div class='container divGradient py-2 contentDetalles'>
+      <div class='container divGradient py-2 fontDetalles'>
         <div class='row'>
           <div class="col-12">
             <h3 class="h4"> <?= $row['marca'] ." ".
@@ -74,20 +74,20 @@
       </div>
     </div>
     <div class="col-lg-4 col-md-12 col-sm-12 p-2">
-      <div class="container divGradient py-2 contentDetalles">
+      <div class="container divGradient py-2 fontDetalles">
         <div class='row'>
           <div class='col-12'>
             <h6 id='linear'>Equipamiento</h6>
             <p><?= $row['equipamiento'] ?></p>
           </div>
           <div class='col-6'>
-            <div class="container-precio py-1">
+            <div class="containerPrecio py-1">
               <h5 class="py-1">$ <?= $row['precio'] ?></h5>
             </div>
           </div>
           <div class='col-6'>
             <button type="button" id="btnCotizacion" class="btn btn-light btn-lg btnCotizarLabel" data-bs-toggle="modal" data-bs-target="#modalCotizacion<?= $modalwindow; ?>">
-              <span class="cotizar_label" value="cotizar">COTIZAR</span>
+              <span class="cotizarLabel" value="cotizar">COTIZAR</span>
             </button>
           </div>
         </div>

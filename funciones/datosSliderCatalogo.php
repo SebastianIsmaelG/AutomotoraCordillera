@@ -29,30 +29,30 @@
                     </div>
                   </div>
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="container-data">
-                      <div class="container">
+                    <div class="containerData">
+                      <div class="container fontDetalles">
                         <div class="row">
                           <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
-                            <p class="contentDetalles"><img class="img-fluid iconoDetalles" src="images/marcas/<?php echo $vehiculos[0]['logo']; ?>"> <?php echo $vehiculos[0]['marca']; ?></p>
+                            <p><img class="img-fluid iconoDetalles" src="images/marcas/<?php echo $vehiculos[0]['logo']; ?>"> <?php echo $vehiculos[0]['marca']; ?></p>
                           </div>
                           <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
-                            <p class="contentDetalles"><img class="img-fluid iconoDetalles" src="images/icons/icons8-car-40.png"> <?php echo $vehiculos[0]['modelo']; ?></p>
+                            <p><img class="img-fluid iconoDetalles" src="images/icons/icons8-car-40.png"> <?php echo $vehiculos[0]['modelo']; ?></p>
                           </div>
                         </div>
                         <div class="row">
                           <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
-                            <p class="contentDetalles"><img class="img-fluid iconoDetalles" src="images/icons/u128.png"> <?php echo $vehiculos[0]['combustible']; ?></p>
+                            <p><img class="img-fluid iconoDetalles" src="images/icons/u128.png"> <?php echo $vehiculos[0]['combustible']; ?></p>
                           </div>
                           <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
-                            <p class="contentDetalles"><img class="img-fluid iconoDetalles" src="images/icons/u129.png"> <?php echo $vehiculos[0]['kilometraje']; ?>KM</p>
+                            <p><img class="img-fluid iconoDetalles" src="images/icons/u129.png"> <?php echo $vehiculos[0]['kilometraje']; ?>KM</p>
                           </div>
                         </div>
                         <div class="row">
                           <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
-                            <p class="contentDetalles"><img class="img-fluid iconoDetalles" src="images/icons/u130.png"> <?php echo $vehiculos[0]['transmision']; ?></p>
+                            <p><img class="img-fluid iconoDetalles" src="images/icons/u130.png"> <?php echo $vehiculos[0]['transmision']; ?></p>
                           </div>
                           <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
-                            <p class="contentDetalles"><img class="img-fluid iconoDetalles" src="images/icons/u131.png"> <?php echo $vehiculos[0]['ano']; ?></p>
+                            <p><img class="img-fluid iconoDetalles" src="images/icons/u131.png"> <?php echo $vehiculos[0]['ano']; ?></p>
                           </div>
                         </div>
                       </div>
@@ -150,30 +150,30 @@
                     </div>
                   </div>
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="container-data">
-                      <div class="container">
+                    <div class="containerData">
+                      <div class="container fontDetalles">
                         <div class="row">
                           <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
-                            <p class="contentDetalles"><img class="img-fluid iconoDetalles" src="images/marcas/<?php echo $vehiculos[1]['logo']; ?>"> <?php echo $vehiculos[1]['marca']; ?></p>
+                            <p><img class="img-fluid iconoDetalles" src="images/marcas/<?php echo $vehiculos[1]['logo']; ?>"> <?php echo $vehiculos[1]['marca']; ?></p>
                           </div>
                           <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
-                            <p class="contentDetalles"><img class="img-fluid iconoDetalles" src="images/icons/icons8-car-40.png"> <?php echo $vehiculos[1]['modelo']; ?></p>
+                            <p><img class="img-fluid iconoDetalles" src="images/icons/icons8-car-40.png"> <?php echo $vehiculos[1]['modelo']; ?></p>
                           </div>
                         </div>
                         <div class="row">
                           <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
-                            <p class="contentDetalles"><img class="img-fluid iconoDetalles" src="images/icons/u128.png"> <?php echo $vehiculos[1]['combustible']; ?></p>
+                            <p><img class="img-fluid iconoDetalles" src="images/icons/u128.png"> <?php echo $vehiculos[1]['combustible']; ?></p>
                           </div>
                           <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
-                            <p class="contentDetalles"><img class="img-fluid iconoDetalles" src="images/icons/u129.png"> <?php echo $vehiculos[1]['kilometraje']; ?>KM</p>
+                            <p><img class="img-fluid iconoDetalles" src="images/icons/u129.png"> <?php echo $vehiculos[1]['kilometraje']; ?>KM</p>
                           </div>
                         </div>
                         <div class="row">
                           <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
-                            <p class="contentDetalles"><img class="img-fluid iconoDetalles" src="images/icons/u130.png"> <?php echo $vehiculos[1]['transmision']; ?></p>
+                            <p><img class="img-fluid iconoDetalles" src="images/icons/u130.png"> <?php echo $vehiculos[1]['transmision']; ?></p>
                           </div>
                           <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
-                            <p class="contentDetalles"><img class="img-fluid iconoDetalles" src="images/icons/u131.png"> <?php echo $vehiculos[1]['ano']; ?></p>
+                            <p><img class="img-fluid iconoDetalles" src="images/icons/u131.png"> <?php echo $vehiculos[1]['ano']; ?></p>
                           </div>
                         </div>
                       </div>
@@ -272,30 +272,30 @@
                     </div>
                   </div>
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="container-data">
-                      <div class="container">
+                    <div class="containerData">
+                      <div class="container fontDetalles">
                         <div class="row">
                           <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
-                            <p class="contentDetalles"><img class="img-fluid iconoDetalles" src="images/marcas/<?php echo $vehiculos[2]['logo']; ?>"> <?php echo $vehiculos[2]['marca']; ?></p>
+                            <p><img class="img-fluid iconoDetalles" src="images/marcas/<?php echo $vehiculos[2]['logo']; ?>"> <?php echo $vehiculos[2]['marca']; ?></p>
                           </div>
                           <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
-                            <p class="contentDetalles"><img class="img-fluid iconoDetalles" src="images/icons/icons8-car-40.png"> <?php echo $vehiculos[2]['modelo']; ?></p>
+                            <p><img class="img-fluid iconoDetalles" src="images/icons/icons8-car-40.png"> <?php echo $vehiculos[2]['modelo']; ?></p>
                           </div>
                         </div>
                         <div class="row">
                           <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
-                            <p class="contentDetalles"><img class="img-fluid iconoDetalles" src="images/icons/u128.png"> <?php echo $vehiculos[2]['combustible']; ?></p>
+                            <p><img class="img-fluid iconoDetalles" src="images/icons/u128.png"> <?php echo $vehiculos[2]['combustible']; ?></p>
                           </div>
                           <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
-                            <p class="contentDetalles"><img class="img-fluid iconoDetalles" src="images/icons/u129.png"> <?php echo $vehiculos[2]['kilometraje']; ?>KM</p>
+                            <p><img class="img-fluid iconoDetalles" src="images/icons/u129.png"> <?php echo $vehiculos[2]['kilometraje']; ?>KM</p>
                           </div>
                         </div>
                         <div class="row">
                           <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
-                            <p class="contentDetalles"><img class="img-fluid iconoDetalles" src="images/icons/u130.png"> <?php echo $vehiculos[2]['transmision']; ?></p>
+                            <p><img class="img-fluid iconoDetalles" src="images/icons/u130.png"> <?php echo $vehiculos[2]['transmision']; ?></p>
                           </div>
                           <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
-                            <p class="contentDetalles"><img class="img-fluid iconoDetalles" src="images/icons/u131.png"> <?php echo $vehiculos[2]['ano']; ?></p>
+                            <p><img class="img-fluid iconoDetalles" src="images/icons/u131.png"> <?php echo $vehiculos[2]['ano']; ?></p>
                           </div>
                         </div>
                       </div>
