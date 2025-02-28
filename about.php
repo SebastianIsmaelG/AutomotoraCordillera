@@ -231,18 +231,16 @@
       </div>
     </div>
   </footer>
-  <div class="chat_container">
-    <div class="chat_button2">
-      <div class="banner_container">
-        <span class="banner_contacto">Contactanos via Messeger</span>
+  <div class="chatContainer">
+    <div class="chatButton">
+      <div class="bannerContainer">
+        <span class="bannerContacto">Contactanos via Messeger</span>
       </div>
-    </div>
-    <div class="chat_button">
       <div class="imagen_container">
         <img src="images/icons/messenger-48.png" class="img-fluid" alt="">
       </div>
     </div>
-    <div class="chat_content">
+    <div class="chatContent">
     </div>
   </div>
 

@@ -91,11 +91,11 @@
         <h3>¿DONDE NOS <span class="title_red">ENCONTRAMOS</span> ?</h3>
       </div>
     </section>
-    <section class="areamap my-2">
+    <section class="areaMapa my-2">
       <div class="container">
         <div class="row">
           <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-            <div class="circlemap" id="scrollHere1">
+            <div class="circuloMapa" id="scrollHere1">
               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3331.3961994531483!2d-70.55500888500409!3d-33.38682628079219!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c9352cbe61f1%3A0x53eaf862e96dce97!2sLas+Tranqueras+1395%2C+Vitacura%2C+Regi%C3%B3n+Metropolitana!5e0!3m2!1ses!2scl!4v1553999263460!5m2!1ses!2scl" height="100%;" width="100%;" frameborder="0" style="border:0" allowfullscreen></iframe>
             </div>
           </div>
@@ -122,11 +122,11 @@
         </div>
       </div>
     </section>
-    <section class="areamap my-2">
+    <section class="areaMapa my-2">
       <div class="container">
         <div class="row">
           <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-            <div class="circlemap" id="scrollHere1">
+            <div class="circuloMapa" id="scrollHere1">
               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d832.2919572172204!2d-70.66524117079187!
                 3d-33.44493379879845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c5abc84beaad%3A0x181aecedf6e7f4a9!
                 2sAv.+Brasil+59%2C+Santiago%2C+Regi%C3%B3n+Metropolitana!5e0!3m2!1ses!2scl!4v1553999985715!5m2!1ses!2scl" 
@@ -217,18 +217,16 @@
       </div>
     </div>
   </footer>
-  <section class="chat_container">
-    <div class="chat_button2">
-      <div class="banner_container">
-        <span class="banner_contacto">Contactanos via Messeger</span>
+  <section class="chatContainer">
+    <div class="chatButton">
+      <div class="bannerContainer">
+        <span class="bannerContacto">Contactanos via Messeger</span>
       </div>
-    </div>
-    <div class="chat_button">
       <div class="imagen_container">
         <img src="images/icons/messenger-48.png" class="img-fluid" alt="">
       </div>
     </div>
-    <div class="chat_content">
+    <div class="chatContent">
 
     </div>
   </section>

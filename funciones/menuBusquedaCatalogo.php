@@ -86,7 +86,7 @@
             </div>
           </div>
           <div class='col-6'>
-            <button type="button" id="btnCotizacion" class="btn btn-light btn-lg btn_cotizar_label" data-bs-toggle="modal" data-bs-target="#modalCotizacion<?= $modalwindow; ?>">
+            <button type="button" id="btnCotizacion" class="btn btn-light btn-lg btnCotizarLabel" data-bs-toggle="modal" data-bs-target="#modalCotizacion<?= $modalwindow; ?>">
               <span class="cotizar_label" value="cotizar">COTIZAR</span>
             </button>
           </div>
@@ -99,7 +99,7 @@
         <div class='modal-content'>
           <div class='modal-header'>
             <h5 class='modal-title'>COTIZA CON <span class='title_red'>NOSOTROS</span></h5>
-            <button class='close' data-bs-dismiss="modal" aria-label='Close'>
+            <button class='labelClose' data-bs-dismiss="modal" aria-label='Close'>
               <i class="fa-solid fa-xmark"></i>
             </button>
           </div>

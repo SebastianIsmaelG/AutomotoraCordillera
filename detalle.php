@@ -64,9 +64,13 @@
           </ul>
 
           <form class="d-flex" method="get" action="busqueda.php">
-            <div class="search-container position-relative">
-              <input class="form-control me-2" type="search" name="src" placeholder="Buscar por Marcas, Modelo, Año..." aria-label="Buscar" maxlength="15">
-              <i class="fas fa-search position-absolute top-50 start-0 translate-middle-y ms-3"></i> <!-- Icono de lupa -->
+            <div class="search-container position-relative d-flex w-100 border rounded overflow-hidden">
+              <input class="form-control border-0 flex-grow-1 px-3" type="search" name="src"
+                placeholder="¿Qué estás buscando?.."
+                aria-label="Buscar" maxlength="15">
+              <button type="submit" class="btn flex-shrink-0 btnLupa">
+                <i class="fas fa-search btnLupa"></i> <!-- Ícono de lupa -->
+              </button>
             </div>
           </form>
 
@@ -133,7 +137,7 @@
                   </div>
                   <div class='col-lg-6 col-md-6-col-sm-6 col-xs-12 text-center'>
                     <div>
-                      <button type="button" class="btn btn-light btn-lg btn_cotizar_label" data-bs-toggle="modal" data-bs-target="#inputCotizacion"><span class='cotizar_label' value='cotizar'>COTIZAR</span></button>
+                      <button type="button" class="btn btn-light btn-lg btnCotizarLabel" data-bs-toggle="modal" data-bs-target="#inputCotizacion"><span class='cotizar_label' value='cotizar'>COTIZAR</span></button>
                     </div>
                   </div>
                 </div>
@@ -143,7 +147,7 @@
                     <div class='modal-content'>
                       <div class='modal-header'>
                         <h2 class='modal-title h3' id='exampleModalLongTitle'>COTIZA CON <span class='title_red'>NOSOTROS</span></h2>
-                        <button class='close' data-bs-dismiss="modal" aria-label='Close'>
+                        <button class='labelClose' data-bs-dismiss="modal" aria-label='Close'>
                           <i class="fa-solid fa-xmark"></i>
                         </button>
                       </div>
@@ -285,18 +289,16 @@
         </div>
       </div>
     </div>
-    <div class="chat_container">
-      <div class="chat_button2">
-        <div class="banner_container">
-          <span class="banner_contacto">Contactanos via Messeger</span>
+    <div class="chatContainer">
+      <div class="chatButton">
+        <div class="bannerContainer">
+          <span class="bannerContacto">Contactanos via Messeger</span>
         </div>
-      </div>
-      <div class="chat_button">
         <div class="imagen_container">
           <img src="images/icons/messenger-48.png" class="img-fluid" alt="">
         </div>
       </div>
-      <div class="chat_content">
+      <div class="chatContent">
         
       </div>
     </div>

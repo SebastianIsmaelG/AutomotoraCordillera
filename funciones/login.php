@@ -48,8 +48,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         //Creamos el session storage
         $_SESSION['usuario'] = $usernameEncontrado;
         $_SESSION['privilegio'] = $privilegioEncontrado;
-        header("Location:".BASE_URL."administracion/index.php");
-        exit();
+        //Tipo de usuario, va a administracion o ejecutivo
+        switch ($privilegioEncontrado) {
+            case 1:
+                header("Location:".BASE_URL."administracion/index.php");
+                break;
+                exit();
+            case 2:
+                header("Location:".BASE_URL."ejecutivo/index.php");
+                exit();
+                break;
+            default:
+                header("Location:".BASE_URL."administrativo.php?error");
+                exit();
+                break;
+        }
     }else{
         header("Location:".BASE_URL."administrativo.php?error");
         exit();

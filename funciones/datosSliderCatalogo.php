@@ -78,7 +78,7 @@
                         <div class='modal-content'>
                           <div class='modal-header'>
                             <h5 class='modal-title' id='exampleModalLongTitle'>COTIZA CON <span class='title_red'>NOSOTROS</span></h5>
-                            <button class='close' data-bs-dismiss="modal" aria-label='Close'>
+                            <button class='labelClose' data-bs-dismiss="modal" aria-label='Close'>
                               <i class="fa-solid fa-xmark"></i>
                             </button>
                           </div>
@@ -200,7 +200,7 @@
                         <div class='modal-content'>
                           <div class='modal-header'>
                             <h5 class='modal-title' id='exampleModalLongTitle'>COTIZA CON <span class='title_red'>NOSOTROS</span></h5>
-                            <button class='close' data-bs-dismiss="modal" aria-label='Close'>
+                            <button class='labelClose' data-bs-dismiss="modal" aria-label='Close'>
                               <i class="fa-solid fa-xmark"></i>
                             </button>
                           </div>
@@ -322,7 +322,7 @@
                         <div class='modal-content'>
                           <div class='modal-header'>
                             <h5 class='modal-title' id='exampleModalLongTitle'>COTIZA CON <span class='title_red'>NOSOTROS</span></h5>
-                            <button class='close' data-bs-dismiss="modal" aria-label='Close'>
+                            <button class='labelClose' data-bs-dismiss="modal" aria-label='Close'>
                               <i class="fa-solid fa-xmark"></i>
                             </button>
                           </div>

@@ -170,7 +170,7 @@
               </div>
               <div class="col-lg-4 col-md-12">
                 <div class="mb-3 py-4">
-                  <input type="submit" class="btn w-100 btnindex_search" name="srcInd" value="Buscar">
+                  <input type="submit" class="btn w-100 btnIndexSearch" name="srcInd" value="Buscar">
                 </div>
               </div>
             </div>
@@ -319,17 +319,15 @@
     </div>
   </footer>
   <section class="chat_container">
-    <div class="chat_button2">
-      <div class="banner_container">
-        <span class="banner_contacto">Contactanos via Messeger</span>
+    <div class="chatButton">
+      <div class="bannerContainer">
+        <span class="bannerContacto">Contactanos via Messeger</span>
       </div>
-    </div>
-    <div class="chat_button">
       <div class="imagen_container">
         <img src="images/icons/messenger-48.png" class="img-fluid" alt="">
       </div>
     </div>
-    <div class="chat_content">
+    <div class="chatContent">
 
     </div>
   </section>

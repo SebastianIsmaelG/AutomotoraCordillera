@@ -23,7 +23,9 @@
         <form action="administrativo.php" method="post">
             <div class="row">
                 <div class="col-12">
-                    <img src="images/Cordillera2.png" class="img-fluid"></img>
+                    <a href="index.php" class="text-decoration-none">
+                        <img src="images/Cordillera2.png" class="img-fluid"></img>
+                    </a>
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12">
                     <div class="container">
@@ -32,8 +34,10 @@
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12">
                     <div class="container text-end">
-                        <button onclick="window.history.back();" class="btn btn-sm btn-outline-primary">
-                            <i class="fas fa-arrow-left me-2"></i> Volver atrás
+                        <button class="btn btn-sm btn-outline-primary">
+                            <a href="index.php" class="text-decoration-none enlacesBtnPrimary">
+                                <i class="fas fa-arrow-left me-2"></i> Volver atrás
+                            </a>
                         </button>
                     </div>
                 </div>
@@ -58,7 +62,7 @@
                             <label for="selectPrivilegio" class="form-label">Tipo de Ingreso </label>
                             <select name="selectPrivilegio" id="selectPrivilegio" class="form-control">
                                 <option value="1">Administración</option>
-                                <option value="2">Secretaríado</option>
+                                <option value="2">Secretaría</option>
                             </select>
                         </div>
                     </div>
