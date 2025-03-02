@@ -63,11 +63,11 @@
                       <div class="col-lg-6 col-md-12 col-sm-12 my-2 ">
                         <form action="detalle.php" method="GET">
                           <input type="hidden" id="id" name="id" value="<?php echo $vehiculos[0]['codigo']; ?>">
-                          <input type="submit" class=" flex-fill input-index" name="index" value="Ver Detalles" id="input_index">
+                          <input type="submit" class=" flex-fill inputIndex" name="index" value="Ver Detalles" id="input_index">
                         </form>
                       </div>
                       <div class="col-lg-6 col-md-12 col-sm-12 my-2 ">
-                        <button type="button" data-bs-toggle="modal" data-bs-target="#input_index_cotizacion1" class="flex-fill input-index" id="input_index">
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#input_index_cotizacion1" class="flex-fill inputIndex" id="input_index">
                           <i class="fa-solid fa-phone"></i>COTIZAR
                         </button>
                       </div>
@@ -77,7 +77,7 @@
                       <div class='modal-dialog modal-dialog-centered' role='document'>
                         <div class='modal-content'>
                           <div class='modal-header'>
-                            <h5 class='modal-title' id='exampleModalLongTitle'>COTIZA CON <span class='title_red'>NOSOTROS</span></h5>
+                            <h5 class='modal-title' id='exampleModalLongTitle'>COTIZA CON <span class='tituloRojo'>NOSOTROS</span></h5>
                             <button class='labelClose' data-bs-dismiss="modal" aria-label='Close'>
                               <i class="fa-solid fa-xmark"></i>
                             </button>
@@ -111,7 +111,7 @@
                           </div>
                           <div class='modal-footer'>
                             <input type="hidden" name="vehiculo_visto" value="<?php echo $vehiculos[0]['marca'] . ' - ' . $vehiculos[0]['modelo'] ?>">
-                            <button type='submit' name='btn_guardar' class=' input-index-modal ' id='input_index2'><span>ENVIAR DATOS</span></button>
+                            <button type='submit' name='btn_guardar' class='inputIndexModal ' id='input_index2'><span>ENVIAR DATOS</span></button>
                           </div>
                           </form>
                         </div>
@@ -185,11 +185,11 @@
 
                         <form action="detalle.php" method="GET">
                           <input type="hidden" id="id" name="id" value="<?php echo $vehiculos[1]['codigo']; ?>">
-                          <input type="submit" class=" flex-fill input-index" name="index" value="Ver Detalles" id="input_index">
+                          <input type="submit" class=" flex-fill inputIndex" name="index" value="Ver Detalles" id="input_index">
                         </form>
                       </div>
                       <div class="col-lg-6 col-md-12 col-sm-12 my-2 ">
-                        <button type="button" data-bs-toggle="modal" data-bs-target="#input_index_cotizacion2" class="flex-fill input-index" id="input_index">
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#input_index_cotizacion2" class="flex-fill inputIndex" id="input_index">
                           <i class="fa-solid fa-phone"></i>COTIZAR
                         </button>
                       </div>
@@ -199,7 +199,7 @@
                       <div class='modal-dialog modal-dialog-centered' role='document'>
                         <div class='modal-content'>
                           <div class='modal-header'>
-                            <h5 class='modal-title' id='exampleModalLongTitle'>COTIZA CON <span class='title_red'>NOSOTROS</span></h5>
+                            <h5 class='modal-title' id='exampleModalLongTitle'>COTIZA CON <span class='tituloRojo'>NOSOTROS</span></h5>
                             <button class='labelClose' data-bs-dismiss="modal" aria-label='Close'>
                               <i class="fa-solid fa-xmark"></i>
                             </button>
@@ -233,7 +233,7 @@
                           </div>
                           <div class='modal-footer'>
                             <input type="hidden" name="vehiculo_visto" value="<?php echo $vehiculos[1]['marca'] . ' - ' . $vehiculos[1]['modelo'] ?>">
-                            <button type='submit' name='btn_guardar' class=' input-index-modal ' id='input_index'><span>ENVIAR DATOS</span></button>
+                            <button type='submit' name='btn_guardar' class='inputIndexModal ' id='input_index'><span>ENVIAR DATOS</span></button>
                           </div>
                           </form>
                         </div>
@@ -307,11 +307,11 @@
 
                         <form action="detalle.php" method="GET">
                           <input type="hidden" id="id" name="id" value="<?php echo $vehiculos[2]['codigo']; ?>">
-                          <input type="submit" class=" flex-fill input-index" name="index" value="Ver Detalles" id="input_index">
+                          <input type="submit" class=" flex-fill inputIndex" name="index" value="Ver Detalles" id="input_index">
                         </form>
                       </div>
                       <div class="col-lg-6 col-md-12 col-sm-12 my-2 ">
-                        <button type="button" data-bs-toggle="modal" data-bs-target="#input_index_cotizacion3" class="flex-fill input-index" id="input_index">
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#input_index_cotizacion3" class="flex-fill inputIndex" id="input_index">
                           <i class="fa-solid fa-phone"></i>COTIZAR
                         </button>
                       </div>
@@ -321,7 +321,7 @@
                       <div class='modal-dialog modal-dialog-centered' role='document'>
                         <div class='modal-content'>
                           <div class='modal-header'>
-                            <h5 class='modal-title' id='exampleModalLongTitle'>COTIZA CON <span class='title_red'>NOSOTROS</span></h5>
+                            <h5 class='modal-title' id='exampleModalLongTitle'>COTIZA CON <span class='tituloRojo'>NOSOTROS</span></h5>
                             <button class='labelClose' data-bs-dismiss="modal" aria-label='Close'>
                               <i class="fa-solid fa-xmark"></i>
                             </button>
@@ -355,7 +355,7 @@
                           </div>
                           <div class='modal-footer'>
                             <input type="hidden" name="vehiculo_visto" value="<?php echo $vehiculos[2]['marca'] . ' - ' . $vehiculos[2]['modelo'] ?>">
-                            <button type='submit' name='btn_guardar' class=' input-index-modal ' id='input_index'><span>ENVIAR DATOS</span></button>
+                            <button type='submit' name='btn_guardar' class=' inputIndexModal ' id='input_index'><span>ENVIAR DATOS</span></button>
                           </div>
                           </form>
                         </div>

@@ -37,7 +37,7 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav">
+          <ul class="navbarNav">
             <li class="nav-item active">
               <a class="nav-link fw-bold" href="index.php">Inicio</a>
             </li>
@@ -73,7 +73,7 @@
           </ul>
 
           <form class="d-flex" method="get" action="busqueda.php">
-            <div class="search-container position-relative d-flex w-100 border rounded overflow-hidden">
+            <div class="searchContainer position-relative d-flex w-100 border rounded overflow-hidden">
               <input class="form-control border-0 flex-grow-1 px-3" type="search" name="src"
                 placeholder="¿Qué estás buscando?.."
                 aria-label="Buscar" maxlength="15">
@@ -127,7 +127,7 @@
               <div class="row">
                 <div class="col-12">
                   <div class="mb-3 text-center py-3">
-                    <h5 class="fw-bold">BUSCADOR <span class="title_red">AVANZADO</span></h5>
+                    <h5 class="fw-bold">BUSCADOR <span class="tituloRojo">AVANZADO</span></h5>
                   </div>
                 </div>
                 <div class="col-12">
@@ -250,7 +250,7 @@
           <div class="container py-2">
             <form class="row g-3" action="funciones/guardarCotizacion.php" method="post">
               <div class="col-12 text-center">
-                <h5 class="fw-bold"><span class="title_red">COTIZA</span> CON NOSOTROS</h5>
+                <h5 class="fw-bold"><span class="tituloRojo">COTIZA</span> CON NOSOTROS</h5>
               </div>
               <div class="col-12">
                 <label for="nombres_cotizacion" class="visually-hidden">Nombres</label>
@@ -359,7 +359,7 @@
       <div class="bannerContainer">
         <span class="bannerContacto">Contactanos via Messeger</span>
       </div>
-      <div class="imagen_container">
+      <div class="imagenContainer">
         <img src="images/icons/messenger-48.png" class="img-fluid" alt="">
       </div>
     </div>

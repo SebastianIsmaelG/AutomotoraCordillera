@@ -98,7 +98,7 @@
       <div class='modal-dialog modal-dialog-centered' role='document'>
         <div class='modal-content'>
           <div class='modal-header'>
-            <h5 class='modal-title'>COTIZA CON <span class='title_red'>NOSOTROS</span></h5>
+            <h5 class='modal-title'>COTIZA CON <span class='tituloRojo'>NOSOTROS</span></h5>
             <button class='labelClose' data-bs-dismiss="modal" aria-label='Close'>
               <i class="fa-solid fa-xmark"></i>
             </button>
@@ -132,7 +132,7 @@
           </div>
           <div class='modal-footer'>
             <input type="hidden" name="vehiculo_visto" value="<?= $marca . ' - ' . $modelo ?>">
-            <button type='submit' name='btn_guardar' class=' input-index-modal ' id='input_index'><span>ENVIAR DATOS</span></button>
+            <button type='submit' name='btn_guardar' class='inputIndexModal ' id='input_index'><span>ENVIAR DATOS</span></button>
           </div>
           </form>
         </div>

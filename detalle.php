@@ -29,7 +29,7 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav">
+          <ul class="navbarNav">
             <li class="nav-item active">
               <a class="nav-link fw-bold" href="index.php">Inicio</a>
             </li>
@@ -65,7 +65,7 @@
           </ul>
 
           <form class="d-flex" method="get" action="busqueda.php">
-            <div class="search-container position-relative d-flex w-100 border rounded overflow-hidden">
+            <div class="searchContainer position-relative d-flex w-100 border rounded overflow-hidden">
               <input class="form-control border-0 flex-grow-1 px-3" type="search" name="src"
                 placeholder="¿Qué estás buscando?.."
                 aria-label="Buscar" maxlength="15">
@@ -149,7 +149,7 @@
                   <div class='modal-dialog modal-dialog-centered' role='document'>
                     <div class='modal-content'>
                       <div class='modal-header'>
-                        <h2 class='modal-title h3' id='exampleModalLongTitle'>COTIZA CON <span class='title_red'>NOSOTROS</span></h2>
+                        <h2 class='modal-title h3' id='exampleModalLongTitle'>COTIZA CON <span class='tituloRojo'>NOSOTROS</span></h2>
                         <button class='labelClose' data-bs-dismiss="modal" aria-label='Close'>
                           <i class="fa-solid fa-xmark"></i>
                         </button>
@@ -184,7 +184,7 @@
                       </div>
                       <div class='modal-footer'>
                         <input type="hidden" name="vehiculo_visto" value="<?= $marca . ' - ' . $modelo ?>">
-                        <button type='submit' name='btn_guardar' class=' input-index-modal ' id='input_index'><span>ENVIAR DATOS</span></button>
+                        <button type='submit' name='btn_guardar' class='inputIndexModal ' id='input_index'><span>ENVIAR DATOS</span></button>
                       </div>
                       </form>
                     </div>
@@ -198,7 +198,7 @@
                 <div class="row">
                   <div class="col-12">
                     <div>
-                      <h2 class="linear upper h4">ESPECIFICACIONES <span class="title_red">TECNICAS</span></h2>
+                      <h2 class="linear upper h4">ESPECIFICACIONES <span class="tituloRojo">TECNICAS</span></h2>
                     </div>
                   </div>
                   <div class="col-12">
@@ -255,7 +255,7 @@
                 <div class="row">
                   <div class="col-12">
                     <div>
-                      <h2 class="linear upper h4">DETALLES <span class="title_red">EQUIPAMIENTO</span></h2>
+                      <h2 class="linear upper h4">DETALLES <span class="tituloRojo">EQUIPAMIENTO</span></h2>
                     </div>
                   </div>
                   <div class="col-12">
@@ -271,12 +271,12 @@
                 <div class="row">
                   <div class="col-12">
                     <div class="vehiculo_data_nombre">
-                      <h2 class="linear h4">UBICACIÓN <span class="title_red">SUCURSAL</span></h2>
+                      <h2 class="linear h4">UBICACIÓN <span class="tituloRojo">SUCURSAL</span></h2>
                     </div>
                   </div>
                   <div class="col-12">
                     <div>
-                      <iframe class="responsive-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3331.3962520354485
+                      <iframe class="responsiveIframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3331.3962520354485
                         !2d<?= $longitud; ?>!3d<?= $latitud; ?>!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c9352d11aa21%3A0x69745e993d10a7e
                         !2sLas%20Tranqueras%201395%2C%207650192%20Vitacura%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses!2scl!4v1739038276416!5m2!1ses!2scl"
                         style="border:0;"
@@ -298,7 +298,7 @@
         <div class="bannerContainer">
           <span class="bannerContacto">Contactanos via Messeger</span>
         </div>
-        <div class="imagen_container">
+        <div class="imagenContainer">
           <img src="images/icons/messenger-48.png" class="img-fluid" alt="">
         </div>
       </div>

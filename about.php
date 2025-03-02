@@ -34,7 +34,7 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav">
+          <ul class="navbarNav">
             <li class="nav-item active">
               <a class="nav-link fw-bold" href="index.php">Inicio</a>
             </li>
@@ -70,7 +70,7 @@
           </ul>
 
           <form class="d-flex" method="get" action="busqueda.php">
-            <div class="search-container position-relative d-flex w-100 border rounded overflow-hidden">
+            <div class="searchContainer position-relative d-flex w-100 border rounded overflow-hidden">
               <input class="form-control border-0 flex-grow-1 px-3" type="search" name="src"
                 placeholder="¿Qué estás buscando?.."
                 aria-label="Buscar" maxlength="15">
@@ -86,7 +86,7 @@
   </header>
   <div class="container">
     <div class="container text-center">
-      <h1 class="h2">Automotora <span class="title_red">Cordillera</span></h1>
+      <h1 class="h2">Automotora <span class="tituloRojo">Cordillera</span></h1>
     </div>
     <div class="container text-center">
       <div class="text-center fondoHistoria"></div>
@@ -136,13 +136,13 @@
       <div class="container">
         <div class="row">
           <div class="col-12 text-center">
-            <h3>Nuestros <span class="title_red">Valores</span></h3>
+            <h3>Nuestros <span class="tituloRojo">Valores</span></h3>
           </div>
         </div>
         <div class="row fontDetalles">
           <div class="col-lg-4 col-md-12 col-sm-12">
-            <div class="container valores-about my-2 p-2">
-              <h4 class="titulo-valores text-center">COMPROMISO</h4>
+            <div class="container valoresAbout my-2 p-2">
+              <h4 class="tituloValores text-center">COMPROMISO</h4>
               <div>
                 <p>Nuestro conocimiento, experiencias y esfuerzo adquiridas a traves de los años son claves para poder ofrecer el mejor servicio a nuestros clientes.
                   Le atenderemos siempre con una sonrisa, en un ambiente que promueva el enriquecimiento, en el cual se valoran y se respetan todas las opiniones e ideas.</p>
@@ -150,8 +150,8 @@
             </div>
           </div>
           <div class="col-lg-4 col-md-12 col-sm-12">
-            <div class="container valores-about my-2 p-2">
-              <h4 class="titulo-valores text-center">HONESTIDAD</h4>
+            <div class="container valoresAbout my-2 p-2">
+              <h4 class="tituloValores text-center">HONESTIDAD</h4>
               <div>
                 <p>Con transparencia, honradez e integridad en nuestras relaciones del día a día,
                   empezando por nosotros mismos y rechazando prácticas de negocio injustas, orientadas a obtener una ventaja particular y siendo ejemplo para los demás.</p>
@@ -159,8 +159,8 @@
             </div>
           </div>
           <div class="col-lg-4 col-md-12 col-sm-12">
-            <div class="container valores-about my-2 p-2">
-              <h4 class="titulo-valores text-center">PASIÓN</h4>
+            <div class="container valoresAbout my-2 p-2">
+              <h4 class="tituloValores text-center">PASIÓN</h4>
               <div>
                 <p>Contamos con mas de 8 años de experiencia en el mundo automotriz, nos emocionamos con los vehiculos al igual que nuestros clientes.
                   Recordando siempre nuestras raices, siempre soñamos con poder formar una organización con pasión dirigida a nuestros clientes</p>
@@ -236,7 +236,7 @@
       <div class="bannerContainer">
         <span class="bannerContacto">Contactanos via Messeger</span>
       </div>
-      <div class="imagen_container">
+      <div class="imagenContainer">
         <img src="images/icons/messenger-48.png" class="img-fluid" alt="">
       </div>
     </div>

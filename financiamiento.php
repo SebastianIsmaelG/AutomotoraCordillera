@@ -29,7 +29,7 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav">
+          <ul class="navbarNav">
             <li class="nav-item active">
               <a class="nav-link fw-bold" href="index.php">Inicio</a>
             </li>
@@ -65,7 +65,7 @@
           </ul>
 
           <form class="d-flex" method="get" action="busqueda.php">
-            <div class="search-container position-relative d-flex w-100 border rounded overflow-hidden">
+            <div class="searchContainer position-relative d-flex w-100 border rounded overflow-hidden">
               <input class="form-control border-0 flex-grow-1 px-3" type="search" name="src"
                 placeholder="¿Qué estás buscando?.."
                 aria-label="Buscar" maxlength="15">

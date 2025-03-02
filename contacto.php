@@ -35,7 +35,7 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav">
+          <ul class="navbarNav">
             <li class="nav-item active">
               <a class="nav-link fw-bold" href="#">Inicio</a>
             </li>
@@ -71,7 +71,7 @@
           </ul>
 
           <form class="d-flex" method="get" action="busqueda.php">
-            <div class="search-container position-relative d-flex w-100 border rounded overflow-hidden">
+            <div class="searchContainer position-relative d-flex w-100 border rounded overflow-hidden">
               <input class="form-control border-0 flex-grow-1 px-3" type="search" name="src"
                 placeholder="¿Qué estás buscando?.."
                 aria-label="Buscar" maxlength="15">
@@ -88,7 +88,7 @@
   <div class='container'>
     <section>
       <div class="container text-center py-3">
-        <h3>¿DONDE NOS <span class="title_red">ENCONTRAMOS</span> ?</h3>
+        <h3>¿DONDE NOS <span class="tituloRojo">ENCONTRAMOS</span> ?</h3>
       </div>
     </section>
     <section class="areaMapa my-2">
@@ -107,7 +107,7 @@
               <div class="col-12">
                 <div class="row fontDetalles">
                   <div class="col-12">
-                    <h5>SUCURSAL <span class="title_red">TRANQUERAS</span></h5>
+                    <h5>SUCURSAL <span class="tituloRojo">TRANQUERAS</span></h5>
                   </div>
                   <div class="col-12">
                     <p><span>Ubicación</span> Las Tranqueras N° 1395, Vitacura. Region Metropolitana.</p>
@@ -141,7 +141,7 @@
               <div class="col-12">
                 <div class="row fontDetalles">
                   <div class="col-12">
-                    <h5>SUCURSAL <span class="title_red">AV BRAZIL</span></h5>
+                    <h5>SUCURSAL <span class="tituloRojo">AV BRAZIL</span></h5>
                   </div>
                   <div class="col-12">
                     <p><span>Ubicación</span> Avenida Brazil N° 159, Santiago. Region Metropolitana </p>
@@ -222,7 +222,7 @@
       <div class="bannerContainer">
         <span class="bannerContacto">Contactanos via Messeger</span>
       </div>
-      <div class="imagen_container">
+      <div class="imagenContainer">
         <img src="images/icons/messenger-48.png" class="img-fluid" alt="">
       </div>
     </div>

@@ -43,7 +43,7 @@
                 </div>
             </div>
             <hr>
-            <div class="container max-width-600">
+            <div class="container maxWidth-600">
                 <div class="row">
                     <div class="col-12">
                         <div class="mb-3">
