@@ -59,7 +59,7 @@ sliderYear.noUiSlider.on("update", function (values) {
 });
 
 
-//nouiSlider Precio
+//noUiSlider Precio
 var sliderPrecio = document.getElementById("precio");
 
 noUiSlider.create(sliderPrecio, {

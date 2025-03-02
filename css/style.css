@@ -101,9 +101,20 @@ main {
 }
 .chatContent {
   margin: 0px;
-  padding: 0px;
+  padding: 10px;
   background-color: white;
-  display: none;
+  visibility: hidden;  /* Oculto inicialmente */
+  opacity: 0;
+  max-height: 0;  /* Para animación de deslizamiento */
+  overflow: hidden;
+  transition: visibility 0s linear 0.3s, opacity 0.3s linear, max-height 0.3s ease-out;
+}
+
+.chatContent.show {
+  visibility: visible;
+  opacity: 1;
+  max-height: 500px; /* Ajusta según el tamaño del contenido */
+  transition: visibility 0s linear, opacity 0.3s linear, max-height 0.3s ease-in;
 }
 .circuloMapa {
   border: 10px solid #f6f5f0;
@@ -240,7 +251,7 @@ main {
 .navbarHeader {
   background-color: #f8f8f9;
 }
-.navbarNav {
+.navbar-nav {
   flex-grow: 1;
 }
 .noUi-connect{

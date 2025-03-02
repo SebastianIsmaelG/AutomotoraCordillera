@@ -40,7 +40,7 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbarNav">
+          <ul class="navbar-nav">
             <li class="nav-item active">
               <a class="nav-link fw-bold" href="index.php">Inicio</a>
             </li>
@@ -182,7 +182,7 @@
         <div class="col-12">
           <?php
 
-          //pasamos $cnn una vez para todas las clases
+          //pasamos $cnn una vez para la clase
           $rsIndex = new MenuBusqueda($cnn);
 
 
@@ -336,7 +336,7 @@
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script type="text/javascript" src="js/scripts.js"></script>
-  <script type="text/javascript" src="js/chat_menu.js"></script>
+  <script type="text/javascript" src="js/chatMenu.js"></script>
   <!--JS CAPTHA-->
   <script src='https://www.google.com/recaptcha/api.js'></script>
 </body>
