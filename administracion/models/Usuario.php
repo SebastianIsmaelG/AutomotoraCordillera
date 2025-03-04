@@ -2,17 +2,17 @@
 require_once __DIR__ . '/../models/Conexion.php';
 
 class Usuario {
-    private $conn;
+    private $cnn;
     private $table = "usuarios";
 
     public function __construct() {
         $db = new Conexion();
-        $this->conn = $db->connect();
+        $this->cnn = $db->connect();
     }
 
     public function obtenerUsuarioPorUsername($usuarioEncontrado) {
         $sql = "SELECT * FROM {$this->table} WHERE nombreUsuario = ?";
-        $stmt = $this->conn->prepare($sql);
+        $stmt = $this->cnn->prepare($sql);
         $stmt->bind_param("s", $usuarioEncontrado);
         $stmt->execute();
         $resultado = $stmt->get_result();
