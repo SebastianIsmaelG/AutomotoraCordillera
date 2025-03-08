@@ -8,15 +8,16 @@
     <link rel="shortcut icon" href="../images/icons/favicon.ico" />
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Lato&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <title>Index Administracion</title>
+    <title>Menu Administracion</title>
 </head>
 
 <body>
     <?php
     session_start();
+    require_once '../config.php';
     require_once 'controllers/UsuarioController.php';
     //si no hay session se va para el login
-    if (!isset($_SESSION['usuario']) && (int)$_SESSION['privilegio'] !== 1) {
+    if (!isset($_SESSION['usuario']) && !isset($_SESSION['privilegio'])) {
         header("Location:" . BASE_URL . "administrativo.php?error");
         exit();
     } else {
@@ -27,7 +28,7 @@
 
 
         $usuarioController = new UsuarioController();
-        $usuarioController->login($usuarioEncontrado);
+        $datosUsuario = $usuarioController->login($usuarioEncontrado);
     }
     ?>
     <header>
@@ -35,33 +36,34 @@
             <div class="p-2">
                 <a id="nav-link" class="navbar-brand" href="">Menu Principal<span class="visually-hidden">Menu Principal</span></a>
             </div>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li id="li_navbar" class="nav-item">
-                        <a id="nav-link" class="nav-link" href="">Vehiculos<span class="visually-hidden">Vehiculos</span></a>
-                    </li>
-                    <li id="li_navbar" class="nav-item">
-                        <a id="nav-link" class="nav-link" href="">Marcas<span class="visually-hidden">Marcas</span></a>
-                    </li>
-                    <li id="li_navbar" class="nav-item">
-                        <a id="nav-link" class="nav-link" href="">Cotizaciones<span class="visually-hidden">Cotizaciones</span></a>
-                    </li>
-                    <li id="li_navbar" class="nav-item">
-                        <a id="nav-link" class="nav-link" href="">Estadisticas<span class="visually-hidden">Estadisticas</span></a>
-                    </li>
-                    <li id="li_navbar" class="nav-item">
-                        <a id="nav-link" class="nav-link" href="">Usuarios<span class="visually-hidden">Usuarios</span></a>
-                    </li>
-                </ul>
-            </div>
             <div class="p-2">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenuPrincipal" aria-controls="navbarMenuPrincipal" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
+            <div class="collapse navbar-collapse" id="navbarMenuPrincipal">
+                <ul class="navbar-nav mr-auto px-3">
+                    <li class="nav-item"><a class="nav-link" href="">Vehiculos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="">Marcas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="">Cotizaciones</a></li>
+                    <li class="nav-item"><a class="nav-link" href="">Estadisticas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="">Usuarios</a></li>
+                </ul>
+                <div class="d-flex align-items-center px-3">
+                    <span class="text-light me-2"><?php echo " " . htmlspecialchars($datosUsuario['nombres']) . " " . htmlspecialchars($datosUsuario['apellidos']); ?></span>
+                    <form action="../funciones/logout.php" method="POST" class="d-inline">
+                        <button type="submit" class="btn btn-danger btn-sm">
+                            <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+                        </button>
+                    </form>
+                </div>
+            </div>
         </nav>
     </header>
-    <h1> <?php  ?> </h1>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
 </body>
 
 </html>

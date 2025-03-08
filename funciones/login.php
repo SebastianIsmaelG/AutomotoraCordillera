@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (!$usuarioEncontrado) {
         //hacer esta salida mas bonita tipo usuario o contraseña incorrectos
-        header("Location:".BASE_URL."/administrativo.php?error");
+        header("Location:".BASE_URL."administrativo.php?error");
     }
 
     //Datos del array
