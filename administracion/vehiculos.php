@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="../images/icons/favicon.ico" />
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Lato&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <title>Menu administracion</title>
+    <title>Menu vehiculos</title>
 </head>
 
 <body>
@@ -16,6 +16,7 @@
     session_start();
     require_once '../config.php';
     require_once 'controllers/UsuarioController.php';
+    require_once 'controllers/VehiculoController.php';
     //si no hay session se va para el login
     if (!isset($_SESSION['usuario']) && !isset($_SESSION['privilegio'])) {
         header("Location:" . BASE_URL . "administrativo.php?error");
@@ -33,6 +34,9 @@
 
         $usuarioController = new UsuarioController();
         $datosUsuario = $usuarioController->login($usuarioEncontrado);
+
+        $vehiculoController = new VehiculoController();
+        $datosVehiculos = $vehiculoController->busqueda();
     }
     ?>
     <header>
