@@ -26,8 +26,7 @@ function cargaselectmodelo() {
 
 //nouiSlider Año
 let minyear = (document.getElementById("minYear").textContent = 2005);
-let maxyear = (document.getElementById("maxYear").textContent =
-  new Date().getFullYear()); //MaxYear
+let maxyear = (document.getElementById("maxYear").textContent = new Date().getFullYear()); //MaxYear
 
 var sliderYear = document.getElementById("yrRange");
 noUiSlider.create(sliderYear, {

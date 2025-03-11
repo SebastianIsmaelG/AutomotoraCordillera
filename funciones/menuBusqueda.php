@@ -1,16 +1,13 @@
 <?php
-class MenuBusqueda
-{
+class MenuBusqueda {
 
   private $cnn;
 
-  public function __construct($cnn)
-  {
+  public function __construct($cnn) {
     $this->cnn = $cnn;
   }
 
-  public function busquedaAvanzada($radioSelect, $categoriaSelect, $marcaSelect, $anoDesdeSelect, $anoHastaSelect, $precioDesdeSelect, $precioHastaSelect)
-  {
+  public function busquedaAvanzada($radioSelect, $categoriaSelect, $marcaSelect, $anoDesdeSelect, $anoHastaSelect, $precioDesdeSelect, $precioHastaSelect) {
 
     try {
       if (!$this->cnn) {
@@ -175,8 +172,7 @@ class MenuBusqueda
     }
   }
 
-  public function busquedaMarcas($marcaSelect)
-  {
+  public function busquedaMarcas($marcaSelect) {
 
     try {
       if (!$this->cnn) {
@@ -299,8 +295,7 @@ class MenuBusqueda
     }
   }
 
-  public function busquedaNavbar($srcNavBar)
-  {
+  public function busquedaNavbar($srcNavBar) {
 
     try {
       if (!$this->cnn) {
@@ -463,8 +458,7 @@ class MenuBusqueda
     }
   }
 
-  public function busquedaUsados()
-  {
+  public function busquedaUsados() {
     try {
       if (!$this->cnn) {
         throw new Exception("Conexion Fallida: " . mysqli_connect_error());
