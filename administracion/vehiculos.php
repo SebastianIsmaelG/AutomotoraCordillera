@@ -59,7 +59,7 @@
                 </ul>
                 <div class="d-flex align-items-center px-3">
                     <span class="text-light me-2"><?php echo " " . htmlspecialchars($datosUsuario['nombres']) . " " . htmlspecialchars($datosUsuario['apellidos']); ?>
-                        <form action="../funciones/login.php" method="POST" class="d-inline">
+                        <form action="../funciones/logout.php" method="POST" class="d-inline">
                             <button type="submit" class="btn btn-danger btn-sm">
                                 <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
                             </button>
